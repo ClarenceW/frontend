@@ -1,0 +1,99 @@
+/***********
+Theme Colors
+***********/
+
+#top-menu {
+  background-color: #1f262d;
+}
+
+#top-menu .right.menu div.item > a.item {
+  color: #fff;
+}
+
+#top-menu .right.menu div.item:hover {
+  background-color: rgba(51,58,65,.75);
+}
+
+#top-menu .menu.frequently-projects .menu-item-wrapper {
+  background: #f0f3fa;
+}
+
+/*一级菜单*/
+.ui.inverted.menu {
+  background-color: #3b3f51;
+}
+
+.ui.inverted.icon.menu .item {
+  color: #a5abc4;
+}
+
+.ui.inverted.icon.menu .icon {
+  color: #a5abc4;
+}
+
+.ui.inverted.menu .active.item,.ui.inverted.menu .active.item a {
+  color: #fff!important
+}
+
+.ui.inverted.menu .active.item .icon {
+  color: #fff!important
+}
+
+.ui.inverted.menu .dropdown.item:hover,.ui.inverted.menu .link.item:hover,.ui.inverted.menu a.item:hover,.ui.link.inverted.menu .item:hover {
+  background-color: rgba(255,255,255,.1)
+}
+
+.ui.inverted.menu .item .menu a.item:hover,.ui.inverted.menu .item>a:hover,.ui.inverted.menu a.item:hover {
+  color: #fff
+}
+
+.ui.inverted.menu .item .menu a.item:hover .icon,.ui.inverted.menu .item>a:hover,.ui.inverted.menu a.item:hover .icon {
+  color: #fff
+}
+
+#context-menu a.active.item .iwrapper {
+  border-left: 5px solid #52BE8A;
+}
+
+/*次级菜单*/
+.ui.secondary.menu {
+  background-color: #242831;
+}
+
+#inner-menu > .uc-secondary-sidebar-menu > li.active > a {
+  background-color: #3b3f51;
+  color: rgba(255,255,255,.95);
+  border: none;
+  border-left: 5px solid #52BE8A;
+}
+
+#inner-menu > .uc-secondary-sidebar-menu .sub-menu li > a {
+  color: #fff;
+}
+
+#inner-menu > .uc-secondary-sidebar-menu .sub-menu li.active > a {
+  color: #52BE8A;
+}
+/*搜索框布局样式*/
+.form-group{
+  margin-right:10px;
+  padding-bottom:5px;
+}
+.form-group>input{
+  border-radius:2px 2px 2px 2px !important;
+}
+
+/*页脚*/
+.my_foot {
+  color:       #b7b7b7;
+  text-align:  center;
+  height:      60px;
+  line-height: 20px;
+  margin: 40px 0 !important;
+  padding:     5px 0;
+  font-size:   12px;
+}
+.my_foot a {
+  font-size: 12px;
+  color:     #b7b7b7;
+}

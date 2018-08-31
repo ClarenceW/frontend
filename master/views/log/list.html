@@ -1,0 +1,63 @@
+<div id="log_index" block-ui="main">
+    <!-- BEGIN PAGE HEADER-->
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li><i class="fa fa-home"></i><a href="javascript:;">系统管理</a><i class="fa fa-angle-right"></i></li>
+            <li><a href="javascript:;">日志管理</a></li>
+        </ul>
+    </div>
+    <!-- END PAGE HEADER-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="selectbox">
+                <ul class="option">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label class="control-label">日志类型：</label>
+                            <select name="logType" ng-model="tempData.logType" class="form-control">
+                                <option value="">请选择</option>
+                                <option ng-repeat="option in logTypeOptions" value="{{option.lookupKey}}">{{option.lookupValue}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <label class="control-label">日期：</label>
+                                <input type="text" class="form-control" id="searchTm"
+                                       uib-datepicker-popup="{{format}}"
+                                       ng-model="tempData.dt"
+                                       is-open="tempData.opened"
+                                       date-disabled="disabled(date, mode)"
+                                       datepicker-options="dateOptions"
+                                       ng-required="true"
+                                       alt-input-formats="altInputFormats"/>
+                                  <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                  </span>
+                            </div>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn blue-madison search" ng-click="toSearch()">
+                                <span class="glyphicon font-blue-linewell"></span>&nbsp;搜 索
+                            </button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn default-madison search" ng-click="toReset()">重 置</button>
+                        </div>
+                    </div>
+                </ul>
+                <div id="ucSelectBoxWrapper" style="padding: 0px;"></div>
+            </div>
+            <table class="table table-bordered  table-hover table-responsive" id="log_table">
+                <thead>
+                <tr>
+                    <th>日志内容</th>
+                    <th width="10%">日志类型</th>
+                    <th width="10%">操作人</th>
+                    <th width="20%">操作时间</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>

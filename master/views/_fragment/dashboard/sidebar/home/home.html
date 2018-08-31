@@ -1,0 +1,440 @@
+<div id="home_index" block-ui="main" style="visibility: hidden;">
+  <!-- BEGIN PAGE HEADER-->
+  <!--  <div class="page-bar" style="margin-bottom:10px;">
+        <ul class="page-breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="javascript:;">首页</a>
+            </li>
+        </ul>
+    </div>-->
+  <div class="container-fluid">
+    <!--数据看板 begin -->
+    <div class="row">
+      <div class="brand_title">
+        <div class="panel panel-title-bg">
+          <div class="panel-heading">
+            <span class="sub-icon">
+              <img src="img/quan.png" />
+            </span>
+            <span class="sub-title">数据看板</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row row_bottom">
+      <div class="container-fluid">
+        <div class="row data_block">
+          <div class="col-md-3 col-md-3-padding-right" style="margin-top:10px;">
+            <div class="dashboard-stat red-intense" style="background-color:#F8B551;border-radius: 20px;">
+              <div class="visual">
+                <i class="fa fa-bar-chart-o"></i>
+              </div>
+              <div class="details">
+                <div class="number" style="padding-top:35px;">
+                  {{parkingCountDay}}
+                </div>
+                <div class="desc" style="opacity: .7;">
+                  当天停车次数
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-md-3-padding-both" style="margin-top:10px;padding-left:0px;">
+            <div class="dashboard-stat red-intense" style="background-color:#B3D465;">
+              <div class="visual">
+                <i class="fa fa-bar-chart-o"></i>
+              </div>
+              <div class="details">
+                <div class="number" style="padding-top:35px;">
+                  {{parkingCountYes}}
+                </div>
+                <div class="desc" style="opacity: .7;">
+                  昨日停车次数
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-md-3-padding-both" style="margin-top:10px;padding-left:0px;">
+            <div class="dashboard-stat red-intense" style="background-color:#6FBFD6;">
+              <div class="visual">
+                <i class="fa fa-bar-chart-o"></i>
+              </div>
+              <div class="details">
+                <div class="number" style="padding-top:35px;">
+                  {{parkingCountMonth}}
+                </div>
+                <div class="desc" style="opacity: .7;">
+                  当月停车次数
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-md-3-padding-both" style="padding-left:0px;margin-top:10px;">
+            <div class="dashboard-stat red-intense" style="background-color:#8c97cb;">
+              <div class="visual">
+                <i class="fa fa-bar-chart-o"></i>
+              </div>
+              <div class="details">
+                <div class="number" style="padding-top:35px;">
+                  {{totalParkingNum }}
+                </div>
+                <div class="desc" style="opacity: .7;">
+                  本年累计停车次数
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-md-3-padding-right">
+            <div class="dashboard-stat red-intense" style="background-color:#F8B551;border-radius: 20px;">
+              <div class="visual">
+                <i class="fa fa-bar-chart-o"></i>
+              </div>
+              <div class="details">
+                <div class="number" style="padding-top:35px;">
+                  {{todayChargeFee | currency}}
+                </div>
+                <div class="desc" style="opacity: .7;">
+                  当天营业额
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-md-3-padding-both" style="padding-left:0px;">
+            <div class="dashboard-stat red-intense" style="background-color:#B3D465;">
+              <div class="visual">
+                <i class="fa fa-bar-chart-o"></i>
+              </div>
+              <div class="details">
+                <div class="number" style="padding-top:35px;">
+                  {{lastDayAlreadyPayMoney | currency}}
+                </div>
+                <div class="desc" style="opacity: .7; ">
+                  昨日营业额
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-md-3-padding-both" style="padding-left:0px;">
+            <div class="dashboard-stat red-intense" style="background-color:#6FBFD6;">
+              <div class="visual">
+                <i class="fa fa-bar-chart-o"></i>
+              </div>
+              <div class="details">
+                <div class="number" style="padding-top:35px;">
+                  {{mouthChargeFee | currency}}
+                </div>
+                <div class="desc" style="opacity: .7;">
+                  当月营业额
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-md-3-padding-both" style="padding-left:0px;">
+            <div class="dashboard-stat red-intense" style="background-color:#8c97cb;">
+              <div class="visual">
+                <i class="fa fa-bar-chart-o"></i>
+              </div>
+              <div class="details">
+                <div class="number" style="padding-top:35px;">
+                  {{totalChargeFee | currency}}
+                </div>
+                <div class="desc" style="opacity: .7;">
+                  本年累计营业额
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--数据看板 end -->
+    <!--停车收费start -->
+    <div class="row row_bottom">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="brand_title">
+            <div class="panel panel-title-bg">
+              <div class="panel-heading">
+                <div class="panel-title">
+                  <span class="sub-icon">
+                    <img src="img/quan.png" />
+                  </span>
+                  <span class="sub-title">停车收费</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row data_block" style="padding-bottom: 45px;">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 col-md-3-padding-left">
+                <p style="padding:10px;font-size:20px;margin-bottom:0;">当天收费总额：
+                  <span style="color:#f8b551">{{currentChargeAll | currency}}</span>
+                </p>
+              </div>
+              <div class="col-md-6 col-md-3-padding-left">
+                <p style="padding:10px;font-size:20px;margin-bottom:0;">当天购买月卡金额：
+                  <span style="color:#f8b551">{{currentRechargeAll | currency}}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 col-md-3-padding-left" id="container03container" ng-show="!emptydata">
+                <!-- <div class="chart1" id="container03container"> -->
+                  <!--支付方式-->
+                <!-- </div> -->
+              </div>
+              <div class="col-md-6 col-md-3-padding-left" id="" ng-show="emptydata">
+                <div class="chart1" style="text-align:center;">
+                  <img src="img/emptydata.png" alt="" style="margin:50px;">
+                </div>
+              </div>
+
+              <div class="col-md-6 col-md-3-padding-right" id="container01container" ng-show="!emptyRechargeway">
+                <!-- <div class="chart1" id="container01container"> -->
+                  <!-- 充值方式 -->
+                <!-- </div> -->
+              </div>
+              <div class="col-md-6 col-md-3-padding-right" id="" ng-show="emptyRechargeway">
+                <div class="chart1" style="text-align:center;">
+                  <img src="img/emptydata.png" alt="" style="margin:50px;">
+                </div>
+              </div>
+            </div>
+            <div class="row" style="margin-top:15px;">
+              <div class="col-md-6 col-md-3-padding-left chartBox">
+                <div class="btn-group btnBox">
+                  <button ng-if="parkCharge === 1" class="btn btn-primary active" ng-click="parkingcharge(1)">日</button>
+                  <button ng-if="parkCharge !== 1" class="btn btn-primary" ng-click="parkingcharge(1)">日</button>
+
+                  <button ng-if="parkCharge === 2" class="btn btn-primary active" ng-click="parkingcharge(2)">月</button>
+                  <button ng-if="parkCharge !== 2" class="btn btn-primary" ng-click="parkingcharge(2)">月</button>
+                </div>
+                <div class="selectBox" style="top:60px;">
+                  <label>停车场：</label>
+                  <select ng-model="formData.parklotCodeChargeTime">
+                    <option value="">全部</option>
+                    <option ng-repeat="option in parklotOption" value="{{option.code}}">{{option.name}}</option>
+                  </select>
+                </div>
+                <div class="chart1" id="chart01">
+                  <!--停车收费趋势图-->
+                </div>
+              </div>
+              <div class="col-md-6 col-md-3-padding-right chartBox">
+                <div class="btn-group btnBox">
+                  <button ng-if="chargesort === 1" class="btn btn-primary active" ng-click="chargeSort(1)">日</button>
+                  <button ng-if="chargesort !== 1" class="btn btn-primary" ng-click="chargeSort(1)">日</button>
+
+                  <button ng-if="chargesort === 2" class="btn btn-primary active" ng-click="chargeSort(2)">月</button>
+                  <button ng-if="chargesort !== 2" class="btn btn-primary" ng-click="chargeSort(2)">月</button>
+                </div>
+                <div class="selectBox" style="top:60px;" ng-if="isSort">
+                  <label>排名：</label>
+                  <select name="sortFive" ng-model="formData.sortFive">
+                    <option value="0">前五</option>
+                    <option value="1">后五</option>
+                  </select>
+                </div>
+                <div class="chart1" id="chart02">
+                  <!-- 收费总额排名 -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--停车收费end -->
+    <!--停车场运营分析-->
+    <div class="row row_bottom">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="brand_title">
+            <div class="panel panel-title-bg">
+              <div class="panel-heading">
+                <div class="panel-title">
+                  <span class="sub-icon">
+                    <img src="img/quan.png" />
+                  </span>
+                  <span class="sub-title">停车场运营分析</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row data_block" style="padding-bottom: 45px;">
+          <div class="container-fluid">
+            <div class="col-md-4 col-md-3-padding-left" style="margin-top:10px;padding-left:0px;">
+              <div class="dashboard-stat red-intense" style="background-color:#B3D465;">
+                <div class="visual">
+                  <i class="fa fa-bar-chart-o"></i>
+                </div>
+                <div class="details" style="left:0;">
+                  <div class="number" style="padding-top:35px;text-align:center;">
+                    {{vipVehicleNumber}}
+                  </div>
+                  <div class="desc" style="opacity: .7;text-align:center;">
+                    会员车总数
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-md-3-padding-both" style="margin-top:10px;padding-left:0px;">
+              <div class="dashboard-stat red-intense" style="background-color:#6FBFD6;">
+                <div class="visual">
+                  <i class="fa fa-bar-chart-o"></i>
+                </div>
+                <div class="details" style="left:0;">
+                  <div class="number" style="padding-top:35px;text-align:center;">
+                    {{bindVehicleNumber}}
+                  </div>
+                  <div class="desc" style="opacity: .7;text-align:center;">
+                    绑定车辆总数
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-md-3-padding-right" style="margin-top:10px;padding-left:10px;padding-right:0px;">
+              <div class="dashboard-stat red-intense" style="background-color:#8c97cb;">
+                <div class="visual">
+                  <i class="fa fa-bar-chart-o"></i>
+                </div>
+                <div class="details" style="left:0;" style="left:0;">
+                  <div class="number" style="padding-top:35px;text-align:center;">
+                    {{parkingExtCount}}
+                  </div>
+                  <div class="desc" style="opacity: .7;text-align:center;">
+                    异常抬杆次数
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 col-md-3-padding-left">
+                <p style="padding:10px;font-size:20px;margin-bottom:0;">停车场泊位利用率：
+                  <span style="color:#f8b551">{{userate}} %</span>
+                  <span style="color:#6FBFD6;cursor:pointer;" ng-click="toUseRateDetail()">详情 <span class="fa fa-angle-double-right"></span></span>
+                </p>
+              </div>
+              <div class="col-md-6 col-md-3-padding-left">
+                <p style="padding:10px;font-size:20px;margin-bottom:0;">停车场平均泊位周转率：
+                  <span style="color:#f8b551">{{turnrate}}次</span>
+                  <span style="color:#6FBFD6;cursor:pointer;" ng-click="toTurnRateDetail()">详情 <span class="fa fa-angle-double-right"></span></span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 col-md-3-padding-right chartBox">
+                <div class="btn-group btnBox">
+                  <button ng-if="berthuserate === 1" class="btn btn-primary active" ng-click="berthUseRate(1)">周</button>
+                  <button ng-if="berthuserate !== 1" class="btn btn-primary" ng-click="berthUseRate(1)">周</button>
+
+                  <button ng-if="berthuserate === 2" class="btn btn-primary active" ng-click="berthUseRate(2)">月</button>
+                  <button ng-if="berthuserate !== 2" class="btn btn-primary" ng-click="berthUseRate(2)">月</button>
+                </div>
+                <div class="selectBox" style="top:50px;">
+                  <label>停车场：</label>
+                  <select name="parklotCodeUseRate" ng-model="formData.parklotCodeUseRate">
+                    <option value="">全部</option>
+                    <option ng-repeat="option in parklotOption" value="{{option.code}}">{{option.name}}</option>
+                  </select>
+                </div>
+                <div class="chart1" id="chartBerthUseRate">
+                  <!-- 各停车场泊位利用率 -->
+                </div>
+                <i data-toggle="tooltip" data-placement="right" title="车位利用率：车位平均停车时间比率 <br/>计算公式：自然小时内所有的车辆占用时间的总和/（车位数目*24*60分钟）" class="fa fa-question-circle-o chart-help"
+                  aria-hidden="true"></i>
+              </div>
+              <div class="col-md-6 col-md-3-padding-right chartBox">
+                <div class="btn-group btnBox">
+                  <button ng-if="berthturnrate === 1" class="btn btn-primary active" ng-click="berthTurnRate(1)">周</button>
+                  <button ng-if="berthturnrate !== 1" class="btn btn-primary" ng-click="berthTurnRate(1)">周</button>
+
+                  <button ng-if="berthturnrate === 2" class="btn btn-primary active" ng-click="berthTurnRate(2)">月</button>
+                  <button ng-if="berthturnrate !== 2" class="btn btn-primary" ng-click="berthTurnRate(2)">月</button>
+                </div>
+                <div class="selectBox" style="top:50px;">
+                  <label>停车场：</label>
+                  <select ng-model="formData.parklotCodeTurnRate">
+                    <option value="">全部</option>
+                    <option ng-repeat="option in parklotOption" value="{{option.code}}">{{option.name}}</option>
+                  </select>
+                </div>
+                <div class="chart1" id="chartBerthTurn">
+                  <!-- 各停车场泊位周转率 -->
+                </div>
+                <i data-toggle="tooltip" data-placement="right" title="车位周转率：车位平均停车次数<br/>计算公式：车位总停车次数/车位总数（单位:次）" class="fa fa-question-circle-o chart-help"
+                  aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 col-md-3-padding-left">
+                <p style="padding:10px;font-size:20px;margin-bottom:0;">空闲泊位/总泊位：
+                  <span style="color:#f8b551">{{emptyBerth}}/{{totalBerth}}</span>
+                </p>
+              </div>
+              <div class="col-md-6 col-md-3-padding-left">
+                <p style="padding:10px;font-size:20px;margin-bottom:0;">车辆过车数量：
+                  <span style="color:#f8b551">{{totalInNum}}（入）{{totalOutNum}}（出）</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 col-md-3-padding-right chartBox">
+                <!-- <div class="btn-group btnBox">
+                    <button ng-if="berthchange === 1" class="btn btn-primary active" ng-click="berthChange(1)">日</button>
+		    						<button ng-if="berthchange !== 1" class="btn btn-primary" ng-click="berthChange(1)">日</button>
+		    						
+		    						<button ng-if="berthchange === 2" class="btn btn-primary active" ng-click="berthChange(2)">月</button>
+		    						<button ng-if="berthchange !== 2" class="btn btn-primary" ng-click="berthChange(2)">月</button>
+                  </div> -->
+                <div class="selectBox" style="top:35px;">
+                  <label>停车场：</label>
+                  <select ng-model="formData.parklotCodeChange">
+                    <option value="">全部</option>
+                    <option ng-repeat="option in parklotOption" value="{{option.code}}">{{option.name}}</option>
+                  </select>
+                </div>
+                <div class="chart1" id="chartBerthChange">
+                  <!-- 各停车场泊位变化 -->
+                </div>
+              </div>
+              <div class="col-md-6 col-md-3-padding-right chartBox">
+                <div class="btn-group btnBox">
+                  <button ng-if="passnum === 1" class="btn btn-primary active" ng-click="passCarNum(1)">日</button>
+                  <button ng-if="passnum !== 1" class="btn btn-primary" ng-click="passCarNum(1)">日</button>
+
+                  <button ng-if="passnum === 2" class="btn btn-primary active" ng-click="passCarNum(2)">月</button>
+                  <button ng-if="passnum !== 2" class="btn btn-primary" ng-click="passCarNum(2)">月</button>
+                </div>
+                <div class="selectBox" style="top:60px;">
+                  <label>停车场：</label>
+                  <select ng-model="formData.parklotCodePassNum">
+                    <option value="">全部</option>
+                    <option ng-repeat="option in parklotOption" value="{{option.code}}">{{option.name}}</option>
+                  </select>
+                </div>
+                <div class="chart1" id="chartFlowChange">
+                  <!-- 各停车场车流量变化 -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,241 @@
+@charset "utf-8";
+.axis text {
+	font: 10px "微软雅黑";
+}
+
+.axis text.tooltips {
+	font: 13px "微软雅黑";
+}
+
+.axis line,
+.axis path {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+.axis--x path {
+	/*display: none;*/
+}
+
+.line {
+	fill: none;
+	stroke-width: 1.5px;
+}
+
+.dot {
+	fill: #ed4e2a;
+}
+
+.MyRect {
+	fill: #cbe876;
+}
+
+.col1 {
+	border: 1px solid #ccc;
+	/*background-color: #eee;*/
+	height: 500px;
+}
+
+._title {
+	height: 100px;
+	border-bottom: 1px solid #ccc;
+	/*background-color: #eee;*/
+	margin: 0px;
+	padding: 0px;
+}
+
+.context1 {
+	height: 100px;
+	border-right: 1px solid #ccc;
+}
+
+.context2 {
+	height: 300px;
+	border-right: 1px solid #ccc;
+}
+
+.context3 {
+	border-right: 1px solid #ccc;
+}
+
+.portlet.light.bordered {
+	border: 0px solid #e1e1e1 !important;
+}
+
+.col2 {
+	border: 1px solid #ccc;
+	/*background-color: #eee;*/
+	height: 300px;
+}
+
+.col-xs-3 {
+	width: 20%;
+}
+
+#home_index {
+	margin: 0;
+	padding: 12px 20px;
+	background-color: #E7ECF0;
+}
+
+.brand_title {
+	width: 100%;
+	height: 50px;
+	background-color: #F5F5F5;
+}
+
+.panel-title-bg {
+	background-color: #F5F5F5;
+}
+
+.panel-title {
+	color: #666;
+}
+
+.query_time_container {
+	width: 100%;
+	height: 80px;
+	background-color: white;
+	padding-top: 18px;
+}
+
+.data_block {
+	background-color: white;
+}
+
+.row_bottom {
+	margin-bottom: 10px;
+}
+
+.chart1 {
+	height: 540px;
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 30px 30px;
+	border-radius: 12px !important;
+}
+
+.chart2 {
+	height: 250px;
+	width: 100%;
+}
+
+.img-container {
+	width: 80px;
+	height: auto;
+	position: relative;
+	margin: 90px 0 0 40px;
+}
+
+.img-container img {
+	width: 100px;
+	height: auto;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}
+
+.img-container .layer {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 30px;
+	top: 38px;
+	z-index: 2;
+	background: rgba(0, 0, 0, 0);
+	background: #000\0;
+	filter: alpha(opacity=0)\0;
+	*background: #FFF;
+	color: #88ABDA;
+}
+
+.sub-title {
+	font-size: 20px;
+	color: #0e0e0e !important;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	padding-left: 5px;
+	padding-top: 10px;
+	vertical-align: middle;
+}
+
+.sub-icon {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.form-control-feedback{
+	padding-top: 10px;
+	color: #00bcd4;
+}
+
+.dashboard-stat {
+	border-radius : 10px !important;
+	margin: 0 5px 10px 0;
+  padding: 0;
+  height: 124px;
+}
+.col-md-3-padding-left{
+	padding-left: 5px;
+}
+
+.col-md-3-padding-right{
+	padding-right: 5px;
+}
+
+.col-md-3-padding-both{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.chartBox {
+  position: relative;
+}
+
+.selectBox {
+  position:absolute;
+  top:30px;
+  right:40px;
+  z-index: 100;
+}
+
+.chart-help{
+	position: absolute;
+	left: 220px;
+    top: 40px;
+    color: #999;
+    font-size: 20px;
+    cursor: pointer;
+}
+.fa-question-circle-o:before {
+	font-size: 18px;
+}
+
+.tooltip-inner {
+	background-color: blue;
+	border-radius: 8px !important;
+	border: blue;
+	text-align: left;
+	max-width: 400px;
+	line-height:1.5;
+	width: 270px;
+}
+
+.selectBox label {
+  color:#999999;
+  font-size:15px;
+}
+
+.selectBox select {
+  color:#999999;
+  font-size:15px;
+  border-radius: 5px !important;
+}
+.btnBox {
+  position:absolute;
+  top:10px;
+  right:40px;
+  z-index: 100;
+}

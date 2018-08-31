@@ -1,0 +1,128 @@
+<div class="row" block-ui="main" id="unusualpass-detail">
+    <div class="col-md-12">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+                <li ng-if="titles.secTitle"><a href="javascript:;" ui-sref="{{stateGoIndex}}">{{titles.secTitle}}</a></li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">查看异常放行详情</div>
+            <div class="panel-body form">
+                <div class="format-height"></div>
+                <div class="parkpay-record">
+                  <div class="parkpay-table">
+                    <table class="table table-bordered table-hover" width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                        <tr>
+                            <td width="19%" align="right"><font class="font-blue-deep"><strong>车牌:</strong></font></td>
+                            <td width="81%">{{formData.plate}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>车主手机号:</strong></font></td>
+                            <td>{{formData.userCode}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>车牌颜色:</strong></font></td>
+                            <td>{{formData.plateColor}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>停车场:</strong></font></td>
+                            <td>{{formData.parklotName}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>过车方向:</strong></font></td>
+                            <td>{{formData.parkdirection}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>出入口名称:</strong></font></td>
+                            <td>{{formData.laneName}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>放行终端编号:</strong></font></td>
+                            <td>{{formData.terminalNo}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>异常原因:</strong></font></td>
+                            <td>
+                              {{formData.reason}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>应收金额:</strong></font></td>
+                            <td>
+                              {{formData.shouldPay}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>放行时间:</strong></font></td>
+                            <td>
+                              {{formData.passTime | date : 'yyyy-MM-dd HH:mm:ss'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>操作员:</strong></font></td>
+                            <td>
+                              {{formData.opUser}}
+                            </td>
+                        </tr>
+                        <tr>
+                          <td align="right"><font class="font-blue-deep"><strong>过车图片:</font></td>
+                          <td>
+                              <!-- <div class="col-xs-6 col-md-3" ng-if="formData.pic1">
+                                  <a href="javascript:void(0);"  class="thumbnail" >
+                                    <img ngf-src="formData.pic" style="width: 171px;max-height: 180px;">
+                                  </a>
+                              </div> -->
+                          </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="">
+                    <button class="btn blue-madison parkpay-btn" ng-click="toPasscarRecord()">
+                        过车记录
+                    </button>
+                </div>
+                <table class="table table-bordered table-hover evidence_table" id="pass-car-table"
+                      ng-if="passcar">
+                    <thead>
+                    <tr>
+                        <th>记录编号</th>
+                        <th>车牌</th>
+                        <th>停车场</th>
+                        <th>出入口名称</th>
+                        <th>过车方向</th>
+                        <th>放行方式</th>
+                        <th>过车图片</th>
+                        <th>通行时间</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div style="text-align: right">
+                    <button type="button" class="btn" ng-click="back();">关闭</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+  .parkpay-record {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .parkpay-table {
+      width: 100%;
+      flex: 0 1 auto;
+
+  }
+
+  .parkpay-btn {
+      margin: 10px auto 10px;
+  }
+</style>

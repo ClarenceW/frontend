@@ -1,0 +1,10 @@
+*.iml
+.idea
+/out
+/dist
+rev
+node_modules
+*.zip
+*.project
+npm-debug.log
+package-lock.json

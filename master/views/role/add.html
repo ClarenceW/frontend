@@ -1,0 +1,74 @@
+<div class="row" block-ui="main">
+    <div class="col-md-12">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li><i class="fa fa-home"></i><a href="javascript:;">系统管理</a><i class="fa fa-angle-right"></i></li>
+                <li><a href="javascript:;">安全管理</a><i class="fa fa-angle-right"></i></li>
+                <li><a href="javascript:;">角色新增</a></li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">添加角色</div>
+            <div class="panel-body form">
+                <form name="addForm" ng-submit="submitForm(addForm.$valid)" class="form-horizontal" novalidate>
+                    <div class="format-height"></div>
+                    <div class="alert alert-danger" ng-show="alertDanger">
+                        <div class="close" ng-click="alertClose()"></div>
+                        您输入的信息存在错误，请先检查.
+                    </div>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-2">角色名称<span class="required">*</span></label>
+                            <div class="col-md-7" ng-class="addForm.roleName.$dirty ? (addForm.roleName.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <!--<i class="fa tooltips" ng-class="addForm.rolename.$dirty ? (addForm.rolename.$valid ? 'fa-check': 'fa-exclamation') :''"></i>-->
+                                    <input type="text" class="form-control" name="roleName" ng-blur="checkValidateRoleName()" ng-model="formData.roleName"  required ill-character>
+                                </div>
+                            </div>
+                            <div class="col-md-3 info" ng-hide="addForm.roleName.$dirty">
+                                <span>角色名称不能为空</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">权限<span class="required">*</span></label>
+                            <div class="col-md-7">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips"></i>
+                                    <div style="height: 500px;border: dashed 1px;overflow: auto;">
+                                        <div class="scroller" data-height="500px">
+                                            <div id="permission_tree" class="tree-demo">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">备注</label>
+                            <div class="col-md-7" ng-class="addForm.memo.$dirty ? (addForm.memo.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.memo.$dirty ? (addForm.memo.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <textarea class="form-control" name="memo" ng-model="formData.memo" cols="50" rows="5" ng-maxlength="200"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-3 info" ng-hide="addForm.memo.$dirty">
+                                <span>不超过200字</span>
+                            </div>
+                            <div class="col-md-3 error" ng-show="addForm.memo.$invalid && addForm.memo.$dirty">
+                                <span ng-show="addForm.memo.$error.required">请输入描述内容</span>
+                                <span ng-show="addForm.memo.$error.maxlength">格式错误，不超过200字</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <div class="col-md-offset-9 col-md-3">
+                            <button type="submit" class="btn btn-info">保存</button>
+                            <button type="button" class="btn default" ui-sref="{{stateGoIndex}}">取消</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

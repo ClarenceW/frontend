@@ -1,0 +1,142 @@
+
+<div id="alreadypaytrade-index" block-ui="main">
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+            <li ng-if="titles.secTitle"><a href="javascript:;">{{titles.secTitle}}</a><i ng-if="titles.thirdTitle" class="fa fa-angle-right"></i></li>
+            <li ng-if="titles.thirdTitle"><a href="javascript:;">{{titles.thirdTitle}}</a></li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="selectbox">
+                <ul class="option">
+                    <div class="form-inline" id="queryForm">
+                        <div class="form-group form-group-sm">
+                 			      订单编号： <input class="form-control" name="boId" ng-model="formData.boId" type="text">
+                        </div>
+                        <div class="form-group form-group-sm">
+                            交易单号： <input class="form-control" name="traId" ng-model="formData.traId" type="text">
+                        </div>
+                        <div class="form-group form-group-sm">
+                 			      车牌： <input class="form-control" name="plate" ng-model="formData.plate" type="text">
+                        </div>
+                        <div class="form-group form-group-sm">
+                            停车场： 
+                            <!-- <input class="form-control" name="parklotName" ng-model="formData.parklotName" type="text"> -->
+                            <div class="multiLot" style="width: 179px;padding: 0;height:34px;display:inline-block;">
+                              <select name="parklotCodes" class="form-control selectpicker" ng-model="formData.parklotCodes" multiple data-live-search="true" title="请选择停车场">
+                                <option ng-repeat="option in parklotCodeOptions" value="{{option.code}}">
+                                    {{option.name}}
+                                </option>
+                              </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">支付方式：</label>
+                            <select name="payType" ng-model="formData.payType" class="form-control">
+                                <option value="">请选择</option>
+                                <option ng-repeat="option in payTypeOption" value="{{option.lookupKey}}">{{option.lookupValue}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">支付渠道：</label>
+                            <select name="paySrc" ng-model="formData.paySrc" class="form-control">
+                                <option value="">请选择</option>
+                                <option ng-repeat="option in paySrcOption" value="{{option.lookupKey}}">{{option.lookupValue}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">状态：</label>
+                            <select name="orderStatus" ng-model="formData.orderStatus" class="form-control">
+                                <option value="">请选择</option>
+                                <option ng-repeat="option in statusOption" value="{{option.lookupKey}}">{{option.lookupValue}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group form-group-sm">
+                          <div class="input-group">
+                            <label class="control-label">时间：</label>
+                            <input type="text" class="form-control" name="startTime"
+                                     datetime-picker="yyyy-MM-dd HH:mm:ss"
+                                     data="formData.startTime"
+                                     ng-model="formData.startTime"
+                                     is-open="starTimeCtrl.isOpen"
+                                     button-bar="starTimeCtrl.buttonBar" ng-click="openStartTime($event,prop)" readonly/>
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="openStartTime($event,prop)"><i class="glyphicon glyphicon-calendar"></i></button>
+                          </span>
+                            <label class="control-label">-</label>
+                            <input type="text" class="form-control" name="endTime"
+                                     datetime-picker="yyyy-MM-dd HH:mm:ss"
+                                     data="formData.endTime"
+                                     ng-model="formData.endTime"
+                                     is-open="endTimeCtrl.isOpen"
+                                     button-bar="endTimeCtrl.buttonBar" ng-click="openEndTime($event,prop)" readonly/>
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="openEndTime($event,prop)"><i class="glyphicon glyphicon-calendar"></i></button>
+                          </span>
+                        </div>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn blue-madison search" ng-click="toSearch()">搜 索</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn search" ng-click="toReset()">重 置</button>
+                        </div>
+                    </div>
+                </ul>
+                <div id="ucSelectBoxWrapper" style="padding: 0px;"></div>
+            </div>
+            <div class="buttonbox">
+                <span class="totalNum">订单总额：<span>{{formData.sumMoney}}</span></span>
+            </div>
+            <table class="table table-bordered table-hover" id="alreadypaytrade-table">
+                <thead>
+                <tr>
+                    <th class="table-checkbox">
+                        <input type="checkbox" class="group-checkable" style="text-align: right;" data-set="#alreadypaytrade-table .checkboxes"/>
+                    </th>
+                    <th>第三方交易单号</th>
+                    <th>车牌</th>
+                    <th>停车场</th>
+                    <th>支付方式</th>
+                    <th>支付渠道</th>
+                    <th>订单金额</th>
+                    <th>生成时间</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+  .tooltip {
+      /* width: 300px; */
+  }
+  .tooltip-inner {
+      display: block;
+      margin: auto;
+      background: #ccc;
+      color: #313131;
+      font-size: 16px;
+      min-width: 100%;
+  }
+  .multiLot>div {
+    padding:0 !important;
+  }
+  .bootstrap-select.btn-group .btn .filter-option {
+    position: static !important;
+  }
+  .totalNum {
+    margin-left: 15px;
+    font-size: 14px;
+  }
+  .totalNum span {
+    font-size: 18px;
+    color:red;
+  }
+</style>

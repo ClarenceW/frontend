@@ -1,0 +1,91 @@
+{
+	"iTotalDisplayRecords": 3012,
+	"iTotalRecords": 3012,
+	"aaData": [
+		{
+			"plate": "苏J 35G5B",
+			"platecolor": "蓝",
+			"carowername": "梦天",
+			"account": "15657181569",
+			"parklotname": "南金鹰",
+			"companyname": "城投集团",
+			"carintime": "2017-06-24 06:08"
+		},
+		{
+			"plate": "苏J 9854B",
+			"platecolor": "蓝",
+			"carowername": "王秦玲",
+			"account": "18596321569",
+			"parklotname": "中南城",
+			"companyname": "城投集团",
+			"carintime": "2017-05-24 20:08"
+		},
+		{
+			"plate": "苏J 7W59B",
+			"platecolor": "蓝",
+			"carowername": "王国宝",
+			"account": "17725893214",
+			"parklotname": "宝龙城市广场",
+			"companyname": "城投集团",
+			"carintime": "2017-05-24 20:08"
+		},
+		{
+			"plate": "苏J 2244D",
+			"platecolor": "蓝",
+			"carowername": "严金华",
+			"account": "15803830488",
+			"parklotname": "市政服务中心",
+			"companyname": "城投集团",
+			"carintime": "2017-03-14 14:08"
+		},
+		{
+			"plate": "苏J 65F22",
+			"platecolor": "蓝",
+			"carowername": "王小康",
+			"account": "15862485976",
+			"parklotname": "欧洲风情街",
+			"companyname": "城投集团",
+			"carintime": "2017-06-26 12:09"
+		},{
+			"plate": "苏J 1234A",
+			"platecolor": "蓝",
+			"carowername": "王六峰",
+			"account": "15166227458",
+			"parklotname": "文化艺术中心",
+			"companyname": "城投集团",
+			"carintime": "2017-01-26 12:09"
+		},{
+			"plate": "苏J 88D52",
+			"platecolor": "蓝",
+			"carowername": "张小蒙",
+			"account": "15863217536",
+			"parklotname": "城投商务楼停车场",
+			"companyname": "城投集团",
+			"carintime": "2017-03-11 21:25"
+		},{
+			"plate": "苏J 951HF",
+			"platecolor": "蓝",
+			"carowername": "冯强",
+			"account": "15396547852",
+			"parklotname": "南金鹰",
+			"companyname": "城投集团",
+			"carintime": "2017-04-13 09:45"
+		},{
+			"plate": "苏J 6615F",
+			"platecolor": "蓝",
+			"carowername": "王克峰",
+			"account": "13396547852",
+			"parklotname": "宝龙城市广场",
+			"companyname": "城投集团",
+			"carintime": "2017-05-16 15:22"
+		},{
+			"plate": "苏J H819G",
+			"platecolor": "蓝",
+			"carowername": "胡诗明",
+			"account": "13565479521",
+			"parklotname": "欧洲风情街",
+			"companyname": "城投集团",
+			"carintime": "2017-06-26 12:09"
+		}
+	]
+}

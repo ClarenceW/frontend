@@ -1,0 +1,82 @@
+<div class="row" block-ui="main">
+    <div class="col-md-12">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li><i class="fa fa-home"></i><a href="javascript:;">企业信息</a><i class="fa fa-angle-right"></i></li>
+                <li><a href="javascript:;">用户信息</a><i class="fa fa-angle-right"></i></li>
+                <li><a href="javascript:;" ui-sref="{{stateGoIndex}}">修改用户</a></li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">修改用户</div>
+            <div class="panel-body form">
+                <form name="editForm" ng-submit="submitForm(editForm.$valid)" class="form-horizontal" novalidate>
+                    <div class="format-height"></div>
+                    <div class="alert alert-danger" ng-show="alertDanger">
+                        <div class="close" ng-click="alertClose()"></div>
+                        您输入的信息存在错误，请先检查.
+                    </div>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-2">用户编号<span class="required">*</span></label>
+                            <div class="col-md-7" ng-class="editForm.userCode.$dirty ? (editForm.userCode.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="editForm.userCode.$dirty ? (editForm.userCode.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <input type="text"  class="form-control" name="userCode"  ng-model="formData.userCode" ng-pattern="/^[1][3458][0-9]{9}$/" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 info" ng-hide="editForm.userCode.$dirty">
+                                <span>用户编号为手机号码</span>
+                            </div>
+                            <div class="col-md-3 error" ng-show="editForm.userCode.$invalid && editForm.userCode.$dirty">
+                                <span ng-show="editForm.userCode.$error.required">请输入用户编号</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">角色名称<span class="required">*</span></label>
+                            <div class="col-md-7">
+                                <select name="roleCode" class="form-control" ng-model="formData.roleCode" required>
+                                    <option value="">---请选择---</option>
+                                    <option ng-repeat="option in roleNameOption" value="{{option.roleCode}}">{{option.roleName}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--<div class="form-group">-->
+                            <!--<label class="control-label col-md-2">用户类别<span class="required">*</span></label>-->
+                            <!--<div class="col-md-7">-->
+                                <!--<select name="userType" class="form-control" ng-model="formData.userType" required>-->
+                                    <!--<option value="">-&#45;&#45;请选择-&#45;&#45;</option>-->
+                                    <!--<option ng-repeat="option in userTypeOption" value="{{option.lookupKey}}">{{option.lookupValue}}</option>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div class="form-group">
+                            <label class="control-label col-md-2">用户名称</label>
+                            <div class="col-md-7" ng-class="editForm.userName.$dirty ? (editForm.userName.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="editForm.userName.$dirty ? (editForm.userName.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <input type="text" class="form-control" name="userName"  ng-model="formData.userName">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="form-group">
+                            <label class="control-label col-md-2">用户部门</label>
+                            <div class="col-md-7" ng-class="editForm.deptName.$dirty ? (editForm.deptName.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="editForm.deptName.$dirty ? (editForm.deptName.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <input type="text" class="form-control" name="deptName"  ng-model="formData.deptName">
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="form-actions">
+                        <div class="col-md-offset-9 col-md-3">
+                            <button type="submit" class="btn btn-info">保存</button>
+                            <button type="button" class="btn default" ui-sref="{{stateGoIndex}}">取消</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

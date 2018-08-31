@@ -1,0 +1,114 @@
+<div class="row" block-ui="main" id="parkingRecord-detail">
+    <div class="col-md-12">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+                <li ng-if="titles.secTitle"><a href="javascript:;">{{titles.secTitle}}</a><i ng-if="titles.thirdTitle" class="fa fa-angle-right"></i></li>
+                <li ng-if="titles.thirdTitle"><a href="javascript:;"  ui-sref="{{stateGoIndex}}">{{titles.thirdTitle}}</a></li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">查看订单记录详情</div>
+            <div class="panel-body form">
+                <div class="format-height"></div>
+                <div class="parking-record">
+                  <div class="parking-table">
+                    <table class="table table-bordered table-hover" width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>记录编号</strong></font></td>
+                            <td>{{formData.boId}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>岗亭订单编号</strong></font></td>
+                            <td>{{formData.traId}}</td>
+                        </tr>
+                        <tr>
+                            <td width="19%" align="right"><font class="font-blue-deep"><strong>车牌:</strong></font></td>
+                            <td width="81%">{{formData.plate}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>车主手机号</strong></font></td>
+                            <td>{{formData.userCode}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>车牌颜色</strong></font></td>
+                            <td>{{formData.plateColor}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>停车场</strong></font></td>
+                            <td>{{formData.parklotName}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>出入口名称</strong></font></td>
+                            <td>{{formData.laneName}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>订单类型</strong></font></td>
+                            <td>{{formData.orderType}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>停车费用</strong></font></td>
+                            <td>{{formData.payableMoney | currency}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>生成时间</strong></font></td>
+                            <td>
+                              {{formData.createTime | date : 'yyyy-MM-dd HH:mm:ss'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>状态</strong></font></td>
+                            <td>
+                              {{formData.orderStatus}}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="">
+                    <button class="btn blue-madison parking-btn" ng-click="toParkingPay()">
+                        缴费记录
+                    </button>
+                </div>
+                <table class="table table-bordered table-hover evidence_table" id="parking-parkingPay-table"
+                       ng-if="parkingPay">
+                    <thead>
+                    <tr>
+                        <th>订单编号</th>
+                        <th>交易单号</th>
+                        <th>车牌</th>
+                        <th>停车场</th>
+                        <th>实付金额(元)</th>
+                        <th>支付方式</th>
+                        <th>生成时间</th>
+                        <th>状态</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div style="text-align: right">
+                    <button type="button" class="btn" ui-sref="{{stateGoIndex}}">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .parking-record {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .parking-table {
+        width: 100%;
+        flex: 0 1 auto;
+
+    }
+
+    .parking-btn {
+        margin: 10px auto 10px;
+    }
+</style>

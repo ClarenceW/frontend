@@ -1,0 +1,108 @@
+
+<div id="role-index" block-ui="main">
+
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li ng-if='titles.firstTitle'><i class="fa fa-home"></i>
+            		<a href="javascript:;">{{titles.firstTitle}}</a>
+            		<i class="fa fa-angle-right"></i>
+            </li>
+            <li ng-if='titles.secTitle'>
+            	<a href="javascript:;">{{titles.secTitle}}</a>
+            	<i class="fa fa-angle-right"></i>
+            </li>
+            <li ng-if='titles.thirdTitle'><a href="javascript:;">{{titles.thirdTitle}}</a></li>
+        </ul>
+    </div>
+    <!-- END PAGE HEADER-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="selectbox">
+                <ul class="option">
+                    <div class="form-inline">
+                        <div class="form-group form-group-sm">
+                            角色名称： <input class="form-control" name="roleName" type="text" ng-model="formData.roleName">
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn blue-madison search" ng-click="toSearch()">搜 索</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn search" ng-click="toReset()">重 置</button>
+                        </div>
+                    </div>
+                </ul>
+                <div id="ucSelectBoxWrapper" style="padding: 0px;"></div>
+            </div>
+            <div class="buttonbox">
+                <button class="btn btn-sm btn-default" ui-sref="{{stateGoAdd}}">
+                    <span class="glyphicon glyphicon-plus font-green-linewell"></span>添加
+                </button>
+                <button class="btn btn-sm btn-default" ng-click="toEdit()">
+                    <span class="glyphicon glyphicon-edit font-blue-linewell"></span>编辑
+                </button>
+                <button class="btn btn-sm btn-default" ng-click="toDelete()">
+                    <span class="glyphicon glyphicon-remove-circle font-red-linewell"></span>删除
+                </button>
+                <button class="btn btn-sm btn-default" ng-click="toFixpermission()" data-toggle="modal" data-target="#myModal">
+                    <span class="glyphicon glyphicon-wrench font-blue-linewell"></span>停车场权限配置
+                </button>
+            </div>
+            <table class="table table-bordered table-hover" id="role-table">
+                <thead>
+                <tr>
+                    <th class="table-checkbox" width="5%">
+                        <input type="checkbox" class="group-checkable" style="text-align: right;" data-set="#role-table .checkboxes"/>
+                    </th>
+                    <th width="10%">角色名称</th>
+                    <th>权限菜单</th>
+                    <th width="10%">操作人</th>
+                    <th width="10%">备注</th>
+                    <th width="10%">操作时间</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="{{myModal}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					可管辖停车场
+				</h4>
+			</div>
+			<div class="modal-body">
+        <div class="row">
+            <div class="col-md-3">停车场</div>
+            <div class="col-md-6">
+              <select id="select" name="parklotCodes" class="form-control show-tick selectpicker" multiple data-live-search="true" data-actions-box="true" ng-model="formData.parklotCodes" title="">
+                <option ng-repeat="option in parklotCodeOptions" value="{{option.code}}">
+                    {{option.name}} <span> （{{parklotOption[option.isOpen].lookupValue}}）</span>
+                </option>
+              </select>
+            </div>
+        </div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" id="confirm" data-dismiss="modal" ng-click="toConfirm()">确认
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+<style type="text/css">
+  .modal-dialog {
+    margin-top:100px !important;
+  }
+  .modal-body .row {
+      height: 30px;
+      line-height: 30px;
+      margin:8px auto;
+  }
+</style>

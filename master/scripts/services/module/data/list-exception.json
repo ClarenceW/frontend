@@ -1,0 +1,42 @@
+{
+	"iTotalDisplayRecords": 4,
+	"iTotalRecords": 4,
+	"aaData": [
+		{
+			"paymentChannel": "ETCP",
+			"collectionCompany": "盐城停车",
+			"accountPeriod": "02-07+3",
+			"exceptionClause": "2",
+			"exceptionAccount": "20",
+			"exceptionTime": "02-10 21:00",
+			"exceptionstatus": "待处理"
+		},
+		{
+			"paymentChannel": "捷顺",
+			"collectionCompany": "盐城停车",
+			"accountPeriod": "02-07+3",
+			"exceptionClause": "3",
+			"exceptionAccount": "30",
+			"exceptionTime": "02-10 19:23",
+			"exceptionstatus": "待处理"
+		},
+		{
+			"paymentChannel": "立方",
+			"collectionCompany": "盐城停车",
+			"accountPeriod": "02-07+3",
+			"exceptionClause": "1",
+			"exceptionAccount": "10",
+			"exceptionTime": "02-10 15:36",
+			"exceptionstatus": "待处理"
+		},
+		{
+			"paymentChannel": "盐城停车",
+			"collectionCompany": "立方",
+			"accountPeriod": "02-07+3",
+			"exceptionClause": "1",
+			"exceptionAccount": "10",
+			"exceptionTime": "02-10 09:19",
+			"exceptionstatus": "待处理"
+		}
+	]
+}

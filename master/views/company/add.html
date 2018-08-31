@@ -1,0 +1,227 @@
+<div class="row" block-ui="main" id="companyAdd">
+    <div class="col-md-12">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+                <li ng-if="titles.secTitle"><a href="javascript:;" ui-sref="{{stateGoIndex}}">{{titles.secTitle}}</a></li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">添加运营公司</div>
+            <div class="panel-body form">
+                <form name="addForm" ng-submit="submitForm(addForm.$valid)" class="form-horizontal" novalidate>
+                    <div class="format-height"></div>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-2">公司编号<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="addForm.code.$invalid && addForm.code.$dirty ? 'has-error':''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.code.$invalid && addForm.code.$dirty ? 'fa-exclamation':''"></i>
+                                    <input type="text" class="form-control" name="code" ng-model="formData.code" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 error" ng-if="addForm.code.$invalid && addForm.code.$dirty">
+                                <span ng-if="addForm.code.$error.required">请输入公司编号</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">公司名称<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="addForm.name.$invalid && addForm.name.$dirty ? 'has-error':''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.name.$invalid && addForm.name.$dirty ? 'fa-exclamation':''"></i>
+                                    <input type="text" class="form-control" name="name" ng-model="formData.name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 error" ng-if="addForm.name.$invalid && addForm.name.$dirty">
+                                <span ng-if="addForm.name.$error.required">请输入公司名称</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">地址<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="addForm.address.$invalid && addForm.address.$dirty ? 'has-error':''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.address.$invalid && addForm.address.$dirty ? 'fa-exclamation':''"></i>
+                                    <input type="text" class="form-control" name="address" ng-model="formData.address" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 error" ng-if="addForm.address.$invalid && addForm.address.$dirty">
+                                <span ng-if="addForm.address.$error.required">请输入地址</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">纬度<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="addForm.lat.$dirty ? (addForm.lat.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-group">
+                                    <input type="text" ng-model="formData.lat"
+                                           id="lat" class="form-control" name="lat" ng-maxlength="20" ng-pattern="/^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$/"
+                                           placeholder="30.000000" required>
+                                        <span class="input-group-btn" id="mapBtnSpan" ng-click="openMap($event)">
+												<button id="mapOpenBtn" class="uc-position-map-btn" type="button"><span></span>地图</button>
+                                      </span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 info" ng-hide="addForm.lat.$dirty">
+                                <span>纬度不能为空</span>
+                            </div>
+                            <div class="col-md-3 error" ng-show="addForm.lat.$invalid && addForm.lat.$dirty">
+                                <span ng-show="addForm.lat.$error.required">请输入纬度</span>
+                                <span ng-show="addForm.lat.$error.pattern">格式错误，仅支持数字(可以有小数)</span>
+                                <span ng-show="addForm.lat.$error.maxlength">纬度不能超过20个字符</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">经度<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="addForm.lng.$dirty ? (addForm.lng.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.lng.$dirty ? (addForm.lng.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <input type="text" class="form-control" placeholder="120.000000" ng-maxlength="20" name="lng"
+                                           ng-pattern="/^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$/" ng-model="formData.lng" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 info" ng-hide="addForm.lng.$dirty">
+                                <span>经度不能为空</span>
+                            </div>
+                            <div class="col-md-3 error" ng-show="addForm.lng.$invalid && addForm.lng.$dirty">
+                                <span ng-show="addForm.lng.$error.required">请输入经度</span>
+                                <span ng-show="addForm.lng.$error.pattern">格式错误，仅支持数字(可以有小数)</span>
+                                <span ng-show="addForm.lng.$error.maxlength">经度不能超过20个字符</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">行政区</label>
+                            <div class="col-md-6" ng-class="addForm.districtCode.$invalid && addForm.districtCode.$dirty ? 'has-error':''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.districtCode.$invalid && addForm.districtCode.$dirty ? 'fa-exclamation':''"></i>
+                                    <select class="form-control" name="districtCode" ng-model="formData.districtCode">
+                                    	<option value="">请选择</option>
+                                    	<option ng-repeat="option in districtCodeOptions" value="{{option.code}}">
+                                    		{{option.name}}
+                                    	</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">运营性质<span class="required">*</span></label>
+                            <div class="col-md-6">
+                                <select name="opType" class="form-control" ng-model="formData.opType" required>
+                                    <option value="">请选择</option>
+                                    <option ng-repeat="option in companyOptTypesOptions" value="{{option.lookupKey}}">
+                                        {{option.lookupValue}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">审核状态<span class="required">*</span></label>
+                            <div class="col-md-6">
+                                <select name="checkFlag" class="form-control" ng-model="formData.checkFlag" required>
+                                    <option value="">请选择</option>
+                                    <option ng-repeat="option in companyCheckFlagOptions" value="{{option.lookupKey}}">
+                                        {{option.lookupValue}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">联系人<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="addForm.contacts.$invalid && addForm.contacts.$dirty ? 'has-error':''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.contacts.$invalid && addForm.contacts.$dirty ? 'fa-exclamation':''"></i>
+                                    <input type="text" class="form-control" name="contacts" ng-model="formData.contacts" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 error" ng-if="addForm.contacts.$invalid && addForm.contacts.$dirty">
+                                <span ng-if="addForm.contacts.$error.required">请输入联系人</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">联系电话<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="addForm.contactNumber.$invalid && addForm.contactNumber.$dirty ? 'has-error':''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.contactNumber.$invalid && addForm.contactNumber.$dirty ? 'fa-exclamation':''"></i>
+                                    <input type="text" class="form-control" name="contactNumber" ng-model="formData.contactNumber" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 error" ng-if="addForm.contactNumber.$invalid && addForm.contactNumber.$dirty">
+                                <span ng-if="addForm.contactNumber.$error.required">请输入联系电话</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">联系邮箱<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="addForm.email.$invalid && addForm.email.$dirty ? 'has-error':''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.email.$invalid && addForm.email.$dirty ? 'fa-exclamation':''"></i>
+                                    <input type="text" class="form-control" name="email" ng-model="formData.email" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 error" ng-if="addForm.email.$invalid && addForm.email.$dirty">
+                                <span ng-if="addForm.email.$error.required">请输入联系邮箱</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">描述</label>
+                            <div class="col-md-6" ng-class="addForm.description.$dirty ? (addForm.description.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.description.$dirty ? (addForm.description.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <textarea class="form-control" name="description" ng-model="formData.description" cols="50" rows="5" ng-maxlength="400" ></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        	<label class="control-label col-md-2">
+                        		图片
+                        	</label>
+							  <div class="col-md-3">
+							  		<div style="width: 176px;height: 186px;border: dotted 1px;margin-bottom: 10px;vertical-align: middle;">
+							  			<a href="javascript:void(0);"  class="thumbnail" >
+									      <img ngf-src="formData.picUrl1 || formData.default" style="width: 171px;max-height: 180px;">
+									    </a>
+							  		</div>
+							  		<button  type="file"  ngf-select="uploadFiles($file, $invalidFiles,1)" accept="image/jpg,image/jpeg,image/png" ngf-max-height="10000" ngf-max-size="10MB">选择图片</button>
+							  		<button ng-if="formData.pic1" type="button" ng-click="delPic(1)">删除图片</button>
+							  </div>
+							   <div class="col-md-3">
+							   		<div style="width: 176px;height: 186px;border: dotted 1px;margin-bottom: 10px;vertical-align: middle;">
+								    	<a href="javascript:void(0);"  class="thumbnail" >
+									      <img ngf-src="formData.picUrl2 || formData.default" style="width: 171px;max-height: 180px;">
+									    </a>
+								    </div>
+								    <div class="caption">
+							    		<button  type="file"  ngf-select="uploadFiles($file, $invalidFiles,2)" accept="image/jpg,image/jpeg,image/png" ngf-max-height="10000" ngf-max-size="10MB">选择图片</button>
+							    		<button ng-if="formData.pic2"  type="button" ng-click="delPic(2)">删除图片</button>
+								    </div>
+							  </div>
+							   <div class="col-md-3">
+							   		<div style="width: 176px;height: 186px;border: dotted 1px;margin-bottom: 10px;vertical-align: middle;">
+									    <a href="javascript:void(0);"  class="thumbnail" >
+									      <img ngf-src="formData.picUrl3 || formData.default" style="width: 171px;max-height: 180px;">
+									    </a>
+								    </div>
+								    <div class="caption">
+							    		<button  type="file"  ngf-select="uploadFiles($file, $invalidFiles,3)" accept="image/jpg,image/jpeg,image/png" ngf-max-height="10000" ngf-max-size="10MB">选择图片</button>
+							    		<button ng-if="formData.pic3"  type="button" ng-click="delPic(3)">删除图片</button>
+								    </div>
+							  </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <div class="col-md-offset-8 col-md-4">
+                            <button type="submit" class="btn btn-info">提交</button>
+                            <button type="button" class="btn default" ui-sref="{{stateGoIndex}}">取消</button>
+                        </div>
+                    </div>
+                </form>
+                <div id="mapWrapper" ng-show="mapShow" ng-style="{'top': mapContainerStyle.top, 'left': mapContainerStyle.left}">
+                    <div class="mapClose" ng-click="mapClose()"></div>
+                    <div id="mapContainer" ng-style="{'width': mapContainerStyle.width, 'height': mapContainerStyle.height}">
+                        <div id="tip">
+                            <input type="text" id="keyword" name="keyword" value="请输入关键字：(选定后搜索)" onfocus='this.value=""'/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

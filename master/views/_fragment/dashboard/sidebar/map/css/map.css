@@ -1,0 +1,303 @@
+.map_content{
+    width:100%;
+    height:100%;
+    position: relative;
+}
+.map_header{
+    width:100%;
+    height:45px;
+}
+.map_header .box_nav{
+    background-color:#2E3142;
+    text-align:center;
+    line-height:40px;
+    width: 40px;
+    height:40px;
+    float:left;
+}
+.map_content_left{
+    background-color:#FFFFFF;
+    width:40px;
+    height:100%;
+    position: absolute;
+    left:0px;
+    top:0px;
+}
+
+.myMenuIcon{
+    text-align:center;
+    line-height:40px;
+    width: 40px;
+    height:40px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    background-color:#2E3142;
+}
+.myParkIcon{
+    text-align:center;
+    line-height:40px;
+    width: 40px;
+    height:40px;
+    position:absolute;
+    left:0px;
+    top:50px;
+    background-color:#2E3142;
+}
+
+.map_content_right{
+    width:100%;
+    height:100%;
+}
+.map_search{
+    width: 350px;
+    height: 40px;
+    padding-right:40px;
+    position: absolute;
+    top:20px;
+    left:40px;
+}
+.map_search input{
+    vertical-align:center;
+    padding: 6px !important;
+    width:100%;
+    height: 40px;
+    margin-left:10px;
+}
+.mySearchIcon{
+    text-align:center;
+    line-height:40px;
+    background-color: #2E3142;
+    width: 40px;
+    height:40px;
+    position:absolute;
+    right:0px;
+    top:0px;
+}
+.myColor{
+    color:#4395D6;
+}
+.myIconColor{
+    color:#e6e6e6;
+}
+/*!**次级菜单样式**!*/
+.sub-hand-bar-box {
+    background-color: #333;
+    opacity: 0.8;
+    position: absolute;
+    top: 90px;
+    left: 50px;
+}
+
+.map-control ul {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-left: 0;
+    list-style: none;
+    width: 90px; /* 根据项数调整 */
+    height: 45px;
+}
+
+.map-control ul li {
+    height: 45px;
+    width: 45px;
+    display: inline-block;
+    position: relative;
+    float: left;
+    border-right: 1px solid #999;
+    line-height: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.map-control ul li.last {
+    border-right: none;
+}
+
+/*****自定义颜色****/
+.font-green-0fd300 {
+    color: #0fd300;
+}
+
+.font-blue-00a6eb {
+    color: #00a6eb;
+}
+
+.font-red-ff6000 {
+    color: #ff6000;
+}
+
+.bg-green-0fd300 {
+    background-color: #0fd300;
+}
+
+.bg-blue-00a6eb {
+    background-color: #00a6eb;
+}
+
+.bg-red-ff6000 {
+    background-color: #ff6000;
+}
+
+/*自定义框mark样式*/
+.amap-marker-label{
+    border:none;
+    color:red;
+}
+.amap-marker-label .marker-text {
+    text-align: center;
+}
+/*自定义图标大小*/
+.amap-marker .amap-icon img:hover {
+    width:43px;
+    height:60px; 
+}
+.bigShow {
+  width:43px;
+  /* height:60px;   */
+}
+
+hr {
+    margin: 10px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+    border-bottom: 0;
+}
+.amap-icon {
+  width:43px !important;
+  height:60px !important;
+}
+.amap-icon img {
+  width:40px;
+}
+
+/**********弹出框********/
+.map-info {
+    border: solid 1px silver;
+    width: 420px;
+    background-color: #ffffff;
+}
+.map-info h3{
+    font-size: 13px;
+    width: 50%;
+    padding:0px;
+}
+.map-info div.row{
+    padding:0 20px;
+}
+div.map-info-top {
+    position: relative;
+    height:30px;
+    background-color:#2E3142;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #CCC;
+    border-radius: 5px 5px 0 0;
+}
+
+.map-info-top.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+div.map-info-top div {
+    display: inline-block;
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 31px;
+    padding: 0 10px;
+}
+
+div.map-info-top b{
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+div.map-info-top img:hover {
+    box-shadow: 0px 0px 5px #000;
+}
+
+/* div.map-info-middle {
+    font-size: 12px;
+    padding: 6px;
+    line-height: 20px;
+}
+
+div.map-info-bottom {
+    height: 0px;
+    width: 100%;
+    clear: both;
+    text-align: center;
+}
+
+div.map-info-bottom img {
+    position: relative;
+    z-index: 104;
+} */
+
+.parklotBox {
+    width:100%;
+    overflow: hidden;
+    /* height: 125px; */
+}
+.parklotBox .leftImg {
+    float: left;
+    margin-left: 15px;
+}
+.imgIconParkingDiv{
+    width:110px;
+    height:110px;
+    background-color: #E2E7ED;
+    text-align: center;
+    line-height:110px;
+    padding-top:5px;
+}
+.dclotContent {
+     margin-left: 33.3%;
+}
+.dclotContent div{
+    /* height:24px; */
+    font-size: 16px;
+    line-height:24px;
+    padding:0px;
+    margin:10px auto;
+}
+.dclotName span{
+    font-size: 18px;
+    font-weight: 600;
+}
+.dclotBerth span {
+    font-size: 24px;
+    color: #1C7E86;
+}
+.dclotBerth s {
+    text-decoration: none;
+}
+.imgIconParkingInfo {
+    background-image: url(../img/icon_parking_green.png);
+}
+.imgIconParkingWarn {
+    background-image: url(../img/icon_parking_yellow.png);
+}
+.imgIconParkingError {
+    background-image: url(../img/icon_parking_red.png);
+}
+/**图标示意说明*/
+.closeShowsize {
+    font-size: 0.5em !important;
+}
+.berthShowList div {
+    float:left;
+    width:110px;
+    height:45px;
+    margin-right:10px;
+}
+.berthShowList b {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right:2px;
+}
+

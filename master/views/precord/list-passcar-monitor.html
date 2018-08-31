@@ -1,0 +1,142 @@
+<style type="text/css">
+	.caption_bgcolor {
+		background-color: #e2e4ed;
+	}
+</style>
+
+<div id="inrecord-index" block-ui="main">
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+            <li ng-if="titles.secTitle"><a href="javascript:;">{{titles.secTitle}}</a></li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="selectbox">
+                <ul class="option">
+                    <div class="form-inline" id="queryForm">
+                        <div class="form-group">
+                              停车场名称： 
+                              <!-- <input class="form-control" name="parklotName" ng-model="formData.parklotName" type="text"> -->
+                              <div class="multiLot" style="width: 179px;padding: 0;height:34px;display:inline-block;">
+                                <select name="parklotCodes" class="form-control selectpicker" ng-model="formData.parklotCodes" multiple data-live-search="true" title="请选择停车场">
+                                  <option ng-repeat="option in parklotCodeOptions" value="{{option.code}}">
+                                      {{option.name}}
+                                  </option>
+                                </select>
+                              </div>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn blue-madison search" ng-click="toSearch()">搜 索</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn search" ng-click="toReset()">重 置</button>
+                        </div>
+                    </div>
+                </ul>
+                <div id="ucSelectBoxWrapper" style="padding: 0px;"></div>
+            </div>
+            <div ng-if="!haveData">
+              <div ng-repeat=" item in parkOptions">
+                <div class="buttonbox parklotMes">
+                  <span class="parkname" style="font-size:18px;top:13px;"> {{item.parklotName}}</span>
+                  <span class="status" style="color: #ec6941;" ng-if="item.status == 0"><span style="background-image: url(img/offline.png);"></span>异常</span>
+                  <span class="status" style="color: #32b16c;" ng-if="item.status == 1"><span style="background-image: url(img/online.png);"></span>正常</span>
+                  <span class="parkout">出口数量：{{item.outLaneNum}}</span>
+                  <span class="parkin">入口数量：{{item.inLaneNum}}</span>
+                  <span class="btn btn-primary btn-xs isOpen" style="height:21px !important;padding:0 10px !important;" ng-click="open($event)">展开</span>
+                </div>
+                <div class="row picBox" style="display:none;">
+                  <div class="col-sm-6 col-md-3" ng-repeat="option in item.passRecords">
+                    <div class="thumbnail">
+                       <a ng-href="{{option.pic ? (picBaseUrl + option.pic):defaultNoCar}}" class="fancybox" rel="edit-newest-group"> 
+                        <img ng-src="{{option.pic ? (picBaseUrl + option.pic):defaultNoCar}}" style="height: 180px;width:100%;">
+                       </a> 
+                      <hr style="margin:4px !important;" />
+                      <div class="caption caption_bgcolor">
+                          <p class="Mes">车牌号：{{option.plate}}</p>
+                          <p class="Mes">出入口名称：{{option.laneName}}</p>
+                          <p class="Mes">过车时间：{{option.passTime}}</p>
+                          <span ng-if="option.alarmType == 1" style="color:green">在线</span>
+                          <span ng-if="option.alarmType == 2" style="color:red">离线</span>
+                          <span ng-if="option.alarmType == 3" style="color:rgb(218, 185, 116)">设备异常</span>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" ng-if="haveData">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                      <div class="well">
+                        暂无过车数据
+                      </div> 
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<style>
+  .parklotMes {
+    position: relative;
+    height: 50px;
+    border-top: 1px solid #DDDDDD !important;
+  }
+  .parklotMes span,.parklotMes button {
+    position: absolute;
+    font-size: 15px;
+    top: 15px;
+  }
+  .parkname {
+    left: 15px;
+  }
+  .parkname span {
+    left: 5px;
+  }
+  .status {
+    right:300px;
+  }
+  .status>span {
+    display: inline-block;
+    width:22px;
+    height:20px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -25px;
+    top:0;
+  }
+  .isOpen {
+    right: 10px;
+  }
+  .parkin {
+    right: 80px;
+    color:#70a5d5;
+  }
+  .parkout {
+    right: 190px;
+    color: #f49b35;
+  }
+  .caption {
+    position: relative;
+  }
+  .caption>span {
+    position: absolute;
+    right:5px;
+    top:9px;
+    font-weight: 600;
+  }
+  .Mes {
+    margin-bottom:5px;
+  }
+  .multiLot>div {
+    padding:0 !important;
+  }
+  .bootstrap-select.btn-group .btn .filter-option {
+    position: static !important;
+  }
+</style>

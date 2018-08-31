@@ -1,0 +1,266 @@
+[
+  {
+    "reportDate": "2018-02-10",
+    "companyName": "捷顺",
+    "parkingName": "中南城",
+    "totalMoney": 26582,
+    "parkTotalMoney": 49590,
+    "reserveMoney": 12712
+  },
+  {
+    "reportDate": "2018-02-10",
+    "companyName": "捷顺",
+    "parkingName": "国际创投中心",
+    "totalMoney": 44537,
+    "parkTotalMoney": 19878,
+    "reserveMoney": 41820
+  },
+  {
+    "reportDate": "2018-02-10",
+    "companyName": "城投集团",
+    "parkingName": "城投商务楼停车场",
+    "totalMoney": 39659,
+    "parkTotalMoney": 27842,
+    "reserveMoney": 29630
+  },
+  {
+    "reportDate": "2018-02-10",
+    "companyName": "立方",
+    "parkingName": "南金鹰",
+    "totalMoney": 15563,
+    "parkTotalMoney": 13155,
+    "reserveMoney": 27161
+  },
+  {
+    "reportDate": "2018-02-10",
+    "companyName": "捷顺",
+    "parkingName": "国际创投中心",
+    "totalMoney": 27634,
+    "parkTotalMoney": 27925,
+    "reserveMoney": 39367
+  },
+  {
+    "reportDate": "2018-02-10",
+    "companyName": "ETCP",
+    "parkingName": "欧洲风情街",
+    "totalMoney": 34004,
+    "parkTotalMoney": 27081,
+    "reserveMoney": 44101
+  },
+  {
+    "reportDate": "2018-02-10",
+    "companyName": "城投集团",
+    "parkingName": "欧洲风情街",
+    "totalMoney": 46277,
+    "parkTotalMoney": 47122,
+    "reserveMoney": 45711
+  },
+  {
+    "reportDate": "2018-02-10",
+    "companyName": "捷顺",
+    "parkingName": "中南城",
+    "totalMoney": 13911,
+    "parkTotalMoney": 32477,
+    "reserveMoney": 20047
+  },
+  {
+    "reportDate": "2018-02-10",
+    "companyName": "捷顺",
+    "parkingName": "文化艺术中心",
+    "totalMoney": 14895,
+    "parkTotalMoney": 12829,
+    "reserveMoney": 31847
+  },
+  {
+    "reportDate": "2018-02-09",
+    "companyName": "捷顺",
+    "parkingName": "城投商务楼停车场",
+    "totalMoney": 19620,
+    "parkTotalMoney": 34724,
+    "reserveMoney": 31133
+  },
+  {
+    "reportDate": "2018-02-09",
+    "companyName": "城投集团",
+    "parkingName": "欧洲风情街",
+    "totalMoney": 20399,
+    "parkTotalMoney": 24460,
+    "reserveMoney": 43156
+  },
+  {
+    "reportDate": "2018-02-09",
+    "companyName": "立方",
+    "parkingName": "城投商务楼停车场",
+    "totalMoney": 19850,
+    "parkTotalMoney": 45565,
+    "reserveMoney": 44334
+  },
+  {
+    "reportDate": "2018-02-09",
+    "companyName": "立方",
+    "parkingName": "中南城",
+    "totalMoney": 45417,
+    "parkTotalMoney": 45670,
+    "reserveMoney": 39787
+  },
+  {
+    "reportDate": "2018-02-09",
+    "companyName": "城投集团",
+    "parkingName": "城投商务楼停车场",
+    "totalMoney": 19998,
+    "parkTotalMoney": 42295,
+    "reserveMoney": 43454
+  },
+  {
+    "reportDate": "2018-02-09",
+    "companyName": "立方",
+    "parkingName": "国际创投中心",
+    "totalMoney": 10122,
+    "parkTotalMoney": 13317,
+    "reserveMoney": 37761
+  },
+  {
+    "reportDate": "2018-02-09",
+    "companyName": "立方",
+    "parkingName": "城投商务楼停车场",
+    "totalMoney": 47825,
+    "parkTotalMoney": 41974,
+    "reserveMoney": 43137
+  },
+  {
+    "reportDate": "2018-02-09",
+    "companyName": "城投集团",
+    "parkingName": "市政服务中心",
+    "totalMoney": 16605,
+    "parkTotalMoney": 19407,
+    "reserveMoney": 26085
+  },
+  {
+    "reportDate": "2018-02-09",
+    "companyName": "城投集团",
+    "parkingName": "宝龙城市广场",
+    "totalMoney": 45265,
+    "parkTotalMoney": 36402,
+    "reserveMoney": 12176
+  },
+  {
+    "reportDate": "2018-02-09",
+    "companyName": "城投集团",
+    "parkingName": "南金鹰",
+    "totalMoney": 37559,
+    "parkTotalMoney": 21940,
+    "reserveMoney": 42503
+  },
+  {
+    "reportDate": "2018-02-09",
+    "companyName": "捷顺",
+    "parkingName": "市政服务中心",
+    "totalMoney": 18031,
+    "parkTotalMoney": 18493,
+    "reserveMoney": 35827
+  },
+  {
+    "reportDate": "2018-02-09",
+    "companyName": "捷顺",
+    "parkingName": "宝龙城市广场",
+    "totalMoney": 12424,
+    "parkTotalMoney": 28573,
+    "reserveMoney": 10157
+  },
+  {
+    "reportDate": "2018-02-09",
+    "companyName": "城投集团",
+    "parkingName": "中南城",
+    "totalMoney": 48342,
+    "parkTotalMoney": 28172,
+    "reserveMoney": 35556
+  },
+  {
+    "reportDate": "2018-02-09",
+    "companyName": "捷顺",
+    "parkingName": "市政服务中心",
+    "totalMoney": 25919,
+    "parkTotalMoney": 13699,
+    "reserveMoney": 47464
+  },
+  {
+    "reportDate": "2018-02-09",
+    "companyName": "立方",
+    "parkingName": "欧洲风情街",
+    "totalMoney": 16544,
+    "parkTotalMoney": 32176,
+    "reserveMoney": 16003
+  },
+  {
+    "reportDate": "2018-02-09",
+    "companyName": "立方",
+    "parkingName": "中南城",
+    "totalMoney": 23611,
+    "parkTotalMoney": 38786,
+    "reserveMoney": 34493
+  },
+  {
+    "reportDate": "2018-02-09",
+    "companyName": "ETCP",
+    "parkingName": "城投商务楼停车场",
+    "totalMoney": 18166,
+    "parkTotalMoney": 47976,
+    "reserveMoney": 48839
+  },
+  {
+    "reportDate": "2018-02-09",
+    "companyName": "ETCP",
+    "parkingName": "中南城",
+    "totalMoney": 12066,
+    "parkTotalMoney": 39644,
+    "reserveMoney": 44165
+  },
+  {
+    "reportDate": "2018-02-08",
+    "companyName": "ETCP",
+    "parkingName": "文化艺术中心",
+    "totalMoney": 47728,
+    "parkTotalMoney": 22175,
+    "reserveMoney": 44351
+  },
+  {
+    "reportDate": "2018-02-08",
+    "companyName": "ETCP",
+    "parkingName": "中南城",
+    "totalMoney": 15213,
+    "parkTotalMoney": 32643,
+    "reserveMoney": 31840
+  },
+  {
+    "reportDate": "2018-02-08",
+    "companyName": "ETCP",
+    "parkingName": "中南城",
+    "totalMoney": 28838,
+    "parkTotalMoney": 41920,
+    "reserveMoney": 28832
+  },
+  {
+    "reportDate": "2018-02-08",
+    "companyName": "立方",
+    "parkingName": "南金鹰",
+    "totalMoney": 36569,
+    "parkTotalMoney": 21773,
+    "reserveMoney": 45614
+  },
+  {
+    "reportDate": "2018-02-08",
+    "companyName": "ETCP",
+    "parkingName": "中南城",
+    "totalMoney": 20223,
+    "parkTotalMoney": 33520,
+    "reserveMoney": 30510
+  },
+  {
+    "reportDate": "2018-02-08",
+    "companyName": "立方",
+    "parkingName": "中南城",
+    "totalMoney": 44255,
+    "parkTotalMoney": 38974,
+    "reserveMoney": 23038
+  }
+]

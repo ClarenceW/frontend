@@ -1,0 +1,105 @@
+{
+	"iTotalDisplayRecords": 85,
+	"iTotalRecords": 85,
+	"aaData": [
+		{
+			"paymentChannel": "捷顺",
+			"collectionCompany": "盐城停车",
+			"accountPeriod": "02-07+3",
+			"balanceAccount": "1256.3",
+			"rate": "3‰",
+			"balanceWay": "现金结算",
+			"operator": "王云华",
+			"balanceTime": "02-10 19:09"
+		},
+		{
+			"paymentChannel": "立方",
+			"collectionCompany": "盐城停车",
+			"accountPeriod": "02-07+3",
+			"balanceAccount": "1555.6",
+			"rate": "3‰",
+			"balanceWay": "现金结算",
+			"operator": "罗永进",
+			"balanceTime": "02-10 15:31"
+		},
+		{
+			"paymentChannel": "ETCP",
+			"collectionCompany": "盐城停车",
+			"accountPeriod": "02-07+3",
+			"balanceAccount": "2413.6",
+			"rate": "3‰",
+			"balanceWay": "现金结算",
+			"operator": "李淑红",
+			"balanceTime": "02-10 12:06"
+		},
+		{
+			"paymentChannel": "盐城停车",
+			"collectionCompany": "ETCP",
+			"accountPeriod": "02-07+3",
+			"balanceAccount": "1213.6",
+			"rate": "3‰",
+			"balanceWay": "转账结算",
+			"operator": "王群",
+			"balanceTime": "02-10 11:15"
+		},
+		{
+			"paymentChannel": "盐城停车",
+			"collectionCompany": "捷顺",
+			"accountPeriod": "02-07+3",
+			"balanceAccount": "1365.4",
+			"rate": "3‰",
+			"balanceWay": "转账结算",
+			"operator": "刘景斌",
+			"balanceTime": "02-10 09:55"
+		},
+		{
+			"paymentChannel": "盐城停车",
+			"collectionCompany": "立方",
+			"accountPeriod": "02-07+3",
+			"balanceAccount": "2354.9",
+			"rate": "3‰",
+			"balanceWay": "现金结算",
+			"operator": "肖翠莲",
+			"balanceTime": "02-09 16:42"
+		},{
+			"paymentChannel": "捷顺",
+			"collectionCompany": "盐城停车",
+			"accountPeriod": "02-07+3",
+			"balanceAccount": "2563.4",
+			"rate": "3‰",
+			"balanceWay": "现金结算",
+			"operator": "徐志坚",
+			"balanceTime": "02-09 10:32"
+		},
+		{
+			"paymentChannel": "立方",
+			"collectionCompany": "盐城停车",
+			"accountPeriod": "02-07+3",
+			"balanceAccount": "3145.1",
+			"rate": "3‰",
+			"balanceWay": "现金结算",
+			"operator": "蔡进",
+			"balanceTime": "02-09 10:53"
+		},
+		{
+			"paymentChannel": "ETCP",
+			"collectionCompany": "盐城停车",
+			"accountPeriod": "02-07+3",
+			"balanceAccount": "2147.2",
+			"rate": "3‰",
+			"balanceWay": "现金结算",
+			"operator": "李德才",
+			"balanceTime": "02-09 13:17"
+		},
+		{
+			"paymentChannel": "盐城停车",
+			"collectionCompany": "ETCP",
+			"accountPeriod": "02-07+3",
+			"balanceAccount": "2695.6",
+			"rate": "3‰",
+			"balanceWay": "转账结算",
+			"operator": "赵武立",
+			"balanceTime": "02-09 15:31"
+		}
+	]
+}

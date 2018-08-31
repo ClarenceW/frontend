@@ -1,0 +1,140 @@
+
+<div id="sentryboxset-index" block-ui="main">
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+            <li ng-if="titles.secTitle"><a href="javascript:;">{{titles.secTitle}}</a></li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="selectbox">
+                <ul class="option">
+                    <div class="form-inline" id="queryForm">
+                        <div class="form-group form-group-sm">
+                 			      岗亭名称： <input class="form-control" name="sentryboxName" ng-model="formData.sentryboxName" type="text">
+                        </div>
+                        <div class="form-group form-group-sm">
+                 			      所属停车场： <input class="form-control" name="parklotName" ng-model="formData.parklotName" type="text">
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn blue-madison search" ng-click="toSearch()">搜 索</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn search" ng-click="toReset()">重 置</button>
+                        </div>
+                    </div>
+                </ul>
+                <div id="ucSelectBoxWrapper" style="padding: 0px;"></div>
+            </div>
+            <div class="buttonbox">
+                <button class="btn btn-sm btn-default">
+                    <span class="glyphicon glyphicon-plus font-green-linewell"></span>新增
+                </button>
+                <button class="btn btn-sm btn-default" ng-click="">
+                    <span class="glyphicon glyphicon-edit font-blue-linewell"></span>修改
+                </button>
+                <button class="btn btn-sm btn-default" ng-click="">
+                    <span class="glyphicon glyphicon-search font-blue-linewell"></span>详情
+                </button>
+                <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal" ng-click="setSentrybox()">
+                    <span class="glyphicon glyphicon-wrench font-blue-linewell"></span>配置出入口
+                </button>
+            </div>
+            <table class="table table-bordered table-hover" id="sentryboxset-table">
+                <thead>
+                <tr>
+                    <th class="table-checkbox">
+                        <input type="checkbox" class="group-checkable" style="text-align: right;" data-set="#sentryboxset-table .checkboxes"/>
+                    </th>
+                    <th>岗亭编号</th>
+                    <th>岗亭名称</th>
+                    <th>所属停车场</th>
+                    <th>更新时间</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id={{myModal}} tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					配置出入口
+				</h4>
+			</div>
+			<div class="modal-body">
+        <div class="row">
+            <div class="col-md-3">岗亭编号：</div>
+            <div class="col-md-7">
+              <input type="text" class="form-control" value="6431FCB356DC11820" readonly>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">岗亭名称：</div>
+            <div class="col-md-7">
+              <input type="text" class="form-control" value="出口岗亭" readonly>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">出入口编号：</div>
+            <div class="col-md-7">
+              <select name="laneId" ng-model="formData.laneId" class="form-control">
+                  <option value="">请选择</option>
+                  <option value="0">0e90f094befd4d148b5b70099f15c8de</option>
+                  <option value="1">75cdf2fbcfe844f2a3abe4e9e70bc7d1</option>
+                  <option value="2">d6c230dc1f484cff8df79cd7fcbee6cd</option>
+              </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">相机编号：</div>
+            <div class="col-md-7">
+              <select name="cameraId" ng-model="formData.cameraId" class="form-control">
+                  <option value="">请选择</option>
+                  <option value="0">e058561e4b9442599950b1cc0e66f866</option>
+                  <option value="1">c71f6a13f43b4f9984a452d5e871c270</option>
+                  <option value="3">c71f6a13f43b4f9984a452d5e871c280</option>
+                  <option value="4">c71f6a13f43b4f9984a452d5e871c281</option>
+                  <option value="5">e058561e4b9442599950b1cc0e66f867</option>
+                  <option value="6">e058561e4b9442599950b1cc0e66f869</option>
+              </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">LED屏编号：</div>
+            <div class="col-md-7">
+              <select name="ledId" ng-model="formData.ledId" class="form-control">
+                  <option value="">请选择</option>
+                  <option value="0">0e90f094befd4d148b5b70099f15c8de</option>
+                  <option value="1">75cdf2fbcfe844f2a3abe4e9e70bc7d1</option>
+                  <option value="2">d6c230dc1f484cff8df79cd7fcbee6cd</option>
+              </select>
+            </div>
+        </div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="">确认
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+<style type="text/css">
+  .modal-body {
+      /* height: 300px; */
+  }
+  .modal-body .row {
+      height: 30px;
+      line-height: 30px;
+      margin:8px auto;
+  }
+</style>

@@ -1,0 +1,92 @@
+<div class="row" block-ui="main">
+  <div class="col-md-12">
+      <div class="page-bar">
+          <ul class="page-breadcrumb">
+              <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+              <li ng-if="titles.secTitle"><a href="javascript:;"  ui-sref="{{stateGoIndex}}">{{titles.secTitle}}</a></li>
+          </ul>
+      </div>
+      <div class="panel panel-default">
+          <div class="panel-heading">查看月卡购买记录详情</div>
+          <div class="panel-body form">
+              <div class="format-height"></div>
+              <table class="table table-bordered table-hover" width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tbody>
+                  <tr>
+                    <td width="25%" align="right"><font class="font-blue-deep"><strong>记录编号</strong></font></td>
+                    <td width="75%">{{formData.recordCode}}</td>
+                  </tr>
+                  <tr>
+                    <td width="25%" align="right"><font class="font-blue-deep"><strong>车牌</strong></font></td>
+                    <td width="75%">{{formData.plate}}</td>
+                  </tr>
+                  <tr>
+                    <td width="25%" align="right"><font class="font-blue-deep"><strong>车牌颜色</strong></font></td>
+                    <td width="75%">{{formData.plateColor}}</td>
+                  </tr>
+                  <tr>
+                    <td width="25%" align="right"><font class="font-blue-deep"><strong>车辆归属</strong></font></td>
+                    <td width="75%">{{formData.vehicleOwnName}}</td>
+                  </tr>
+                  <tr>
+                    <td width="25%" align="right"><font class="font-blue-deep"><strong>月卡编号</strong></font></td>
+                    <td width="75%">{{formData.cardCode}}</td>
+                  </tr>
+                  <tr>
+                    <td width="25%" align="right"><font class="font-blue-deep"><strong>月卡名称</strong></font></td>
+                    <td width="75%">{{formData.cardName}}</td>
+                  </tr>
+                  <tr>
+                    <td width="25%" align="right"><font class="font-blue-deep"><strong>月卡类型</strong></font></td>
+                    <td width="75%">{{formData.cardType}}</td>
+                  </tr>
+                  <tr>
+                    <td align="right"><font class="font-blue-deep"><strong>购买金额</strong></font></td>
+                    <td>{{formData.payMoney}}</td>
+                  </tr>
+                  <tr>
+                    <td align="right"><font class="font-blue-deep"><strong>购买终端</strong></font></td>
+                    <td>{{formData.terminal}}</td>
+                  </tr>
+                  <tr>
+                    <td align="right"><font class="font-blue-deep"><strong>购买时间</strong></font></td>
+                    <td>
+                      {{formData.createTime | date : 'yyyy-MM-dd HH:mm:ss'}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right"><font class="font-blue-deep"><strong>生效时间</strong></font></td>
+                    <td>
+                      {{formData.validTime | date : 'yyyy-MM-dd HH:mm:ss'}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right"><font class="font-blue-deep"><strong>到期时间</strong></font></td>
+                    <td>
+                      {{formData.invalidTime | date : 'yyyy-MM-dd HH:mm:ss'}}
+                    </td>
+                  </tr>
+                  <tr>
+                      <td align="right"><font class="font-blue-deep"><strong>剩余时间</strong></font></td>
+                      <td>{{formData.remainTime}}</td>
+                  </tr>
+                  
+                  <tr>
+                      <td align="right"><font class="font-blue-deep"><strong>购买人手机号</strong></font></td>
+                      <td>{{formData.phoneNum}}</td>
+                  </tr>
+                  <tr>
+                      <td align="right"><font class="font-blue-deep"><strong>状态</strong></font></td>
+                      <td>
+                        {{formData.status}}
+                      </td>
+                  </tr>
+                  </tbody>
+              </table>
+              <div style="text-align: right">
+                  <button type="button" class="btn" ui-sref="{{stateGoIndex}}">关闭</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

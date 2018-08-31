@@ -1,0 +1,65 @@
+<div id="section-index" block-ui="main">
+    <!-- BEGIN PAGE HEADER-->
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li><i class="fa fa-home"></i><a href="javascript:;">基础配置</a><i class="fa fa-angle-right"></i></li>
+            <li><a href="javascript:;">路段管理</a></li>
+        </ul>
+    </div>
+    <!-- END PAGE HEADER-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="selectbox">
+                <ul class="option">
+                    <div class="form-inline">
+                        <div class="form-group form-group-sm">
+                            路段编号： <input class="form-control" name="sectionCode" type="text" ng-model="formData.sectionCode">
+                        </div>
+                        <div class="form-group form-group-sm">
+                            路段名称： <input class="form-control" name="name" type="text" ng-model="formData.name">
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn blue-madison search" ng-click="toSearch()">搜 索</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn search" ng-click="toReset()">重 置</button>
+                        </div>
+                    </div>
+                </ul>
+                <div id="ucSelectBoxWrapper" style="padding: 0px;"></div>
+            </div>
+            <div class="buttonbox">
+                <!--<button class="btn btn-sm btn-default" ui-sref="{{stateGoAdd}}">-->
+                    <!--<span class="glyphicon glyphicon-plus font-green-linewell"></span>添加-->
+                <!--</button>-->
+                <!--<button class="btn btn-sm btn-default" ng-click="toEdit()">-->
+                    <!--<span class="glyphicon glyphicon-edit font-blue-linewell"></span>编辑-->
+                <!--</button>-->
+                <button class="btn btn-sm btn-default" ng-click="toDetail()">
+                    <span class="glyphicon glyphicon-search font-blue-linewell"></span>查看
+                </button>
+                <!--<button class="btn btn-sm btn-default" ng-click="toDelete()">-->
+                    <!--<span class="glyphicon glyphicon-remove-circle font-red-linewell"></span>删除-->
+                <!--</button>-->
+            </div>
+            <table class="table table-bordered table-hover" id="section-table">
+                <thead>
+                <tr>
+                    <th class="table-checkbox">
+                        <input type="checkbox" class="group-checkable" style="text-align: right;" data-set="#section-table .checkboxes"/>
+                    </th>
+                    <th>路段编号</th>
+                    <th>路段名称</th>
+                    <th>地址</th>
+                    <th>纬度</th>
+                    <th>经度</th>
+                    <th>泊位数量</th>
+                    <th>运营情况</th>
+                    <th>更新时间</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>

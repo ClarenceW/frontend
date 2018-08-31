@@ -1,0 +1,97 @@
+{
+  "iTotalRecords": 78,
+  "iTotalDisplayRecords": 78,
+  "aaData": [
+    {
+      "plate": "苏J89D17",
+      "plateColor": "蓝色",
+      "userCode": "15657181295",
+      "plateType": "违规车",
+      "plotName": "华邦西厦",
+      "inTime": "2017-07-29 17:32",
+      "inPic": "img/data/131255-in-1-A89D17-0-285.jpg"
+    },
+     {
+      "plate": "苏JMM586",
+      "plateColor": "蓝色",
+      "userCode": "18957182289",
+      "plateType": "套牌车",
+      "plotName": "华邦西厦",
+      "inTime": "2017-08-01 09:52",
+      "inPic": "img/data/145915-in-1-AMM586-0-3195.jpg"
+    }
+    ,
+     {
+      "plate": "苏JEB395",
+      "plateColor": "蓝色",
+      "userCode": "15057183448",
+      "plateType": "违规车",
+      "plotName": "宝龙城市广场",
+      "inTime": "2017-08-02 11:50",
+      "inPic": "img/data/150748-in-1-AEB395-0-5537.jpg"
+    },
+     {
+      "plate": "苏J9843S",
+      "plateColor": "蓝色",
+      "userCode": "15188752289",
+      "plateType": "违规车",
+      "plotName": "宝龙城市广场",
+      "inTime": "2017-08-03 11:27",
+      "inPic": "img/data/151204-in-1-H9843S-0-4833.jpg"
+    },
+     {
+      "plate": "苏J789AA",
+      "plateColor": "蓝色",
+      "userCode": "15257142388",
+      "plateType": "违规车",
+      "plotName": "宝龙城市广场",
+      "inTime": "2017-08-03 17:52",
+      "inPic": "img/data/161659-in-1-ASJ587-0-4313.jpg"
+    },
+     {
+      "plate": "苏JSJ587",
+      "plateColor": "蓝色",
+      "userCode": "15267732325",
+      "plateType": "违规车",
+      "plotName": "宝龙城市广场",
+      "inTime": "2017-08-03 17:52",
+      "inPic": "img/data/165018-in-1-A500FW-0-333.jpg"
+    },
+     {
+      "plate": "苏J677SD",
+      "plateColor": "蓝色",
+      "userCode": "15657143467",
+      "plateType": "违规车",
+      "plotName": "宝龙城市广场",
+      "inTime": "2017-08-03 17:52",
+      "inPic": "img/data/175440-in-1-CU6S62-0-1869.jpg"
+    },
+     {
+      "plate": "苏J5872D",
+      "plateColor": "蓝色",
+      "userCode": "15188492311",
+      "plateType": "违规车",
+      "plotName": "城投商务楼停车场",
+      "inTime": "2017-08-03 17:52",
+      "inPic": "img/data/181822-in-1-CU6S62-0-2668.jpg"
+    },
+     {
+      "plate": "苏JD23A3",
+      "plateColor": "蓝色",
+      "userCode": "15978092388",
+      "plateType": "违规车",
+      "plotName": "城投商务楼停车场",
+      "inTime": "2017-08-03 17:52",
+      "inPic": "img/data/161659-in-1-ASJ587-0-4313.jpg"
+    },
+     {
+      "plate": "苏JS3427",
+      "plateColor": "蓝色",
+      "userCode": "17057143418",
+      "plateType": "违规车",
+      "plotName": "城投商务楼停车场",
+      "inTime": "2017-08-03 17:52",
+      "inPic": "img/data/091313-in-1-AV9K56-0-288.jpg"
+    }
+  ]
+}

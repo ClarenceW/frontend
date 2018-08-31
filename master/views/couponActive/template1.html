@@ -1,0 +1,98 @@
+<div class="form-group cdsc">
+    <label class="control-label col-md-2">充电时长<span class="required">*</span></label>
+    <div class="col-md-6">
+        <div class="input-icon right">
+            <input type="number" class="form-control timeRange" name="starttime" ng-model="formData.starttime" placeholder="单位：小时" min="0.0" step="0.5" readonly> 至 
+            <input type="number" class="form-control timeRange" name="endtime" ng-model="formData.endtime" placeholder="单位：小时" min="0.0" step="0.5" readonly>
+            <label class="control-label" style="padding:0 15px;"> 抵扣金额</label><input type="number" class="form-control timeRange" name="deductible" ng-model="formData.deductible" placeholder="单位：元" min="0.0" step="0.5" readonly>
+            <img src='img/jiahao.png' id='addRule' ng-click='addrule1()' style='width:34px;position:absolute;top:0;right:30px;'/>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-md-2">规则描述<span class="required">*</span></label>
+    <div class="col-md-6" ng-class="addForm.couponmoney.$invalid && addForm.couponmoney.$dirty ? 'has-error':''">
+        <div class="input-icon right">
+            <input type="text" class="form-control" name="couponmoney" ng-model="formData.couponmoney" readonly >
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-md-2">活动范围<span class="required">*</span></label>
+    <div class="col-md-6" ng-class="addForm.couponrule.$invalid && addForm.plate.$dirty ? 'has-error':''">
+        <div class="input-icon right">
+            <i class="fa tooltips" ng-class="addForm.couponrule.$invalid && addForm.couponrule.$dirty ? 'fa-exclamation':''"></i>
+            <select name="parklotCode" class="form-control selectpicker" multiple ng-model="formData.parklotCode" data-live-search="true" title="请选择停车场" required >
+                <option value="">请选择</option>
+                <option value="1">下沙</option>
+                <option value="2">滨江</option>
+                <option value="3">余杭</option>
+                <option value="4">萧山</option>
+                <option value="5">拱墅</option>
+                <!-- <option ng-repeat="option in parklotCodeOptions" value="{{option.code}}">
+                    {{option.name}}
+                </option> -->
+            </select>
+        </div>
+    </div>
+    <div class="col-md-3 error" ng-if="(addForm.couponrule.$invalid && addForm.couponrule.$dirty) || submited">
+        <span ng-if="addForm.couponrule.$error.required">请输入优惠规则名称</span>
+        <span ng-if="addForm.couponrule.$error.maxlength">规则名称不能超过10个字</span>
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-md-2">适用车型<span class="required">*</span></label>
+    <div class="col-md-6">
+      <label class="btn btn-info cartype">
+        <input type="checkbox" name="option1" class="ruletype" ng-value="1" ng-model="formData.type1" ng-checked="true" id="option1"> 通用
+      </label>
+      <label class="btn btn-info cartype">
+          <input type="checkbox" name="option1" class="ruletype" ng-value="2" ng-model="formData.type2" id="option2"> 大型车
+      </label>
+      <label class="btn btn-info cartype">
+          <input type="checkbox" name="option1" class="ruletype" ng-value="3" ng-model="formData.type3" id="option3"> 小型车
+      </label>
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-md-2">活动开始时间<span class="required">*</span></label>
+    <div class="col-md-6" ng-class="addForm.startTime.$dirty ? (addForm.startTime.$valid ? 'has-success': 'has-error') :''">
+        <div class="input-group">
+            <input type="text" class="form-control" id="searchTm" readonly
+                   uib-datepicker-popup="{{format}}"
+                   ng-model="formData.startTime"
+                   is-open="tempData.opened"
+                   date-disabled="disabled(date, mode)"
+                   datepicker-options="dateOptions"
+                   ng-required="true"
+                   alt-input-formats="altInputFormats" ng-click="open()"/>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </div>
+    </div>
+    <div class="col-md-3 error" ng-show="addForm.startTime.$invalid && (addForm.startTime.$dirty || submited)">
+        <span ng-show="addForm.startTime.$error.required">请选择开始时间</span>
+    </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-md-2">活动结束时间<span class="required">*</span></label>
+  <div class="col-md-6" ng-class="addForm.endTime.$dirty ? (addForm.endTime.$valid ? 'has-success': 'has-error') :''">
+      <div class="input-group">
+          <input type="text" class="form-control" id="searchTm" readonly
+                 uib-datepicker-popup="{{format}}"
+                 ng-model="formData.endTime"
+                 is-open="tempData.opened2"
+                 date-disabled="disabled(date, mode)"
+                 datepicker-options="dateOptions"
+                 ng-required="true"
+                 alt-input-formats="altInputFormats" ng-click="open2()"/>
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+      </div>
+  </div>
+  <div class="col-md-3 error" ng-show="addForm.endTime.$invalid && (addForm.endTime.$dirty || submited)">
+      <span ng-show="addForm.endTime.$error.required">请选择结束时间</span>
+  </div>
+</div>

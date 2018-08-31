@@ -1,0 +1,158 @@
+<style type="text/css">
+	.caption_bgcolor {
+		background-color: #e2e4ed;
+	}
+</style>
+
+<div id="inrecord-index" block-ui="main">
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+            <li ng-if="titles.secTitle"><a href="javascript:;">{{titles.secTitle}}</a></li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="selectbox">
+                <ul class="option">
+                    <div class="form-inline" id="queryForm">
+                        <div class="form-group">
+                           	 停车场名称： <input class="form-control" name="name" ng-model="formData.name" type="text">
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn blue-madison search" ng-click="toSearch()">搜 索</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn search" ng-click="toReset()">重 置</button>
+                        </div>
+                    </div>
+                </ul>
+                <div id="ucSelectBoxWrapper" style="padding: 0px;"></div>
+            </div>
+            <div class="monitorContent">
+              <div>
+                <p>停车场数</p>
+                <p>6</p>
+              </div>
+              <div>
+                <p>监控总数</p>
+                <p>6</p>
+              </div>
+            </div>
+            <div class="row" >
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail" style="border-radius:10px !important;">
+                  <img ng-if="option.inPic" ng-src="{{ (picBaseUrl + (option.pic1||option.pic2||option.pic3)||defaultPic)}}" style="height: 180px;">
+                  <img ng-if="!option.inPic" ng-src="{{defaultNoCar}}">
+                  <hr style="margin:4px !important;" />
+                  <div class="caption caption_bgcolor">
+                      <p>停车场名称：{{option.name}}</p>
+                      <p>出入口名称：{{option.parklotCode }}</p>
+                      <p>设备编号：{{option.address }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail" style="border-radius:10px !important;">
+                  <img ng-if="option.inPic" ng-src="{{picBaseUrl + option.inPic}}" style="height: 180px;">
+                  <img ng-if="!option.inPic" ng-src="{{defaultNoCar}}">
+                  <hr style="margin:4px !important;" />
+                  <div class="caption caption_bgcolor">
+                    <p>停车场名称：{{option.name}}</p>
+                      <p>出入口名称：{{option.parklotCode }}</p>
+                      <p>设备编号：{{option.address }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail" style="border-radius:10px !important;">
+                  <img ng-if="option.outPic" ng-src="{{picBaseUrl + option.outPic }}" style="height: 180px;">
+                  <img ng-if="!option.outPic" ng-src="{{defaultNoCar }}">
+                  <hr style="margin:4px !important;" />
+                  <div class="caption caption_bgcolor">
+                    <p>停车场名称：{{option.name}}</p>
+                      <p>出入口名称：{{option.parklotCode }}</p>
+                      <p>设备编号：{{option.address }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail" style="border-radius:10px !important;">
+                  <img ng-if="option.outPic" ng-src="{{picBaseUrl + option.outPic }}" style="height: 240px;">
+                  <img ng-if="!option.outPic" ng-src="{{defaultNoCar }}" style="height: 240px;">
+                  <hr style="margin:4px !important;" />
+                  <div class="caption caption_bgcolor">
+                    <p>停车场名称：{{option.name}}</p>
+                      <p>出入口名称：{{option.parklotCode }}</p>
+                      <p>设备编号：{{option.address }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail" style="border-radius:10px !important;">
+                  <img ng-if="option.outPic" ng-src="{{picBaseUrl + option.outPic }}" style="height: 240px;">
+                  <img ng-if="!option.outPic" ng-src="{{defaultNoCar }}" style="height: 240px;">
+                  <hr style="margin:4px !important;" />
+                  <div class="caption caption_bgcolor">
+                    <p>停车场名称：{{option.name}}</p>
+                      <p>出入口名称：{{option.parklotCode }}</p>
+                      <p>设备编号：{{option.address }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail" style="border-radius:10px !important;">
+                  <img ng-if="option.outPic" ng-src="{{picBaseUrl + option.outPic }}" style="height: 240px;">
+                  <img ng-if="!option.outPic" ng-src="{{defaultNoCar }}" style="height: 240px;">
+                  <hr style="margin:4px !important;" />
+                  <div class="caption caption_bgcolor">
+                    <p>停车场名称：{{option.name}}</p>
+                      <p>出入口名称：{{option.parklotCode }}</p>
+                      <p>设备编号：{{option.address }}</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="row"  style="display:none;">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                      <div class="well">
+                        暂无数据
+                      </div> 
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<style>
+  .monitorContent {
+    margin-bottom:10px;
+  }
+  .monitorContent>div {
+    width:180px;
+    height:80px;
+    border-radius:10px !important;
+    display:inline-block;
+    margin-right:20px;
+  }
+  .monitorContent>div:nth-of-type(1) {
+    background: #f49b35;
+  }
+  .monitorContent>div:nth-of-type(2) {
+    background: #b3d465;
+  }
+  .monitorContent>div>p:nth-of-type(1) {
+    text-align:center;
+    color:white;
+    font-size:20px;
+    margin:5px 0;
+  }
+  .monitorContent>div>p:nth-of-type(2) {
+    text-align:center;
+    color:white;
+    font-size:23px;
+    margin:5px 0;
+  }
+</style>

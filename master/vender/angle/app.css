@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+/**=========================================================
+ *  .thumb32
+ *  view/traffic/list.html
+ =========================================================*/
+
+.thumb32 {
+    width: 32px !important;
+    height: 32px !important;
+}
+
+/**=========================================================
+ *  .ngdialog
+ *  view/traffic/list.html
+ =========================================================*/
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    background-color: #fff !important;
+    border-radius: 4px !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-close {
+    display: none;
+}
+
+/**=========================================================
+ *  .well
+ *  view/traffic/list.html tpls/previewModal.html
+ =========================================================*/
+
+.well {
+    border: 1px solid #dde6e9;
+}
+
+.well {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    /* border: 1px solid #ededed; */
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+/**=========================================================
+
+ *  .panel
+ *  view/traffic/list.html
+ =========================================================*/
+
+.panel.panel-default .form .form-actions {
+    background-color: #fff;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.panel-default {
+    border-color: #fff;
+}
+
+.panel.panel-default {
+    border-top-width: 3px;
+}
+
+.panel .panel-heading {
+    border-bottom: 0;
+    font-size: 14px;
+}
+
+.panel-default > .panel-heading {
+    color: #444;
+    background-color: #fff;
+    border-color: #cfdbe2;
+    border-bottom: 1px solid #ddd;
+}
+
+.panel-heading {
+    padding: 10px 20px;
+    border-bottom: 1px solid transparent;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    font-weight: 700;
+}
+
+/**=========================================================
+
+ *  .nav-tabs
+ *  view/traffic/list.html
+ =========================================================*/
+
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
+
+.nav {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.nav-tabs > li > a {
+    font-weight: 700;
+    color: #515253;
+    background-color: #edf1f2;
+    margin: 0;
+    border: 1px solid #dde6e9;
+    border-radius: 0;
+    padding: 10px 20px;
+}
+
+.tab-content {
+    padding: 10px 20px;
+    border-style: solid;
+    border-width: 0 1px 1px;
+    border-color: #dde6e9;
+}

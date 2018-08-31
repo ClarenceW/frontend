@@ -1,0 +1,51 @@
+{
+	"iTotalDisplayRecords": 5,
+	"iTotalRecords": 5,
+	"aaData": [
+		{
+			"paymentChannel": "捷顺",
+			"collectionCompany": "盐城停车",
+			"accountPeriod": "02-07+3",
+			"delayClause": "2",
+			"delayAccount": "35",
+			"delaystatus": "待确认",
+			"delayTime": "02-10 15:33"
+		},
+		{
+			"paymentChannel": "立方",
+			"collectionCompany": "盐城停车",
+			"accountPeriod": "02-07+3",
+			"delayClause": "3",
+			"delayAccount": "50",
+			"delaystatus": "已确认",
+			"delayTime": "02-10 11:10"
+		},
+		{
+			"paymentChannel": "ETCP",
+			"collectionCompany": "盐城停车",
+			"accountPeriod": "02-07+3",
+			"delayClause": "3",
+			"delayAccount": "55",
+			"delaystatus": "待确认",
+			"delayTime": "02-10 10:36"
+		},
+		{
+			"paymentChannel": "盐城停车",
+			"collectionCompany": "立方",
+			"accountPeriod": "02-07+3",
+			"delayClause": "5",
+			"delayAccount": "70",
+			"delaystatus": "待确认",
+			"delayTime": "02-10 10:05"
+		},
+		{
+			"paymentChannel": "盐城停车",
+			"collectionCompany": "ETCP",
+			"accountPeriod": "02-07+3",
+			"delayClause": "6",
+			"delayAccount": "90",
+			"delaystatus": "已确认",
+			"delayTime": "02-10 09:11"
+		}
+	]
+}

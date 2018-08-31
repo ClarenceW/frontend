@@ -1,0 +1,7 @@
+<!--<a class="item" ng-class="{'active': $index==0}" title="{{menu.name}}" ui-sref="{{menu.uiSref}}({menuCode:'{{menu.code}}'})" ng-repeat="menu in menus">-->
+<a class="item" name="firstMenu" code="{{menu.code}}" ng-class="{'active': defaultFirstMenuCode == menu.code }" title="{{menu.name}}" ng-repeat="menu in menus" ng-click="clickFirstMenu(menu)"  name='firstMenu'>
+    <!-- <i class="{{menu.icon}}"></i>
+    <span class="menu-title">{{menu.name}}</span> -->
+    <div class="iwrapper"><i class="{{menu.icon}}"></i></div>
+    <span class="menu-title">{{menu.name}}</span>
+</a>

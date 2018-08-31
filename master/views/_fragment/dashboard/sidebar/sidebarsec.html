@@ -1,0 +1,37 @@
+<div class="ui secondary vertical fixed menu active" id="inner-menu">
+    <ul class="uc-secondary-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+        <li class="nav-item">
+            <div class="nav-link first-nav sidebar-second-title" ng-click="appSidebarSecondToggler()">
+              <div class="sidebar-second-toggle">
+                <div class="sidebar-second-hid-icon">
+                  <i class="sidebar-second-hid-icon-item"></i>
+                  <i class="sidebar-second-hid-icon-item"></i>
+                  <i class="sidebar-second-hid-icon-item"></i>
+                </div>
+                <i class="iconfont icon-close"></i>
+                <span>{{secondMenuTitle}}</span> 
+              </div>
+            </div>
+        </li>
+        <li ng-class="{'open active': defaultSecMenuCode == menu.code}" ng-repeat="menu in menus">
+            <!-- 二级菜单 -->
+            <a ng-if="!menu.children.length" ui-sref="{{menu.uiSref}}" class="ajaxify">
+                <i class="{{menu.icon}}"></i><span class="menu-title">{{menu.name}}</span>
+            </a>
+            <!-- 包含三级菜单的二级菜单 -->
+            <a ng-if="menu.children.length" href="javascript:;">
+                <i class="{{menu.icon}}"></i><span class="menu-title">{{menu.name}}</span><span ng-class="{'open': $index==0}" class="arrow"></span>
+            </a>
+            <ul ng-if="menu.children.length" class="sub-menu" ng-style="{'display: block': $index==0}">
+                <li ng-class="{'active': $index==0}" ng-repeat="childrenMenu in menu.children">
+                    <a ui-sref="{{childrenMenu.uiSref}}" class="ajaxify"><i class=""></i>{{childrenMenu.name}}</a>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+</div>
+<div class="page-content-wrapper">
+    <div class="page-content" ui-view>
+    </div>
+</div>

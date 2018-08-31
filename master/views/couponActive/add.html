@@ -1,0 +1,173 @@
+<div class="row" block-ui="main" id="couponactiveAdd">
+  <div class="col-md-12">
+      <div class="page-bar">
+          <ul class="page-breadcrumb">
+              <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+              <li ng-if="titles.secTitle"><a href="javascript:;"  ui-sref="{{stateGoIndex}}">{{titles.secTitle}}</a></li>
+          </ul>
+      </div>
+      <div class="panel panel-default">
+          <div class="panel-heading">新增优惠活动</div>
+          <div class="panel-body form">
+              <form name="addForm" ng-submit="submitForm(addForm.$valid)" class="form-horizontal" novalidate>
+                  <div class="format-height"></div>
+                  <div class="form-body">
+                      <div class="form-group">
+                          <label class="control-label col-md-2">优惠活动名称<span class="required">*</span></label>
+                          <div class="col-md-6" ng-class="addForm.couponActivityName.$invalid && addForm.couponActivityName.$dirty ? 'has-error':''">
+                              <div class="input-icon right">
+                                  <i class="fa tooltips" ng-class="addForm.couponActivityName.$invalid && addForm.couponActivityName.$dirty ? 'fa-exclamation':''"></i>
+                                  <input type="text" class="form-control" name="couponActivityName" ng-model="formData.couponActivityName" placeholder="请输入优惠活动名称" required ng-maxlength="10">
+                              </div>
+                          </div>
+                          <div class="col-md-3 error" ng-if="(addForm.couponActivityName.$invalid && addForm.couponActivityName.$dirty) || submited">
+                              <span ng-if="addForm.couponActivityName.$error.required">请输入优惠活动名称</span>
+                              <span ng-if="addForm.couponActivityName.$error.maxlength">活动名称不能超过10个字</span>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-2">活动类型<span class="required">*</span></label>
+                        <div class="col-md-6">
+                            <label class="btn btn-info" ng-repeat="option in conditionOptions">
+                                <input type="radio" name="ruletype" class="ruletype" value="{{option.lookupKey}}" ng-model="formData.getCondition"> {{option.lookupValue}}
+                            </label>
+                        </div>
+                      </div>
+                      <div class="form-group" ng-if="formData.getCondition == 1 || formData.getCondition == 4">
+                        <label class="control-label col-md-2" style="font-size: 20px;font-weight: 600;">活动内容</label>
+                      </div>
+                      <div class="avtivityBox" ng-show="formData.getCondition == 1 || formData.getCondition == 4">
+                        <div class="avtivityContent" id="firstRule">
+                          <div class="form-group">
+                              <label class="control-label col-md-2">优惠规则名称<span class="required">*</span></label>
+                              <div class="col-md-6" ng-class="addForm.couponRuleId.$invalid && addForm.couponRuleId.$dirty ? 'has-error':''">
+                                  <div class="input-icon right">
+                                      <i class="fa tooltips" ng-class="addForm.couponRuleId.$invalid && addForm.couponRuleId.$dirty ? 'fa-exclamation':''"></i>
+                                      <select name="couponRuleId" class="form-control couponRuleId" required>
+                                          <option value="">请选择</option>
+                                          <option ng-repeat="option in couponRuleOptions" value="{{option.couponRuleId}}" ng-disabled="{{option.disabled}}">
+                                              {{option.couponRuleName}}
+                                          </option>
+                                      </select>
+                                  </div>
+                              </div>
+                              <div class="col-md-3 error" ng-if="(addForm.couponRuleId.$invalid && addForm.couponRuleId.$dirty) || submited">
+                                  <span ng-if="addForm.couponRuleId.$error.required">请输入优惠规则名称</span>
+                                  <span ng-if="addForm.couponRuleId.$error.maxlength">规则名称不能超过10个字</span>
+                              </div>
+                          </div>
+                          <activerule2></activerule2>
+                          <!-- <activerule3></activerule3> -->
+                          <activerulecommon></activerulecommon>
+                          <input type="hidden">
+                        </div>
+                      </div>
+                      <div class="form-group" style="margin-bottom:10px;" ng-if="formData.getCondition == 1 || formData.getCondition == 4">
+                        <label class="control-label col-md-2"> </label>
+                        <div class="col-md-6">
+                            <button class="btn btn-info addRule" type="button" ng-click="addRule()">
+                                <span></span>添加新规则
+                            </button>
+                        </div>
+                      </div>
+
+                      <activerule3 id="rule3" ng-show="formData.getCondition == 3"></activerule3>
+
+                      <div class="form-group" ng-if="formData.getCondition == 1 || formData.getCondition == 4">
+                        <label class="control-label col-md-2" style="font-size: 20px;font-weight: 600;">活动规则</label>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-2">活动开始时间<span class="required">*</span></label>
+                        <div class="col-md-6" ng-class="addForm.startTime.$dirty ? (addForm.startTime.$valid ? 'has-success': 'has-error') :''">
+                            <div class="input-group">
+                              <input type="text" class="form-control" name="startTime" onchange="" ng-model="formData.startTime" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',autoUpdateOnChanged:true,autoPickDate:true})" id="searchTm1" required/>
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-default" onclick="WdatePicker({el:'searchTm1',dateFmt:'yyyy-MM-dd HH:mm:ss',autoUpdateOnChanged:true,autoPickDate:true})"><i class="glyphicon glyphicon-calendar"></i></button>
+                              </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 error" ng-show="addForm.startTime.$invalid && (addForm.startTime.$dirty || submited)">
+                            <span ng-show="addForm.startTime.$error.required">请选择开始时间</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                      <label class="control-label col-md-2">活动结束时间<span class="required">*</span></label>
+                      <div class="col-md-6" ng-class="addForm.endTime.$dirty ? (addForm.endTime.$valid ? 'has-success': 'has-error') :''">
+                          <div class="input-group">
+                            <input type="text" class="form-control" name="endTime" onchange="" ng-model="formData.endTime" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',autoPickDate:true})" id="searchTm2" required/>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" onclick="WdatePicker({el:'searchTm2',dateFmt:'yyyy-MM-dd HH:mm:ss',autoPickDate:true})"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="col-md-3 error" ng-show="addForm.endTime.$invalid && (addForm.endTime.$dirty || submited)">
+                            <span ng-show="addForm.endTime.$error.required">请选择结束时间</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-2">优惠描述</label>
+                        <div class="col-md-6">
+                            <div class="input-icon right">
+                                <textarea class="form-control" name="activityDesc" ng-model="formData.activityDesc" cols="50" rows="5" ng-maxlength="400" placeholder="请输入描述内容" ></textarea>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-actions">
+                      <div class="col-md-offset-8 col-md-4">
+                          <button type="button" class="btn default" ui-sref="{{stateGoIndex}}">取消</button>
+                          <button type="submit" class="btn btn-info">新增</button>
+                      </div>
+                    </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+<style>
+  .ruletype {
+    width:15px;
+    height:15px;
+  }
+  .timeRange {
+    display: inline-block;
+    width:20%;
+    padding-right: 20px !important;
+  }
+  .avtivityContent {
+    border:1px solid #e5e5e5;
+    padding-top:10px;
+    margin-bottom:10px;
+    border-radius: 6px !important;
+    position: relative;
+  }
+  .delRule {
+    width:35px;
+    height:35px;
+    position: absolute;
+    top:15px;
+    right:10px;
+  }
+  .delRule>span {
+    margin-top:10px;
+    margin-left:5px;
+    font-size: 26px !important;
+  }
+  .addRule {
+    border-radius: 4px !important;
+    position: relative;
+    padding-left:32px;
+  }
+  .addRule>span {
+    width:34px;
+    height:34px;
+    background-image: url(img/jiahao.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+    top:0;
+    left: 0;
+  }
+</style>

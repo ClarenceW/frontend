@@ -1,0 +1,62 @@
+{
+  "iTotalRecords": 4,
+  "iTotalDisplayRecords": 4,
+  "aaData": [
+    {
+      "plate": "苏JV9K56",
+      "plateColor": "0",
+      "userCode": "13457186549",
+      "userName": "王瑞平",
+      "dclotName": "宝龙城市广场",
+      "regTime": "2017-08-01 09:52",
+      "startTime": "2017-11-01 09:52",
+      "endTime": "2017-11-01 13:01",
+      "updateTime": "2017-11-23 09:56",
+      "carType": "1",
+      "reason": "停车场内滋事",
+      "opUser": "admin"
+    },
+     {
+      "plate": "苏J9LV62",
+      "plateColor": "1",
+      "userCode": "13888754728",
+      "userName": "何鸣",
+      "dclotName": "宝龙城市广场",
+      "regTime": "2017-09-28 14:49",
+      "startTime": "2017-11-12 12:19",
+      "endTime": "2017-11-12 13:01",
+      "updateTime": "2017-11-23 09:56",
+      "carType": "0",
+      "reason": "欠费超过5次",
+      "opUser": "admin"
+    },
+     {
+      "plate": "苏JD23A3",
+      "plateColor": "2",
+      "userCode": "15054562388",
+      "userName": "薛晶",
+      "dclotName": "城投商务楼停车场",
+      "regTime": "2017-08-01 09:52",
+      "startTime": "2017-11-01 09:52",
+      "endTime": "2017-11-01 13:01",
+      "updateTime": "2017-11-25 09:56",
+      "carType": "1",
+      "reason": "其他",
+      "opUser": "admin"
+    },
+     {
+      "plate": "苏JS3427",
+      "plateColor": "3",
+      "userCode": "17057142311",
+      "userName": "夏奥",
+      "dclotName": "城投商务楼停车场",
+      "regTime": "2017-05-12 10:35",
+      "startTime": "2017-11-23 06:47",
+      "endTime": "2017-11-23 18:12",
+      "updateTime": "2017-11-23 09:56",
+      "carType": "0",
+      "reason": "欠费超过5次",
+      "opUser": "admin"
+    }
+  ]
+}

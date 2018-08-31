@@ -1,0 +1,44 @@
+<div class="row" block-ui="main">
+    <div class="col-md-12">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+                <li ng-if="titles.secTitle"><a href="javascript:;" ui-sref="{{stateGoIndex}}">{{titles.secTitle}}</a></li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">查看运营信息详情</div>
+            <div class="panel-body form">
+                <div class="format-height"></div>
+                <table class="table table-bordered table-hover" width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td width="19%" align="right"><font class="font-blue-deep"><strong>停车场编号:</strong></font></td>
+                            <td width="81%">{{formData.parklotCode}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>停车场名称:</strong></font></td>
+                            <td>{{formData.parklotName}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>运营时间:</strong></font></td>
+                            <td>{{formData.address}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>收费规则:</strong></font></td>
+                            <td>{{formData.payRuleContent}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>规则描述:</strong></font></td>
+                            <td>{{formData.description}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="text-align: right">
+                    <button type="button" class="btn" ui-sref="{{stateGoEdit}}">编辑</button>
+                    <button type="button" class="btn" ui-sref="{{stateGoIndex}}">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

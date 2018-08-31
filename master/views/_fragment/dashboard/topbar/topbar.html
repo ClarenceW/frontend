@@ -1,0 +1,126 @@
+<!-- BEGIN nav DIV -->
+<style type="text/css">
+    #top-menu .right.menu .add.dropdown .menu:after {
+        right: 67px;
+    }
+
+    .project-num {
+        position: absolute;
+        width: auto;
+        line-height: 12px;
+        background: #f75288;
+        border-radius: 10px !important;
+        padding: 2px 6px;
+        color: #FFF;
+        font-size: 10px;
+        border: 2px solid #FFF;
+        text-align: center;
+        transform: scale(0.875);
+        margin-top: -2px
+    }
+
+    @media only screen and (min-width: 1260px) and (max-width: 1420px) {
+        #top-menu .left.menu a.item {
+            margin: 10px 2px
+        }
+    }
+
+    .frequently-projects.menu {
+        width: 114px !important;
+        height: 400px !important;
+    }
+
+    .frequently-projects.menu:after {
+        background: #F6F6F6 !important;
+    }
+
+    .frequently-used-projects {
+        position: absolute;
+        width: 361px;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 12;
+        background: #FFF;
+        border-right: 1px solid #DDD;
+    }
+
+    .menu-item-wrapper {
+        width: 114px; /*在border-box盒模型下*/
+        padding-left: 0px;
+        height: 100%;
+        background: #F6F6F6;
+    }
+
+    .menu-item-wrapper .item:last-child {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    }
+
+    .mart-logo {
+        padding: 0 !important;
+        height: 60px;
+    }
+
+    .mart-logo a {
+        padding: 5px 10px 0 !important;
+        height: 60px;
+    }
+
+    .mart-logo img {
+        height: 50px;
+    }
+
+    .mart-logo .vertical-line {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        margin-top: 20px;
+        height: 20px;
+        border-left: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    
+    .sub-title2{
+        font-size: 20px;
+        color: white;
+        font-family: "微软雅黑";
+        font-weight: bold;
+        padding-left: 5px;
+        padding-top: 10px;
+        vertical-align: middle;
+    
+    }
+    .sub-logo {
+    	display: inline-block;
+    	vertical-align: middle;
+    }
+</style>
+<div class="ui fixed transparent main menu" id="top-menu">
+    <!-- ngIf: USER -->
+    <a class="left logo" target="_self" style="left: 1px" href="javascript:;" ng-click="sideFirstMenu()">
+        <div>
+	    	<span class="sub-logo" style="height:38px;">
+          <img ng-if="hasSidebar" src="img/logo-light.png" height="38" >
+          <img ng-if="!hasSidebar" src="img/logo-other.png" style="margin-top:5px;" width="148">
+	    	</span>
+	    </div>
+    </a>
+    <a class="left title" target="_self" style="left: 1px" href="javascript:;">
+        <span class="sub-title2">城市停车场运营管理平台</span>
+    </a>
+    <div class="right menu">
+        <div class="ui dropdown item" id="user_dropdown">
+            <div class="menu frequently-projects ui transition" style="display:none;">
+                <div class="menu-item-wrapper">
+                    <a class="item" style="border-bottom: 1px solid rgba(0, 0, 0, 0.0470588)" ng-click="$emit('modifyPwd')"><i class="glyphicon glyphicon-edit font-blue-linewell"></i>修改密码</a>
+                    <a class="item" style="border-bottom: 1px solid rgba(0, 0, 0, 0.0470588)" ng-click="$emit('logout')"><i class="fa fa-sign-out icon"></i>退出</a>
+                </div>
+            </div>
+            <a class="ui avatar image message-breath" title="{{$storage.user.userCode}}" href="javascript:;">
+                <img src="img/avatar-1.png">
+            </a>
+            <i class="fa fa-caret-down dropdown icon" id="dropdown-icon"></i>
+        </div>
+    </div>
+</div>
+<!-- END nav DIV -->

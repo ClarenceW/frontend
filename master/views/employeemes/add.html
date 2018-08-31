@@ -1,0 +1,168 @@
+<div class="row" block-ui="main">
+    <div class="col-md-12">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+                <li ng-if="titles.secTitle"><a href="javascript:;" ui-sref="{{stateGoIndex}}">{{titles.secTitle}}</a></li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">新增员工</div>
+            <div class="panel-body form">
+                <form name="addForm" ng-submit="submitForm(addForm.$valid)" class="form-horizontal" novalidate>
+                    <div class="format-height"></div>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-2">工号<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="addForm.code.$invalid && addForm.code.$dirty ? 'has-error':''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.code.$invalid && addForm.code.$dirty ? 'fa-exclamation':''"></i>
+                                    <input type="text" class="form-control" name="code" ng-model="formData.code" placeholder="请输入工号" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 error" ng-if="addForm.code.$invalid && (addForm.code.$dirty || submited)">
+                                <span ng-if="addForm.code.$error.required">请输入工号</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">手机号<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="addForm.phoneNumber.$invalid && (addForm.phoneNumber.$dirty || submited) ? 'has-error':''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.phoneNumber.$invalid && (addForm.phoneNumber.$dirty || submited) ? 'fa-exclamation':''"></i>
+                                    <input type="text" class="form-control" name="phoneNumber" ng-model="formData.phoneNumber" placeholder="请输入手机号（必填项）" required ng-maxlength="11" ng-pattern="/^0?1[3|4|5|7|8][0-9]\d{8}$/">
+                                </div>
+                            </div>
+                            <div class="col-md-3 error" ng-if="addForm.phoneNumber.$invalid && (addForm.phoneNumber.$dirty || submited)">
+                                <span ng-if="addForm.phoneNumber.$error.required">请输入手机号</span>
+                                <span ng-show="addForm.phoneNumber.$error.maxlength">手机号不能超过11位</span>
+                                <span ng-show="addForm.phoneNumber.$error.pattern">手机号格式错误</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">员工姓名<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="addForm.name.$invalid && (addForm.name.$dirty || submited) ? 'has-error':''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.name.$invalid && (addForm.name.$dirty || submited) ? 'fa-exclamation':''"></i>
+                                    <input type="text" class="form-control" name="name" placeholder="请输入员工姓名（必填项，不能超过16个汉字）" ng-model="formData.name"
+                                        required ng-maxlength="16">
+                                </div>
+                            </div>
+                            <div class="col-md-3 error" ng-if="addForm.name.$invalid && (addForm.name.$dirty || submited)">
+                                <span ng-if="addForm.name.$error.required">请输入员工姓名</span>
+                                <span ng-show="addForm.name.$error.maxlength">员工姓名不能超过16个汉字</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">部门名称 <span class="required">*</span></label>
+                            <div class="col-md-7">
+                                <div class="input-icon right">
+                                    <input type="text" class="form-control"  name="deptCode"  ng-model="tempData.deptCode" required="required" readonly="readonly" data-toggle="modal" data-target="#selDeptModal">
+                                    <i class="glyphicon glyphicon-search" data-toggle="modal" data-target="#selDeptModal"></i>
+                                    <input type="hidden" name="deptCode" id="deptCode" ng-model="formData.deptCode" />
+                                </div>
+                            </div>
+                             <div class="col-md-3 error" ng-show="addForm.parentname.$invalid && *(addForm.parentname.$dirty || submited)">
+                                <span ng-show="addForm.parentname.$error.required">请选部门</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">员工工号<span class="required">*</span></label>
+                            <div class="col-md-7" ng-class="addForm.usercode.$dirty ? (addForm.usercode.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.usercode.$dirty ? (addForm.usercode.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <input type="text" class="form-control" name="usercode"  ng-model="formData.usercode"  required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 info" ng-hide="addForm.usercode.$dirty">
+                                <span>员工工号不能为空</span>
+                            </div>
+                            <div class="col-md-3 error" ng-show="addForm.usercode.$invalid && addForm.usercode.$dirty">
+                                <span ng-show="addForm.usercode.$error.required">请输入员工工号</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="control-label col-md-2">性别</label>
+                            <div class="col-md-7" ng-class="addForm.sex.$dirty ? (addForm.sex.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <select name="sex" class="form-control" ng-model="formData.sex">
+                                        <option value="">请选择</option>
+                                        <option ng-repeat="option in sexTypes" value="{{option.lookupkey}}">
+                                            {{option.lookupvalue}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 info" ng-hide="addForm.sex.$dirty">
+                                <span>&nbsp;</span>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="form-group">
+                            <label class="control-label col-md-2">选择岗位<span class="required">*</span></label>
+                            <div class="col-md-7" ng-class="addForm.postcodes.$dirty ? (addForm.postcodes.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <select name="postcodes" class="form-control" ng-model="formData.postcodes" required>
+                                        <option value="">请选择</option>
+                                        <option ng-repeat="option in positionsOptions" value="{{option.postcode}}">
+                                            {{option.postname}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 info" ng-hide="addForm.postcodes.$dirty">
+                                <span>选择岗位</span>
+                            </div>
+                            <div class="col-md-3 error" ng-show="addForm.postcodes.$invalid && addForm.postcodes.$dirty">
+                                <span ng-show="addForm.postcodes.$error.required">请选择岗位</span>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="form-actions">
+                            <div class="col-md-offset-9 col-md-3">
+                                <button type="submit" class="btn btn-info">保存</button>
+                                <button type="button" class="btn default" ui-sref="{{stateGoIndex}}">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="selDeptModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					<i class="glyphicon glyphicon-home"></i> 选择部门
+				</h4>
+			</div>
+			<div class="modal-body">
+				<div class="deptTreeContainer">
+					 <div class="scroller" data-height="300px">
+                        <div id="dept_tree" class="tree-demo">
+                        	
+                        </div>
+                    </div>
+				</div>
+			</div>
+			<div class="modal-footer" id="modal-footer">
+				
+				<button type="button" class="btn btn-primary" ng-click="selDept();">
+					确定
+				</button>
+				<button type="button" id="cancelModelBtn" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

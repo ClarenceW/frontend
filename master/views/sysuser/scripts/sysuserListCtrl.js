@@ -1,0 +1,171 @@
+'use strict';
+angular.module("parkingApp").controller('SysuserListCtrl',
+    //["$rootScope", "$scope", "$http", "$state", "growl", "Setting", "$log", "customerService", "roleService"]
+    function ($timeout, $rootScope, $scope, $http, $state, growl, Setting, $log, customerService, StateName, sessionCache, userService) {
+        var indexId = "#sysuser-index";
+        var tableId = indexId + " #sysuser-table";
+        var checkboxesCls = tableId + " .checkboxes";
+        var oTable = null;
+        var nRow = null, aData = null;
+        $scope.formData = {};
+        $scope.stateGoDetail = StateName.user.detail;
+        $scope.stateGoEdit = StateName.user.edit;
+        $scope.stateGoAdd = StateName.user.add;
+        $scope.stateGoIndex = StateName.user.index;
+
+        var reload = function () {
+            if (customerService.isDataTableExist(tableId)) {
+                oTable.api().ajax.reload(null, true);
+            }
+        };
+
+        var initTable = function () {
+            oTable = $(tableId).dataTable($.extend(UcUtils.getTableDefaultOptions(), {
+                "ajax": function (data, callback, settings) {
+                    if ($scope.formData.userCode) {
+                        data.userCode = $scope.formData.userCode;
+                    }
+                    userService.reqUserPagination(data).then(function (resp) {
+                        callback(resp)
+                    }, function (msg) {
+                        growl.addErrorMessage(msg, {ttl: 2000});
+                    });
+                },
+                "columns": [
+                    {"defaultContent": ""},
+                    {"data": "userCode"},
+                    {"data": "userName"},
+                    {"data": "roleName"},
+                   /* {"data": "userType"},*/
+                    // {"data": "deptName"},
+                    {"data": "createUser"},
+                    {"data": "registerTime"}
+                ],
+                "rowCallback": function (nRow, aData, iDisplayIndex) {
+                    $('td:eq(0)', nRow).html("<input type=\"checkbox\" class=\"checkboxes\" value=\"1\"/>");
+                   // $('td:eq(4)', nRow).html(sessionCache.getUserType(aData.userType));
+                    return nRow;
+                },
+                "drawCallback": function () {
+                    customerService.initUniform(tableId);
+                    customerService.initTitle();
+                }
+            }));
+        };
+
+        $scope.toSearch = function () {
+            reload();
+        };
+        $scope.toReset = function () {
+            $scope.formData.userCode = "";
+            reload();
+        };
+
+        $scope.toDetail = function () {
+            var count = 0;
+            var aData;
+            $(checkboxesCls).each(function () {
+                if ($(this).prop("checked")) {
+                    nRow = $(this).parents('tr')[0];
+                    aData = oTable.fnGetData(nRow);
+                    count++;
+                }
+            });
+            if (count === 1) {
+                $state.go($scope.stateGoDetail, {userCode: aData.userCode});
+            } else {
+                customerService.openDetailConfirmModal();
+            }
+        };
+
+        $scope.toEdit = function () {
+            var count = 0;
+            var aData;
+            $(checkboxesCls).each(function () {
+                if ($(this).prop("checked")) {
+                    nRow = $(this).parents('tr')[0];
+                    aData = oTable.fnGetData(nRow);
+                    count++;
+                }
+            });
+            if (count === 1) {
+                $state.go($scope.stateGoEdit, {userCode: aData.userCode});
+            } else {
+                customerService.openDetailConfirmModal();
+            }
+        };
+
+        $scope.toDelete = function () {
+            var count = 0;
+            var aData;
+            $(checkboxesCls).each(function () {
+                if ($(this).prop("checked")) {
+                    nRow = $(this).parents('tr')[0];
+                    aData = oTable.fnGetData(nRow);
+                    count++;
+                }
+            });
+            if (count === 1) {
+                customerService.modalInstance().result.then(function (message) {
+                    var data = {};
+                    data.userCode = aData.userCode;
+                    userService.delSysUser(data).then(function (msg) {
+                      if (msg.code == '000000') {
+                          growl.addInfoMessage("删除成功！", {ttl: 2000});
+                          reload();
+                      } else {
+                          growl.addInfoMessage(msg.msg, {ttl: 2000});
+                      }
+                    }, function (msg) {
+                        growl.addInfoMessage(msg, {ttl: 2000});
+                    });
+                }, function () {
+                    $log.debug('Modal dismissed at: ' + new Date());
+                });
+            } else {
+                customerService.openDeleteConfirmModal();
+            }
+        };
+
+        $scope.toReset = function () {
+          var count = 0;
+          var aData;
+          $(checkboxesCls).each(function () {
+              if ($(this).prop("checked")) {
+                  nRow = $(this).parents('tr')[0];
+                  aData = oTable.fnGetData(nRow);
+                  count++;
+              }
+          });
+          if (count === 1) {
+            if(sessionCache.getUserCode() == 'admin') {
+              customerService.modalResetInstance().result.then(function (message) {
+                var data = {};
+                data.userCode = aData.userCode;
+                data.resetPwd = $.md5('123456');
+                userService.resetPwd(data).then(function (msg) {
+                  if (msg.code == '000000') {
+                      growl.addInfoMessage("重置密码成功！", {ttl: 2000});
+                      reload();
+                  } else {
+                      growl.addInfoMessage(msg.msg, {ttl: 2000});
+                  }
+                }, function (msg) {
+                    growl.addInfoMessage(msg, {ttl: 2000});
+                });
+              }, function () {
+                  $log.debug('Modal dismissed at: ' + new Date());
+              });
+            }else {
+              growl.addInfoMessage("当前用户无重置密码权限！", {ttl: 2000});
+            }
+          } else {
+              customerService.openDeleteConfirmModal();
+          }
+      };
+
+        $timeout(function () {
+            initTable();
+        }, 0);
+
+    });

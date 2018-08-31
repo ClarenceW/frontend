@@ -1,0 +1,66 @@
+{
+	"iTotalDisplayRecords": 6,
+	"iTotalRecords": 6,
+	"aaData": [
+		{
+			"paymentChannel": "盐城停车",
+			"collectionCompany": "捷顺",
+			"accountPeriod": "02-07+3",
+			"balanceAccount": "3000",
+			"rate": "3‰",
+			"rechargeAccount": "2751.4",
+			"balanceType": "正常结单",
+			"balanceStatus": "已确认"
+		},
+		{
+			"paymentChannel": "盐城停车",
+			"collectionCompany": "立方",
+			"accountPeriod": "02-07+3",
+			"balanceAccount": "3200",
+			"rate": "3‰",
+			"rechargeAccount": "3198.6",
+			"balanceType": "正常结单",
+			"balanceStatus": "已确认"
+		},
+		{
+			"paymentChannel": "盐城停车",
+			"collectionCompany": "ETCP",
+			"accountPeriod": "02-07+3",
+			"balanceAccount": "1500",
+			"rate": "3‰",
+			"rechargeAccount": "1458.6",
+			"balanceType": "搁置结单",
+			"balanceStatus": "已确认"
+		},
+		{
+			"paymentChannel": "捷顺",
+			"collectionCompany": "盐城停车",
+			"accountPeriod": "02-07+3",
+			"balanceAccount": "1750",
+			"rate": "3‰",
+			"rechargeAccount": "1645.7",
+			"balanceType": "正常结单",
+			"balanceStatus": "已确认"
+		},
+		{
+			"paymentChannel": "立方",
+			"collectionCompany": "盐城停车",
+			"accountPeriod": "02-07+3",
+			"balanceAccount": "1120",
+			"rate": "3‰",
+			"rechargeAccount": "1050.3",
+			"balanceType": "搁置结单",
+			"balanceStatus": "已确认"
+		},
+		{
+			"paymentChannel": "ETCP",
+			"collectionCompany": "盐城停车",
+			"accountPeriod": "02-07+3",
+			"balanceAccount": "1350",
+			"rate": "3‰",
+			"rechargeAccount": "1345.5",
+			"balanceType": "正常结单",
+			"balanceStatus": "已确认"
+		}
+	]
+}

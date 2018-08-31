@@ -1,0 +1,167 @@
+[
+    {	
+    	"id":1,
+        "reportDate": "2018-02-10",
+        "companyName": "立方",
+        "parkingName": "城投商务楼停车场",
+        "berthTotal": 150,
+        "chargeTotal":440000,
+        "parkchargeTotal": 400000,
+        "orderchargeTotal": 50000,
+        "berthAve": 2933
+    },
+    {	
+    	"id":2,
+        "reportDate": "2018-02-10",
+        "companyName": "捷顺",
+        "parkingName": "宝龙城市广场",
+        "berthTotal": 200,
+        "chargeTotal":420000,
+        "parkchargeTotal": 330000,
+        "orderchargeTotal": 35000,
+        "berthAve": 2100
+    },
+    {	
+    	"id":3,
+        "reportDate": "2018-02-10",
+        "companyName": "ETC",
+        "parkingName": "国际创投中心",
+        "berthTotal": 210,
+        "chargeTotal":390000,
+        "parkchargeTotal": 480000,
+        "orderchargeTotal": 39000,
+        "berthAve": 1.50
+    },
+    {	
+    	"id":4,
+        "reportDate": "2018-02-10",
+        "companyName": "捷顺",
+        "parkingName": "欧洲风情街",
+        "berthTotal": 150,
+        "chargeTotal":450000,
+        "parkchargeTotal": 630000,
+        "orderchargeTotal": 61000,
+        "berthAve": 3000
+    },
+   	{	
+    	"id":5,
+        "reportDate": "2018-02-10",
+        "companyName": "立方",
+        "parkingName": "南金鹰",
+        "berthTotal": 130,
+        "chargeTotal":390000,
+        "parkchargeTotal": 520000,
+        "orderchargeTotal": 41000,
+        "berthAve": 3000
+    },
+     {	
+    	"id":6,
+        "reportDate": "2018-02-10",
+        "companyName": "捷顺",
+        "parkingName": "市政务服务中心",
+        "berthTotal": 140,
+        "chargeTotal":520000,
+        "parkchargeTotal": 490000,
+        "orderchargeTotal": 55000,
+        "berthAve": 3885
+    },
+    {	
+    	"id":7,
+        "reportDate": "2018-02-10",
+        "companyName": "城投集团",
+        "parkingName": "第三人民医院",
+        "berthTotal": 13000,
+        "chargeTotal":390000,
+        "parkchargeTotal": 390000,
+        "orderchargeTotal": 36000,
+        "berthAve": 3000
+    },
+    {	
+    	"id":8,
+        "reportDate": "2018-02-09",
+        "companyName": "捷顺",
+        "parkingName": "南金鹰",
+        "berthTotal": 19000,
+        "chargeTotal":400000,
+        "parkchargeTotal": 632500,
+        "orderchargeTotal": 53500,
+        "berthAve": 2105
+    },
+    {	
+    	"id":9,
+        "reportDate": "2018-02-09",
+        "companyName": "立方",
+        "parkingName": "宝龙城市广场",
+        "berthTotal": 21000,
+        "chargeTotal":653100,
+        "parkchargeTotal": 490000,
+        "orderchargeTotal": 52000,
+        "berthAve": 3011
+    },
+   	{	
+    	"id":10,
+        "reportDate": "2018-02-09",
+        "companyName": "城投集团",
+        "parkingName": "欧洲风情街",
+        "berthTotal": 11000,
+        "chargeTotal":245100,
+        "parkchargeTotal": 350000,
+        "orderchargeTotal": 39000,
+        "berthAve": 2310
+    },
+     {	
+    	"id":11,
+        "reportDate": "2018-02-09",
+        "companyName": "ETC",
+        "parkingName": "中南城",
+        "berthTotal": 13000,
+        "chargeTotal":390000,
+        "parkchargeTotal": 450000,
+        "orderchargeTotal": 50000,
+        "berthAve": 3000
+    },
+    {	
+    	"id":12,
+        "reportDate": "2018-02-09",
+        "companyName": "立方",
+        "parkingName": "南金鹰",
+        "berthTotal": 19000,
+        "chargeTotal":475000,
+        "parkchargeTotal": 550000,
+        "orderchargeTotal": 49000,
+        "berthAve": 2500
+    },
+    {	
+    	"id":13,
+        "reportDate": "2018-02-09",
+        "companyName": "捷顺",
+        "parkingName": "新都社区商务楼",
+        "berthTotal": 21000,
+        "chargeTotal":420000,
+        "parkchargeTotal": 400000,
+        "orderchargeTotal": 43000,
+        "berthAve": 2000
+    },
+    {	
+    	"id":14,
+        "reportDate": "2018-02-09",
+        "companyName": "城投集团",
+        "parkingName": "欧洲风情街",
+        "berthTotal": 18000,
+        "chargeTotal":720000,
+        "parkchargeTotal": 450000,
+        "orderchargeTotal": 50000,
+        "berthAve": 4000
+    },
+   	{	
+    	"id":15,
+        "reportDate": "2018-02-09",
+        "companyName": "ETCP",
+        "parkingName": "市政服务中心",
+        "berthTotal": 14000,
+        "chargeTotal":420000,
+        "parkchargeTotal": 390000,
+        "orderchargeTotal": 48000,
+        "berthAve": 3000
+    }
+]

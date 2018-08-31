@@ -1,0 +1,180 @@
+<div id="sectionEditIndex" class="row" block-ui="main">
+    <div class="col-md-12">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li><i class="fa fa-home"></i><a href="javascript:;">基础配置</a><i class="fa fa-angle-right"></i></li>
+                <li><a href="javascript:;" ui-sref="{{stateGoIndex}}">路段管理</a></li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">编辑路段</div>
+            <div class="panel-body form">
+                <form name="editForm" ng-submit="submitForm(editForm.$valid)" class="form-horizontal" novalidate>
+                    <div class="format-height"></div>
+                    <div class="alert alert-danger" ng-show="alertDanger">
+                        <div class="close" ng-click="alertClose()"></div>
+                        您输入的信息存在错误，请先检查.
+                    </div>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-2">路段编号<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="editForm.sectionCode.$dirty ? (editForm.sectionCode.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="editForm.sectionCode.$dirty ? (editForm.sectionCode.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <input type="text" class="form-control" name="sectionCode" ng-model="formData.sectionCode" ng-required="true" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-3 error" ng-show="editForm.sectionCode.$invalid && editForm.sectionCode.$dirty">
+                                <span ng-show="editForm.sectionCode.$error.required">请输入路段编号</span>
+                                <span ng-show="editForm.sectionCode.$error.maxlength">路段编号不能超过50个字</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">名称</label>
+                            <div class="col-md-6" ng-class="editForm.name.$dirty ? (editForm.name.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="editForm.name.$dirty ? (editForm.name.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <input type="text" class="form-control" name="name" ng-model="formData.name" ng-maxlength="20">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">地址</label>
+                            <div class="col-md-6" ng-class="editForm.address.$dirty ? (editForm.address.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="editForm.address.$dirty ? (editForm.address.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <input type="text" class="form-control" name="address" ng-model="formData.address" ng-maxlength="20">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">泊位数量<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="editForm.berthNum.$dirty ? (editForm.berthNum.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="editForm.berthNum.$dirty ? (editForm.berthNum.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <input type="text" class="form-control" name="berthNum" ng-model="formData.berthNum" ng-maxlength="100" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 info" ng-hide="editForm.berthNum.$dirty">
+                                <span>泊位数量不能为空</span>
+                            </div>
+                            <div class="col-md-3 error" ng-show="editForm.berthNum.$invalid && editForm.berthNum.$dirty">
+                                <span ng-show="editForm.berthNum.$error.required">请输入泊位数量</span>
+                                <span ng-show="editForm.berthNum.$error.maxlength">格式错误，不能超过100个字符</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">行政区域编号</label>
+                            <div class="col-md-6" ng-class="editForm.districtCode.$dirty ? (editForm.districtCode.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="editForm.districtCode.$dirty ? (editForm.districtCode.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <input type="text" class="form-control" name="districtCode" ng-model="formData.districtCode">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">区域编号</label>
+                            <div class="col-md-6" ng-class="editForm.areaCode.$dirty ? (editForm.areaCode.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="editForm.areaCode.$dirty ? (editForm.areaCode.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <input type="text" class="form-control" name="areaCode" ng-model="formData.areaCode">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">运营公司编号</label>
+                            <div class="col-md-6" ng-class="editForm.companyCode.$dirty ? (editForm.companyCode.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="editForm.companyCode.$dirty ? (editForm.companyCode.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <input type="text" class="form-control" name="companyCode" ng-model="formData.companyCode">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">纬度<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="editForm.lat.$dirty ? (editForm.lat.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-group">
+                                    <input type="text" ng-model="formData.lat"
+                                           id="lat" class="form-control" name="lat" ng-maxlength="20" ng-pattern="/^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$/"
+                                           placeholder="120.000000" required>
+                                        <span class="input-group-btn" id="mapBtnSpan" ng-click="openMap($event)">
+												<button id="mapOpenBtn" class="uc-position-map-btn" type="button"><span></span>地图</button>
+                                      </span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 info" ng-hide="editForm.lat.$dirty">
+                                <span>纬度不能为空</span>
+                            </div>
+                            <div class="col-md-3 error" ng-show="editForm.lat.$invalid && editForm.lat.$dirty">
+                                <span ng-show="editForm.lat.$error.required">请输入纬度</span>
+                                <span ng-show="editForm.lat.$error.pattern">格式错误，仅支持数字(可以有小数)</span>
+                                <span ng-show="editForm.lat.$error.maxlength">纬度不能超过20个字符</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">经度<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="editForm.lng.$dirty ? (editForm.lng.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="editForm.lng.$dirty ? (editForm.lng.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <input type="text" class="form-control" placeholder="30.000000" ng-maxlength="20" name="lng"
+                                           ng-pattern="/^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$/" ng-model="formData.lng" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 info" ng-hide="editForm.lng.$dirty">
+                                <span>经度不能为空</span>
+                            </div>
+                            <div class="col-md-3 error" ng-show="editForm.lng.$invalid && editForm.lng.$dirty">
+                                <span ng-show="editForm.lng.$error.required">请输入经度</span>
+                                <span ng-show="editForm.lng.$error.pattern">格式错误，仅支持数字(可以有小数)</span>
+                                <span ng-show="editForm.lng.$error.maxlength">经度不能超过20个字符</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">运营情况<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="editForm.isOp.$dirty ? (editForm.isOp.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <select name="isOp" class="form-control" ng-model="formData.isOp" ng-required="true">
+                                        <option value="">请选择</option>
+                                        <option ng-repeat="option in isOpOption" value="{{option.lookupKey}}">
+                                            {{option.lookupValue}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 info" ng-hide="editForm.isOp.$dirty">
+                                <span>运营情况必选项</span>
+                            </div>
+                            <div class="col-md-3 error" ng-show="editForm.isOp.$error.required && editForm.isOp.$dirty">
+                                请选择运营情况
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <div class="col-md-offset-9 col-md-3">
+                                <button type="submit" class="btn btn-info">保存</button>
+                                <button type="button" class="btn default" ui-sref="{{stateGoIndex}}">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div id="mapWrapper" ng-show="mapShow" ng-style="{'top': mapContainerStyle.top, 'left': mapContainerStyle.left}">
+                    <div class="mapClose" ng-click="mapClose()"></div>
+                    <div id="mapContainer" ng-style="{'width': mapContainerStyle.width, 'height': mapContainerStyle.height}">
+                        <div id="tip">
+                            <input type="text" id="keyword" name="keyword" value="请输入关键字：(选定后搜索)" onfocus='this.value=""'/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

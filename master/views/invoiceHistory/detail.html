@@ -1,0 +1,132 @@
+<div class="row" block-ui="main" id="invoiceHistory-detail">
+  <div class="col-md-12">
+      <div class="page-bar">
+          <ul class="page-breadcrumb">
+              <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+              <li ng-if="titles.secTitle"><a href="javascript:;"  ui-sref="{{stateGoIndex}}">{{titles.secTitle}}</a></li>
+          </ul>
+      </div>
+      <div class="panel panel-default">
+          <div class="panel-heading">查看开票历史详情</div>
+          <div class="panel-body form">
+              <div class="format-height"></div>
+              <div class="parkpay-record">
+                <div class="parkpay-table">
+                  <table class="table table-bordered table-hover" width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tbody>
+                      <tr>
+                        <td width="25%" align="right"><font class="font-blue-deep"><strong>记录编号</strong></font></td>
+                        <td width="75%">{{formData.recordCode}}</td>
+                      </tr>
+                      <tr>
+                          <td width="25%" align="right"><font class="font-blue-deep"><strong>手机号</strong></font></td>
+                          <td width="75%">{{formData.userCode}}</td>
+                      </tr>
+                      <tr>
+                          <td align="right"><font class="font-blue-deep"><strong>申领发票金额</strong></font></td>
+                          <td>{{formData.invoicePrice}}</td>
+                      </tr>
+                      <tr>
+                          <td align="right"><font class="font-blue-deep"><strong>发票抬头</strong></font></td>
+                          <td>{{formData.invoiceRise}}</td>
+                      </tr>
+                      <tr>
+                          <td align="right"><font class="font-blue-deep"><strong>税号</strong></font></td>
+                          <td>{{formData.invoiceTfn}}</td>
+                      </tr>
+                      <tr>
+                          <td align="right"><font class="font-blue-deep"><strong>发票内容</strong></font></td>
+                          <td>{{formData.invoiceInfo}}</td>
+                      </tr>
+                      <tr>
+                          <td align="right"><font class="font-blue-deep"><strong>邮箱</strong></font></td>
+                          <td>{{formData.recvEmail}}</td>
+                      </tr>
+                      <tr>
+                          <td align="right"><font class="font-blue-deep"><strong>申请时间</strong></font></td>
+                          <td>
+                            {{formData.applicationTime | date : 'yyyy-MM-dd HH:mm:ss'}}
+                          </td>
+                      </tr>
+                      <tr>
+                          <td align="right"><font class="font-blue-deep"><strong>状态</strong></font></td>
+                          <td>
+                            {{formData.invoiceStatus}}
+                          </td>
+                      </tr>
+                      <tr ng-if="formData.invoicestatus == 1">
+                          <td align="right"><font class="font-blue-deep"><strong>开票时间</strong></font></td>
+                          <td>
+                            {{formData.invoiceTime | date : 'yyyy-MM-dd HH:mm:ss'}}
+                          </td>
+                      </tr>
+                      <tr ng-if="formData.invoicestatus == 2">
+                          <td align="right"><font class="font-blue-deep"><strong>失败原因</strong></font></td>
+                          <td>
+                            {{formData.reason}}
+                          </td>
+                      </tr>
+                      </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="">
+                <button class="btn blue-madison parkpay-btn" ng-click="toChargeRecord()">
+                    停车缴费记录
+                </button>
+              </div>
+              <table class="table table-bordered table-hover evidence_table" id="chargerecord-table"
+                     ng-if="chargerecord">
+                  <thead>
+                  <tr>
+                      <th>交易单号</th>
+                      <th>车牌</th>
+                      <th>停车场</th>
+                      <th>实收金额（元）</th>
+                      <th>到账时间</th>
+                  </tr>
+                  </thead>
+                  <tbody></tbody>
+              </table>
+              <div class="">
+                  <button class="btn blue-madison parkpay-btn" ng-click="toMonthCardRecord()">
+                      月卡购买记录
+                  </button>
+                </div>
+                <table class="table table-bordered table-hover evidence_table" id="monthcardrecord-table"
+                       ng-if="monthcardrecord">
+                    <thead>
+                    <tr>
+                        <th>交易单号</th>
+                        <th>车牌</th>
+                        <th>月卡编号</th>
+                        <th>购买金额（元）</th>
+                        <th>购买时间</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+              <div style="text-align: right">
+                  <button type="button" class="btn" ng-click="back();">关闭</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<style>
+  .parkpay-record {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .parkpay-table {
+      width: 100%;
+      flex: 0 1 auto;
+
+  }
+
+  .parkpay-btn {
+      margin: 10px auto 10px;
+  }
+</style>

@@ -1,0 +1,60 @@
+<div id="payType-charge-index" block-ui="main">
+    <!-- BEGIN PAGE HEADER-->
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a></li>
+            <li ng-if="titles.secTitle"><i class="fa fa-angle-right"></i><a href="javascript:;">{{titles.secTitle}}</a></li>
+            <li ng-if="titles.thirdTitle"><i class="fa fa-angle-right"></i><a href="javascript:;">{{titles.thirdTitle}}</a></li>
+        </ul>
+    </div>
+    <!-- END PAGE HEADER-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="selectbox">
+                <ul class="option">
+                    <div class="form-inline">
+                        <div class="form-group form-group-sm">
+                            运营公司名称： <input class="form-control" name="companyName" type="text" ng-model="formData.companyName">
+                        </div>
+                        <div class="form-group form-group-sm">
+                            停车场名称： <input class="form-control" name="parkingName" type="text" ng-model="formData.parkingName">
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn blue-madison search" ng-click="toSearch()">查 询</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn default-madison search" ng-click="toReset()">重 置</button>
+                        </div>
+                    </div>
+                </ul>
+                <div id="ucSelectBoxWrapper" style="padding: 0px;"></div>
+            </div>
+            <div class="buttonbox">
+                <button class="btn btn-sm btn-default" ng-click="exportData();">
+                    <span class="fa fa-file-excel-o font-blue-linewell"></span> 导出
+                </button>
+            </div>
+            <table class="table table-bordered table-hover" id="payType-charge-table">
+                <thead>
+                <tr>
+                    <th class="table-checkbox">
+                        <input type="checkbox" class="group-checkable" style="text-align: right;" data-set="#payType-charge-table .checkboxes"/>
+                    </th>
+                    <th>报表日期</th>
+                    <th>运营公司名称</th>
+                    <th>停车场名称</th>
+                    <th>收费总额</th>
+                    <th>支付宝总额</th>
+                    <th>微信总额</th>
+                    <th>钱包总额</th>
+                    <th>现金总额</th>
+                    <th>银联总额</th>
+                    <th>虚拟车卡总额</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

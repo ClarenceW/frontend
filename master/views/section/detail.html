@@ -1,0 +1,55 @@
+<div class="row" block-ui="main">
+    <div class="col-md-12">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li><i class="fa fa-home"></i><a href="javascript:;">基础配置</a><i class="fa fa-angle-right"></i></li>
+                <li><a href="javascript:;">路段管理</a></li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">查看路段详情</div>
+            <div class="panel-body form">
+                <div class="format-height"></div>
+                <table class="table table-bordered table-hover" width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td width="19%" align="right"><font class="font-blue-deep"><strong>路段编号:</strong></font></td>
+                        <td width="81%">{{formData.sectionCode}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>路段名称:</strong></font></td>
+                        <td>{{formData.name}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>地址:</strong></font></td>
+                        <td>{{formData.address}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>纬度:</strong></font></td>
+                        <td>{{formData.lat}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>经度:</strong></font></td>
+                        <td>{{formData.lng}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>泊位数量:</strong></font></td>
+                        <td>{{formData.berthNum}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>运营情况:</strong></font></td>
+                        <td>{{formData.isOp}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>更新时间:</strong></font></td>
+                        <td>{{formData.sysTime}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div style="text-align: right">
+                    <button type="button" class="btn" ui-sref="{{stateGoIndex}}">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

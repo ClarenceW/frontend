@@ -1,0 +1,105 @@
+{
+	"iTotalDisplayRecords": 3009,
+	"iTotalRecords": 3009,
+	"aaData": [
+		{
+			"plate": "苏J 345B5",
+			"account": "15657181569",
+			"parklotname": "华邦西厦",
+      "carintime": "2017-05-24 06:08",
+      "carinpic": null,
+      "carouttime": "2017-05-24 09:08",
+      "caroutpic": null,
+      "order":"是"
+		},
+		{
+			"plate": "苏J M952W",
+			"account": "18338334943",
+			"parklotname": "宝龙城市广场",
+      "carintime": "2017-06-24 06:08",
+      "carinpic": null,
+      "carouttime": "2017-06-24 09:08",
+      "caroutpic": null,
+      "order":"是"
+		},
+		{
+			"plate": "苏J MA968",
+			"account": "15985312475",
+			"parklotname": "欧洲风情街",
+      "carintime": "2017-06-24 06:08",
+      "carinpic": null,
+      "carouttime": "2017-06-24 09:08",
+      "caroutpic": null,
+      "order":"否"
+		},
+		{
+			"plate": "苏J D859K",
+			"account": "18578932541",
+			"parklotname": "文化艺术中心",
+      "carintime": "2016-10-24 06:08",
+      "carinpic": null,
+      "carouttime": "2016-10-24 09:08",
+      "caroutpic": null,
+      "order":"是"
+		},
+		{
+			"plate": "苏J 833H5",
+			"account": "15657181569",
+			"parklotname": "第三人民医院",
+      "carintime": "2017-03-24 11:19",
+      "carinpic": null,
+      "carouttime": "2017-03-24 12:08",
+      "caroutpic": null,
+      "order":"否"
+		},{
+			"plate": "苏J 35K21",
+			"account": "15965475125",
+			"parklotname": "华邦西厦",
+      "carintime": "2017-05-24 06:08",
+      "carinpic": null,
+      "carouttime": "2017-05-24 09:08",
+      "caroutpic": null,
+      "order":"是"
+		},
+		{
+			"plate": "苏J 24JH5",
+			"account": "15769842531",
+			"parklotname": "宝龙城市广场",
+      "carintime": "2017-04-24 14:08",
+      "carinpic": null,
+      "carouttime": "2017-04-24 18:23",
+      "caroutpic": null,
+      "order":"是"
+		},
+		{
+			"plate": "苏J 839MA",
+			"account": "15737195862",
+			"parklotname": "第三人民医院",
+      "carintime": "2017-06-24 06:08",
+      "carinpic": null,
+      "carouttime": "2017-06-24 09:08",
+      "caroutpic": null,
+      "order":"否"
+		},
+		{
+			"plate": "苏J 5D98K",
+			"account": "18869547852",
+			"parklotname": "文化艺术中心",
+      "carintime": "2016-11-24 10:08",
+      "carinpic": null,
+      "carouttime": "2016-11-24 10:58",
+      "caroutpic": null,
+      "order":"是"
+		},
+		{
+			"plate": "苏J 965HF",
+			"account": "15869425863",
+			"parklotname": "南金鹰",
+      "carintime": "2017-09-24 06:08",
+      "carinpic": null,
+      "carouttime": "2017-09-24 09:08",
+      "caroutpic": null,
+      "order":"否"
+		}
+	]
+}

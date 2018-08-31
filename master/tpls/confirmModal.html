@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{title}}</h3>
+</div>
+<div class="modal-body">
+    <ul>
+        <li ng-repeat="item in items">
+            <a ng-click="selected.item = item">{{ item }}</a>
+        </li>
+    </ul>
+    <span>{{ message }}</span>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()" ng-show="showOK">{{confirmMessage}}</button>
+    <button class="btn btn-warning" ng-click="cancel()" ng-show="showCancel">{{cancelMessage}}</button>
+</div>

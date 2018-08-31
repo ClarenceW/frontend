@@ -1,0 +1,103 @@
+<div class="row" block-ui="main">
+    <div class="col-md-12">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+                <li ng-if="titles.secTitle"><a href="javascript:;">{{titles.secTitle}}</a></li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">查看运营公司详情</div>
+            <div class="panel-body form">
+                <div class="format-height"></div>
+                <table class="table table-bordered table-hover" width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td width="19%" align="right"><font class="font-blue-deep"><strong>公司编号:</strong></font></td>
+                        <td width="81%">{{formData.code}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>公司名称:</strong></font></td>
+                        <td>{{formData.name}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>描述:</strong></font></td>
+                        <td>{{formData.description}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>具体地址:</strong></font></td>
+                        <td>{{formData.address}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>纬度:</strong></font></td>
+                        <td>{{formData.lat}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>经度:</strong></font></td>
+                        <td>{{formData.lng}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>行政区域:</strong></font></td>
+                        <td>{{formData.districtName}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>审核状态:</strong></font></td>
+                        <td>
+                        	{{formData.checkFlag}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>运营性质:</strong></font></td>
+                        <td>
+                        	{{formData.opType}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>联系人:</strong></font></td>
+                        <td>{{formData.contacts}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>联系电话:</strong></font></td>
+                        <td>{{formData.contactNumber}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>联系邮箱:</strong></font></td>
+                        <td>{{formData.email}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>创建人:</strong></font></td>
+                        <td>{{formData.createUser}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>创建时间:</strong></font></td>
+                        <td>{{formData.sysTime | date : 'yyyy-MM-dd HH:mm:ss'}}</td>
+                    </tr>
+                     <tr>
+                    	<td align="right"><font class="font-blue-deep"><strong>图片:</font></td>
+                    	<td>
+                    		  <div class="col-xs-6 col-md-3" ng-if="formData.pic1">
+						  			<a href="javascript:void(0);"  class="thumbnail" >
+								      <img ngf-src="formData.pic1" style="width: 171px;max-height: 180px;">
+								    </a>
+							  </div>
+							   <div class="col-xs-6 col-md-3" ng-if="formData.pic2">
+							    	<a href="javascript:void(0);"  class="thumbnail" style="width: 171px;max-height: 180px;">
+								      <img ngf-src="formData.pic2">
+								    </a>
+							  </div>
+							   <div class="col-xs-6 col-md-3" ng-if="formData.pic3">
+								    <a href="javascript:void(0);"  class="thumbnail" style="width: 171px;max-height: 180px;">
+								      <img ngf-src="formData.pic3">
+								    </a>
+							  </div>
+                    	</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div style="text-align: right">
+                    <button type="button" class="btn" ui-sref="{{stateGoIndex}}">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

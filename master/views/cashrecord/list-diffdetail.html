@@ -1,0 +1,86 @@
+<div class="row" block-ui="main" id="diff-detail">
+    <div class="col-md-12">
+        <div class="page-bar">
+          <ul class="page-breadcrumb">
+            <li ng-if='titles.firstTitle'><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a>
+              <i class="fa fa-angle-right"></i>
+            </li>
+            <li ng-if='titles.secTitle'><a href="javascript:;" ui-sref="{{stateGoDiffIndex}}">{{titles.secTitle}}</a>
+              <i class="fa fa-angle-right"></i>
+            </li>
+            <li ng-if='titles.secTitle' ui-sref="{{stateGoDiffIndex}}">差额记录<i class="fa fa-angle-right"></i></li>
+            <li ng-if='titles.secTitle'>差额详情</li>
+          </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body form">
+                <div class="format-height"></div>
+                <div class="pay-record">
+                    <div class="pay-table">
+                        <table class="table table-bordered table-hover" width="70%" border="0" cellspacing="0"
+                               cellpadding="0">
+                          <tbody>
+                          <tr>
+                            <td width="10%" align="right"><font class="font-blue-deep"><strong>收费员编号
+                                :</strong></font></td>
+                            <td width="81%">{{formData.userCode }}</td>
+                          </tr>
+                          <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>应缴金额:</strong></font></td>
+                            <td>{{formData.payableMoney }}</td>
+                          </tr>
+                          <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>实缴金额:</strong></font></td>
+                            <td>{{formData.payMoney }}</td>
+                          </tr>
+                          <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>差额金额:</strong></font></td>
+                            <td>{{formData.diffMoney }}</td>
+                          </tr>
+                          <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>创建人:</strong></font></td>
+                            <td>{{formData.opUser }}</td>
+                          </tr>
+                          <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>创建时间:</strong></font></td>
+                            <td>{{formData.opTime}}</td>
+                          </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="">
+                  <button class="btn blue-madison pay-btn" ng-click="toEvidence()">现金对账记录</button>
+                </div>
+                <table class="table table-bordered table-hover pay_table" id="diff-evidence-table" ng-if="evidenceRecord">
+                    <thead>
+                    <tr>
+                      <th>收费员编号</th>
+                      <th>应上交金额</th>
+                      <th>实际上交金额</th>
+                      <th>收费日期</th>
+                      <th>状态</th>
+                      <th>确认人</th>
+                      <th>确认时间</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div style="text-align: right">
+                    <button type="button" class="btn" ui-sref="{{stateGoDiffIndex}}">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .pay_table {
+        margin-bottom: 30px !important;
+    }
+
+    .pay-btn {
+        margin: 10px auto 10px;
+    }
+</style>

@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+/* 搜索框样式 */
+.selectbox {
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 12px;
+    min-height: 10px;
+    border: 1px solid #dddddd;
+    border-top: 2px solid #749bc3;
+    /*background: url(../images/select-box-bg.png) bottom right no-repeat #fcfcfc;*/
+}
+
+.selectbox .option {
+    padding: 10px;
+    background-color: #ecf2f8;
+    font-size: 14px;
+}
+
+.selectbox .option .search {
+    padding: 4px 12px;
+}
+
+.selectbox ul {
+    margin: 0;
+    padding: 0
+}
+
+.selectbox .option .form-group .form-control, .selectbox .option .input-group .form-control {
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 3px;
+}
+
+.selectbox .option .input-group .control-label {
+    display: table-cell;
+}
+
+/* 条件筛选-单选择框样式 */
+.selectbox .selectBoxContent {
+    padding: 0 10px 10px 20px;
+    /*height: 260px;*/
+}
+
+.selectbox dl {
+    clear: both;
+    font-family: "微软雅黑";
+    font-size: 13px;
+}
+
+.selectbox dl dt {
+    display: block;
+    margin-bottom: 10px;
+    padding: 2px 0px;
+    float: left;
+    font-weight: normal;
+    color: #999;
+    width: 60px;
+}
+
+.selectbox dl dd {
+    margin-bottom: 10px;
+    float: left;
+    margin-right: 15px;
+    color: #487cb2;
+}
+
+.selectbox dl dd span {
+    display: block;
+    padding: 2px 0px;
+    cursor: pointer;
+}
+
+.selectbox dl dd span.active {
+    padding: 2px 6px;
+    font-weight: bold;
+    color: #fff;
+    background: #ffcc00;
+    border-radius: 3px !important;
+}
+
+.selectbox dl dd span:hover {
+    color: #ffcc00;
+}
+
+.selectbox dl dd span.active:hover {
+    color: #fff;
+}
+

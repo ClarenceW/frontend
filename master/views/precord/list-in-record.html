@@ -1,0 +1,48 @@
+<div id="inrecord-index" block-ui="main">
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+            <li ng-if="titles.secTitle"><a href="javascript:;">{{titles.secTitle}}</a></li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="selectbox">
+                <ul class="option">
+                    <div class="form-inline" id="queryForm">
+                        <div class="form-group form-group-sm">
+                            	停车场名称： <input class="form-control" name="parklotName" ng-model="formData.parklotName" type="text">
+                        </div>
+                        <div class="form-group">
+                           	 	车牌： <input class="form-control" name="plate" ng-model="formData.plate" type="text">
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn blue-madison search" ng-click="toSearch()">搜 索</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn search" ng-click="toReset()">重 置</button>
+                        </div>
+                    </div>
+                </ul>
+                <div id="ucSelectBoxWrapper" style="padding: 0px;"></div>
+            </div>
+            <table class="table table-bordered table-hover" id="inrecord-table">
+                <thead>
+                <tr>
+                    <th>停车场编号</th>
+                    <th>停车场名称</th>
+                    <th>车牌号</th>
+                    <th>车牌颜色</th>
+                    <th>进入时间</th>
+                    <th>进入图片1</th>
+                    <th>进入图片2</th>
+                    <th>驶出时间</th>
+                    <th>驶出图片1</th>
+                    <th>驶出图片2</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>

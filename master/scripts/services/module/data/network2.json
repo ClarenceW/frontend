@@ -1,0 +1,26 @@
+{
+  "iTotalRecords": 1,
+  "iTotalDisplayRecords": 1,
+  "aaData": [
+    {
+      "repordDate":"2018-01-22",
+      "dclotName": "城南停车场",
+      "parkNum":22,
+      "parkNum15":6,
+      "monthCar":16,
+      "averageTime":1209,
+      "turnOver":4.6,
+      "receiveMoney":1200,
+      "cash":800,
+      "alpay":300,
+      "wechat":100,
+      "card":100,
+      "total":1200,
+      "minCard":20,
+      "depotMoney":35,
+      "coupon":30,
+      "times":120,
+      "amount": 2340
+    }
+  ]
+}

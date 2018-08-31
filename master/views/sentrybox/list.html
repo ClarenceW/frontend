@@ -1,0 +1,122 @@
+<div id="sentrybox_index" block-ui="main">
+    <!-- BEGIN PAGE HEADER-->
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li><i class="fa fa-home"></i><a href="javascript:;">系统管理</a><i class="fa fa-angle-right"></i></li>
+            <li><a href="javascript:;">同步岗亭信息</a></li>
+        </ul>
+    </div>
+    <!-- END PAGE HEADER-->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mesBox">
+              <div class="mesHead">
+                <h2>停车场信息</h2>
+              </div>
+              <div class="mesContent">
+                <div class="row">
+                    <div class="col-md-3 mesLabel">最近同步时间：</div>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" value="{{parklotData.pullTime}}" readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 mesLabel">最近操作人：</div>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" value="admin" readonly>
+                    </div>
+                </div>
+                <div class="col-md-12 btnbox">
+                  <button class="btn btn-primary"  ng-click="toPullparklot()"> 同步停车场信息 </button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mesBox">
+              <div class="mesHead">
+                <h2>会员车信息</h2>
+              </div>
+              <div class="mesContent">
+                <div class="row">
+                    <div class="col-md-3 mesLabel">最近同步时间：</div>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" value="{{vipData.pullTime}}" readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 mesLabel">最近操作人：</div>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" value="admin" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3 mesLabel">同步时间段：</div>
+                    <div class="col-md-4" ng-class="addForm.startTime.$dirty ? (addForm.startTime.$valid ? 'has-success': 'has-error') :''">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="searchTm" readonly
+                                    uib-datepicker-popup="{{format}}"
+                                    ng-model="vipData.startTime"
+                                    is-open="tempBeginData.opened"
+                                    date-disabled="disabled(date, mode)"
+                                    datepicker-options="dateOptions"
+                                    ng-required="true"
+                                    alt-input-formats="altInputFormats"/>
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open('begin')"><i class="glyphicon glyphicon-calendar"></i></button>
+                          </span>
+                        </div>
+                    </div>
+                    <div class="col-md-4" ng-class="addForm.startTime.$dirty ? (addForm.startTime.$valid ? 'has-success': 'has-error') :''">
+                        <!-- <label for="">-</label> -->
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="searchTm" readonly
+                                    uib-datepicker-popup="{{format}}"
+                                    ng-model="vipData.endTime"
+                                    is-open="tempEndData.opened"
+                                    date-disabled="disabled(date, mode)"
+                                    datepicker-options="dateOptions"
+                                    ng-required="true"
+                                    alt-input-formats="altInputFormats"/>
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open('end')"><i class="glyphicon glyphicon-calendar"></i></button>
+                          </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 btnbox">
+                  <button class="btn btn-primary"  ng-click="toPullvip()"> 同步会员车信息 </button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+  .mesBox {
+    height: 400px;
+    border: 1px solid #e5e5e5;
+  }
+  .mesHead {
+    height: 50px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .mesHead h2 {
+    padding-left:20px;
+  }
+  .mesContent>div {
+    margin:20px 0;
+    height: 34px;
+    line-height: 34px;
+  }
+  .mesLabel {
+    text-align: right;
+  }
+  .btnbox {
+    text-align: center;
+  }
+  .timeTool>div {
+    display: inline-block !important;
+  }
+</style>

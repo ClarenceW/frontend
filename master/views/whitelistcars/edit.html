@@ -1,0 +1,154 @@
+<div class="row" block-ui="main" id="whitelistcarEdit">
+  <div class="col-md-12">
+      <div class="page-bar">
+          <ul class="page-breadcrumb">
+              <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+              <li ng-if="titles.secTitle"><a href="javascript:;"  ui-sref="{{stateGoIndex}}">{{titles.secTitle}}</a></li>
+          </ul>
+      </div>
+      <div class="panel panel-default">
+          <div class="panel-heading">编辑白名单车辆</div>
+          <div class="panel-body form">
+              <form name="editForm" ng-submit="submitForm(editForm.$valid)" class="form-horizontal" novalidate>
+                  <div class="format-height"></div>
+                  <div class="form-body">
+                      <div class="form-group">
+                          <label class="control-label col-md-2">车牌<span class="required">*</span></label>
+                          <div class="col-md-6">
+                              <div class="input-icon right">
+                                  <input type="text" class="form-control" name="plate" ng-model="formData.plate" readonly>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="control-label col-md-2">车牌颜色<span class="required">*</span></label>
+                          <div class="col-md-6">
+                            <div class="input-icon right">
+                              <input type="text" class="form-control" name="platecolor" ng-model="platecolor" readonly>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="control-label col-md-2">车主手机号<span class="required">*</span></label>
+                          <div class="col-md-6" ng-class="editForm.userCode.$invalid && (editForm.userCode.$dirty || submited) ? 'has-error':''">
+                              <div class="input-icon right">
+                                  <i class="fa tooltips" ng-class="editForm.userCode.$invalid && (editForm.userCode.$dirty || submited) ? 'fa-exclamation':''"></i>
+                                  <input type="text" class="form-control" name="userCode" ng-model="formData.userCode" placeholder="请输入车主手机号" ng-maxlength="11" ng-pattern="/^0?1[3|4|5|7|8][0-9]\d{8}$/" required>
+                              </div>
+                          </div>
+                          <div class="col-md-3 error" ng-if="editForm.userCode.$invalid && (editForm.userCode.$dirty || submited)">
+                              <span ng-show="editForm.userCode.$error.required">请输入车主手机号</span>
+                              <span ng-show="editForm.userCode.$error.maxlength">车主手机号不能超过11位</span>
+                              <span ng-show="editForm.userCode.$error.pattern">车主手机号格式错误</span>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="control-label col-md-2">车主姓名</label>
+                          <div class="col-md-6">
+                              <div class="input-icon right">
+                                  <input type="text" class="form-control" name="userName" ng-model="formData.userName" placeholder="请输入车主姓名">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="control-label col-md-2">所属停车场<span class="required">*</span></label>
+                          <div class="col-md-6" ng-class="editForm.parklotCodes.$dirty ? (editForm.parklotCodes.$valid ? 'has-success': 'has-error') :''">
+                              <div class="input-icon right multiLot">
+                                  <i class="fa tooltips" ng-class="editForm.parklotCodes.$dirty ? (editForm.parklotCodes.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                  <select name="parklotCodes" class="form-control selectpicker" ng-model="formData.parklotCodes" multiple data-live-search="true" title="请选择停车场" required >
+                                      <option ng-repeat="option in parklotCodeOptions" value="{{option.code}}">
+                                          {{option.name}}
+                                      </option>
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="col-md-3 error" ng-show="(editForm.parklotCodes.$invalid && editForm.parklotCodes.$dirty) || submited">
+                              <span ng-show="editForm.parklotCodes.$error.required">请选择所属停车场</span>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="control-label col-md-2">有效期<span class="required">*</span></label>
+                          <div class="col-md-6">
+                            <label class="radio-inline">
+                              <input type="radio" ng-value=1 name="validtime">当天
+                            </label>
+                            <label class="radio-inline">
+                              <input type="radio" ng-value=2 name="validtime">永久有效
+                            </label>
+                            <label class="radio-inline">
+                              <input type="radio" ng-value=4 name="validtime" checked="checked">自定义
+                            </label>
+                          </div>
+                      </div>
+                      <div class="form-group selectTime">
+                          <label class="control-label col-md-2">开始时间<span class="required">*</span></label>
+                          <div class="col-md-6" ng-class="editForm.startTime.$dirty ? (editForm.startTime.$valid ? 'has-success': 'has-error') :''">
+                              <div class="input-group">
+                                  <input type="text" class="form-control" id="searchTm" readonly
+                                         uib-datepicker-popup="{{format}}"
+                                         ng-model="formData.startTime"
+                                         is-open="tempData.opened"
+                                         date-disabled="disabled(date, mode)"
+                                         datepicker-options="dateOptions"
+                                         ng-required="true"
+                                         alt-input-formats="altInputFormats" ng-click="open()"/>
+                                <span class="input-group-btn">
+                                  <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                              </div>
+                          </div>
+                          <div class="col-md-3 error" ng-show="editForm.startTime.$invalid && (editForm.startTime.$dirty || submited)">
+                              <span ng-show="editForm.startTime.$error.required">请选择开始时间</span>
+                          </div>
+                      </div>
+                      <div class="form-group selectTime">
+                        <label class="control-label col-md-2">结束时间<span class="required">*</span></label>
+                        <div class="col-md-6" ng-class="editForm.endTime.$dirty ? (editForm.endTime.$valid ? 'has-success': 'has-error') :''">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="searchTm" readonly
+                                       uib-datepicker-popup="{{format}}"
+                                       ng-model="formData.endTime"
+                                       is-open="tempData.opened2"
+                                       date-disabled="disabled(date, mode)"
+                                       datepicker-options="dateOptions"
+                                       ng-required="true"
+                                       alt-input-formats="altInputFormats" ng-click="open2()"/>
+                              <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                              </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 error" ng-show="editForm.endTime.$invalid && (editForm.endTime.$dirty || submited)">
+                            <span ng-show="editForm.endTime.$error.required">请选择结束时间</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-md-2">备注</label>
+                      <div class="col-md-6" ng-class="editForm.description.$dirty ? (editForm.description.$valid ? 'has-success': 'has-error') :''">
+                          <div class="input-icon right">
+                              <i class="fa tooltips" ng-class="editForm.description.$invalid && editForm.description.$dirty ? 'fa-exclamation':''"></i>
+                              <textarea class="form-control" name="description" ng-model="formData.description" cols="50" rows="5" ng-maxlength="200" ></textarea>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-actions">
+                      <div class="col-md-offset-8 col-md-4">
+                          <button type="button" class="btn default" ng-click="back();">取消</button>
+                          <button type="submit" class="btn btn-info">确认</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+<style>
+  .multiLot>div {
+    padding:0 !important;
+  }
+  .bootstrap-select.btn-group .btn .filter-option {
+    position: static !important;
+  }
+</style>

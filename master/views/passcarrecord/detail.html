@@ -1,0 +1,81 @@
+<div class="row" block-ui="main">
+    <div class="col-md-12">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+                <li ng-if="titles.secTitle"><a href="javascript:;" ng-click="back();">{{titles.secTitle}}</a></li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">查看停车记录详情</div>
+            <div class="panel-body form">
+                <div class="format-height"></div>
+                <table class="table table-bordered table-hover" width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                      <tr>
+                        <td width="19%" align="right"><font class="font-blue-deep"><strong>记录编号:</strong></font></td>
+                        <td width="81%">{{formData.id}}</td>
+                      </tr>
+                    <tr>
+                        <td width="19%" align="right"><font class="font-blue-deep"><strong>车牌:</strong></font></td>
+                        <td width="81%">{{formData.plate}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>车主手机号:</strong></font></td>
+                        <td>{{formData.userCode}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>车牌颜色:</strong></font></td>
+                        <td>{{formData.plateColor}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>停车场:</strong></font></td>
+                        <td>{{formData.parklotName}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>过车方向:</strong></font></td>
+                        <td>{{formData.parkDirection}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>放行方式:</strong></font></td>
+                        <td>{{formData.passType}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>出入口名称:</strong></font></td>
+                        <td>{{formData.laneName}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>放行终端编号:</strong></font></td>
+                        <td>{{formData.terminalNo}}</td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>通行时间:</strong></font></td>
+                        <td>
+                        	{{formData.passTime | date : 'yyyy-MM-dd HH:mm:ss'}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right"><font class="font-blue-deep"><strong>操作员:</strong></font></td>
+                        <td>
+                        	{{formData.opUser}}
+                        </td>
+                    </tr>
+                     <tr>
+                    	<td align="right"><font class="font-blue-deep"><strong>过车图片:</font></td>
+                    	<td>
+                    	</td>
+                    </tr>
+                     <tr>
+                    	<td align="right"><font class="font-blue-deep"><strong>车牌图片:</font></td>
+                    	<td>
+                    	</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div style="text-align: right">
+                    <button type="button" class="btn" ng-click="back();">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

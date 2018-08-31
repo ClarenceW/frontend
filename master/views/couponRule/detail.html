@@ -1,0 +1,69 @@
+<div class="row" block-ui="main">
+  <div class="col-md-12">
+      <div class="page-bar">
+          <ul class="page-breadcrumb">
+              <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+              <li ng-if="titles.secTitle"><a href="javascript:;">{{titles.secTitle}}</a></li>
+          </ul>
+      </div>
+      <div class="panel panel-default">
+          <div class="panel-heading">优惠规则详情</div>
+          <div class="panel-body form">
+              <div class="format-height"></div>
+              <table class="table table-bordered table-hover" width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tbody>
+                  <tr>
+                    <td width="25%" align="right"><font class="font-blue-deep"><strong>优惠规则编号</strong></font></td>
+                    <td width="75%">{{formData.couponRuleId}}</td>
+                  </tr>
+                  <tr>
+                    <td width="25%" align="right"><font class="font-blue-deep"><strong>优惠规则类型</strong></font></td>
+                    <td width="75%">{{formData.couponRuleType}}</td>
+                  </tr>
+                  <tr>
+                    <td width="25%" align="right"><font class="font-blue-deep"><strong>优惠规则名称</strong></font></td>
+                    <td width="75%">{{formData.couponRuleName}}</td>
+                  </tr>
+                  <!-- <tr ng-if='couponRuleType == 1'>
+                    <td width="25%" align="right"><font class="font-blue-deep"><strong>充电时长</strong></font></td>
+                    <td width="75%">{{formData.vehicleOwnName}}小时  至  {{formData.vehicleOwnName}}小时；抵扣金额：{{formData.vehicleOwnName}}元</td>
+                  </tr> -->
+                  <tr ng-if='couponRuleType == 1'>
+                    <td align="right"><font class="font-blue-deep"><strong>优惠金额</strong></font></td>
+                    <td>{{formData.couponMoney}} 元</td>
+                  </tr>
+                  <tr ng-if='couponRuleType == 2'>
+                    <td align="right"><font class="font-blue-deep"><strong>免费次数</strong></font></td>
+                    <td>{{formData.freeNum}} 次</td>
+                  </tr>
+                  <tr ng-if='couponRuleType == 1 || couponRuleType == 2'>
+                    <td align="right"><font class="font-blue-deep"><strong>优惠券有效时间</strong></font></td>
+                    <td>{{formData.couponStartTime}} ~ {{formData.couponEndTime}}</td>
+                  </tr>
+                  <tr>
+                    <td width="25%" align="right"><font class="font-blue-deep"><strong>规则描述</strong></font></td>
+                    <td width="75%">{{formData.couponDesc}}</td>
+                  </tr>
+                  <tr>
+                    <td width="25%" align="right"><font class="font-blue-deep"><strong>是否关联优惠券</strong></font></td>
+                    <td width="75%">{{formData.relateCoupon}}</td>
+                  </tr>
+                  <tr>
+                    <td align="right"><font class="font-blue-deep"><strong>创建人</strong></font></td>
+                    <td>{{formData.opUser}}</td>
+                  </tr>
+                  <tr>
+                    <td align="right"><font class="font-blue-deep"><strong>创建时间</strong></font></td>
+                    <td>
+                      {{formData.createTime | date : 'yyyy-MM-dd HH:mm:ss'}}
+                    </td>
+                  </tr>
+                  </tbody>
+              </table>
+              <div style="text-align: right">
+                  <button type="button" class="btn" ui-sref="{{stateGoIndex}}">关闭</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

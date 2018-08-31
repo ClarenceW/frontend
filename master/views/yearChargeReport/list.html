@@ -1,0 +1,180 @@
+<div id="yearchargeReport-index" block-ui="main">
+  <!-- BEGIN PAGE HEADER-->
+  <div class="page-bar">
+    <ul class="page-breadcrumb">
+      <li ng-if="titles.firstTitle">
+        <i class="fa fa-home"></i>
+        <a href="javascript:;">{{titles.firstTitle}}</a>
+      </li>
+      <li ng-if="titles.secTitle">
+        <i class="fa fa-angle-right"></i>
+        <a href="javascript:;">{{titles.secTitle}}</a>
+      </li>
+      <li ng-if="titles.thirdTitle">
+        <i class="fa fa-angle-right"></i>
+        <a href="javascript:;">{{titles.thirdTitle}}</a>
+      </li>
+    </ul>
+  </div>
+  <!-- END PAGE HEADER-->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="selectbox">
+        <ul class="option">
+          <div class="form-inline" id="queryForm">
+            <div class="form-group">
+              <label class="control-label">停车场：</label>
+              <div class="multiLot" style="width: 179px;padding: 0;height:34px;display:inline-block;">
+                <select name="parklotCodes" class="form-control selectpicker" ng-model="formData.parklotCodes" multiple data-live-search="true" title="请选择停车场">
+                  <option ng-repeat="option in parklotCodeOptions" value="{{option.code}}">
+                      {{option.name}}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group form-group-sm">
+              <div class="input-group">
+                <label class="control-label">选择年份：</label>
+                <input type="text" class="form-control" onchange="" ng-model="formData.startTime" onclick="WdatePicker({maxDate:'%y-%M-%d',dateFmt:'yyyy'})"
+                  id="searchTm"/>
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" onclick="WdatePicker({el:'searchTm',dateFmt:'yyyy',maxDate:'%y-%M-%d'})">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                  </button>
+                </span>
+              </div>
+            </div>
+            
+            <div class="btn-group">
+              <button class="btn blue-madison search" ng-click="toSearch()">搜 索</button>
+            </div>
+            <div class="btn-group">
+              <button class="btn search" ng-click="toReset()">重 置</button>
+            </div>
+          </div>
+        </ul>
+        <div id="ucSelectBoxWrapper" style="padding: 0px;"></div>
+      </div>
+      <div class="buttonbox">
+        <button class="btn btn-sm btn-default" ng-click="downloadExcel();">
+          <span class="fa fa-file-excel-o font-blue-linewell"></span> 导出
+        </button>
+      </div>
+      <table class="table table-bordered table-hover" id="yearchargeReport-table">
+        <thead>
+          <tr>
+            <th class="table-checkbox">
+              <input type="checkbox" class="group-checkable" style="text-align: right;" data-set="#yearchargeReport-table .checkboxes" />
+            </th>
+            <th>停车场</th>
+            <th>1月</th>
+            <th>2月</th>
+            <th>3月</th>
+            <th>4月</th>
+            <th>5月</th>
+            <th>6月</th>
+            <th>7月</th>
+            <th>8月</th>
+            <th>9月</th>
+            <th>10月</th>
+            <th>11月</th>
+            <th>12月</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="col-md-12" style="margin-top:15px;">
+      <div class="walletCharge">
+          <div class="row" style="margin-left:0;margin-right:0;">
+            <div class="col-md-3 totalWallet">
+                <i class="icon icon-wallet"></i>
+                <span>钱包充值：</span>
+                <span>￥{{sumMoney}}</span>
+            </div>
+            <div class="col-md-9 totalWallet">
+                <div class="row walletMonth">
+                  <div class="col-md-2" ng-repeat="item in chargeArr">{{item.month}}月：<span>￥{{item.sumMoney}}</span></div>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .form-group .sel-date{
+        width: 100px;
+        height: 35px;
+        border: 1px solid #999;
+        display: flex;
+        display: -webkit-flex;
+        flex-wrap: nowrap;
+    }
+    .form-group .sel-date span{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-group .sel-date .active{
+        background: #404b40;
+        color: #fff;
+    }
+
+    .ui-datepicker-calendar {  
+        display: none;
+    } 
+
+    .multiLot>div {
+      padding:0 !important;
+    }
+    .bootstrap-select.btn-group .btn .filter-option {
+      position: static !important;
+    }
+    .walletCharge {
+      border: 1px solid #ddd;
+      border-radius: 4px !important;
+    }
+    .totalWallet {
+      height: 100px;
+      vertical-align: middle;
+      display:inline-block;
+      line-height: 100px;
+      padding:0 10px;
+    }
+    .totalWallet i {
+      font-size: 50px;
+      margin-bottom:25px;
+    }
+    .totalWallet>span:nth-of-type(1) {
+      display:inline-block;
+      vertical-align: middle;
+      font-size: 18px;
+      margin-bottom:25px;
+    }
+    .totalWallet>span:nth-of-type(2) {
+      display:inline-block;
+      vertical-align: middle;
+      font-size: 25px;
+      color: #3399ff;
+      margin-bottom:25px;
+    }
+    .walletMonth {
+      margin-left:0;
+      margin-right:0;
+      height: 50px;
+    }
+    .walletMonth div {
+      height: 50px;
+      line-height: 50px;
+    }
+    .walletMonth span {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+</style>

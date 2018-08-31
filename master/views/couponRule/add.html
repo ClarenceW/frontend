@@ -1,0 +1,216 @@
+<div class="row" block-ui="main" id="couponRuleAdd">
+    <div class="col-md-12">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+                <li ng-if="titles.secTitle"><a href="javascript:;"  ui-sref="{{stateGoIndex}}">{{titles.secTitle}}</a></li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">新增优惠规则</div>
+            <div class="panel-body form">
+                <form name="addForm" ng-submit="submitForm(addForm.$valid)" class="form-horizontal" novalidate>
+                    <div class="format-height"></div>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-2">规则类型<span class="required">*</span></label>
+                            <div class="col-md-6">
+                              <label class="btn btn-info" ng-repeat="option in ruleOptions">
+                                  <input type="radio" name="options" class="ruletype" value="{{option.lookupKey}}" ng-model="formData.couponRuleType" id="option2"> {{option.lookupValue}}
+                              </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">优惠规则名称<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="addForm.couponRuleName.$invalid && addForm.couponRuleName.$dirty ? 'has-error':''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.couponRuleName.$invalid && addForm.couponRuleName.$dirty ? 'fa-exclamation':''"></i>
+                                    <input type="text" class="form-control" name="couponRuleName" ng-model="formData.couponRuleName" placeholder="请输入优惠规则名称" required ng-maxlength="10">
+                                </div>
+                            </div>
+                            <div class="col-md-3 error" ng-if="(addForm.couponRuleName.$invalid && addForm.couponRuleName.$dirty) || submited">
+                                <span ng-if="addForm.couponRuleName.$error.required">请输入优惠规则名称</span>
+                                <span ng-if="addForm.couponRuleName.$error.maxlength">规则名称不能超过10个字</span>
+                            </div>
+                        </div>
+                        <!-- <rule1 style='display:none;'></rule1> -->
+                        <rule2 ng-if="formData.couponRuleType == 1"></rule2>
+                        <rule3 ng-if="formData.couponRuleType == 2"></rule3>
+                        <!-- <rule4 style='display:none;'></rule4>
+                        <rule5 style='display:none;'></rule5> -->
+                        <div class="form-group">
+                          <label class="control-label col-md-2">规则描述</label>
+                          <div class="col-md-6" ng-class="addForm.couponDesc.$dirty ? (addForm.couponDesc.$valid ? 'has-success': 'has-error') :''">
+                              <div class="input-icon right">
+                                  <i class="fa tooltips" ng-class="addForm.couponDesc.$dirty ? (addForm.couponDesc.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                  <textarea class="form-control" name="couponDesc" ng-model="formData.couponDesc" cols="50" rows="5" ng-maxlength="400" placeholder="请输入描述内容" ></textarea>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-actions">
+                        <div class="col-md-offset-8 col-md-4">
+                            <button type="button" class="btn default" ui-sref="{{stateGoIndex}}">取消</button>
+                            <button type="submit" class="btn btn-info">新增</button>
+                        </div>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <script type="text/ng-template" id="rule1">
+    <div class="form-group">
+        <label class="control-label col-md-2">充电时长<span class="required">*</span></label>
+        <div class="col-md-6" ng-class="(addForm.starttime.$invalid && addForm.starttime.$dirty)||(addForm.endtime.$invalid && addForm.endtime.$dirty) ? 'has-error':''">
+            <div class="input-icon right">
+                <i class="fa tooltips" ng-class="(addForm.starttime.$invalid && addForm.starttime.$dirty)||(addForm.endtime.$invalid && addForm.endtime.$dirty) ? 'fa-exclamation':''"></i>
+                <input type="number" class="form-control timeRange" name="starttime" ng-model="formData.starttime" placeholder="单位：小时" min="0.0" step="0.5" required> 至 
+                <input type="number" class="form-control timeRange" name="endtime" ng-model="formData.endtime" placeholder="单位：小时" min="0.0" step="0.5" required>
+                <label class="control-label" style="padding:0 15px;"> 抵扣金额</label><input type="number" class="form-control timeRange" name="deductible" ng-model="formData.deductible" placeholder="单位：元" min="0.0" step="0.5" required>
+                <img src='img/jiahao.png' id='addRule' ng-click='addrule1()' style='width:34px;position:absolute;top:0;right:30px;'/>
+            </div>
+        </div>
+        <div class="col-md-3 error" ng-if="(addForm.starttime.$invalid && addForm.starttime.$dirty) ||(addForm.endtime.$invalid && addForm.endtime.$dirty)|| submited">
+            <span ng-if="(addForm.starttime.$error.required)||(addForm.endtime.$error.required)">请输入完整充电时长区间</span>
+            <span ng-if="formData.starttime > formData.endtime">起始时间不得大于结束时间</span>
+        </div>
+    </div>
+  </script>
+  
+  <script type="text/ng-template" id="rule2">
+    <div class="form-group">
+        <label class="control-label col-md-2">优惠金额<span class="required">*</span></label>
+        <div class="col-md-6" ng-class="addForm.couponPrice.$invalid && addForm.couponPrice.$dirty ? 'has-error':''">
+            <div class="input-icon right">
+                <i class="fa tooltips" ng-class="addForm.couponPrice.$invalid && addForm.couponPrice.$dirty ? 'fa-exclamation':''"></i>
+                <input type="text" class="form-control" name="couponPrice" ng-model="formData.couponPrice" placeholder="请输入优惠金额（单位：元）" required ng-pattern="/^\d+$/">
+                <span style="position:absolute;right:8px;top:8px;">元</span>
+            </div>
+        </div>
+        <div class="col-md-3 error" ng-if="(addForm.couponPrice.$invalid && addForm.couponPrice.$dirty) || submited">
+            <span ng-if="addForm.couponPrice.$error.required">请输入优惠金额</span>
+            <span ng-if="addForm.couponPrice.$error.pattern">优惠金额只能为整数</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">优惠券有效开始时间<span class="required">*</span></label>
+        <div class="col-md-6" ng-class="addForm.couponStartTime.$dirty ? (addForm.couponStartTime.$valid ? 'has-success': 'has-error') :''">
+            <div class="input-group">
+              <input type="text" class="form-control" onchange="" ng-model="formData.couponStartTime" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',autoPickDate:true})" id="searchTm1"/>
+              <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" onclick="WdatePicker({el:'searchTm1',dateFmt:'yyyy-MM-dd HH:mm:ss',autoPickDate:true})"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </div>
+        </div>
+        <div class="col-md-3 error" ng-show="(addForm.couponStartTime.$invalid && addForm.couponStartTime.$dirty) || submited">
+            <span ng-show="addForm.couponStartTime.$error.required">请选择开始时间</span>
+        </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-2">优惠券有效结束时间<span class="required">*</span></label>
+      <div class="col-md-6" ng-class="addForm.couponEndTime.$dirty ? (addForm.couponEndTime.$valid ? 'has-success': 'has-error') :''">
+          <div class="input-group">
+            <input type="text" class="form-control" onchange="" ng-model="formData.couponEndTime" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',autoPickDate:true})" id="searchTm2"/>
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" onclick="WdatePicker({el:'searchTm2',dateFmt:'yyyy-MM-dd HH:mm:ss',autoPickDate:true})"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+          </div>
+      </div>
+      <div class="col-md-3 error" ng-show="addForm.couponEndTime.$invalid && (addForm.couponEndTime.$dirty || submited)">
+          <span ng-show="addForm.couponEndTime.$error.required">请选择结束时间</span>
+      </div>
+    </div>
+  </script>
+  
+  <script type="text/ng-template" id="rule3">
+    <div class="form-group">
+        <label class="control-label col-md-2">免费次数<span class="required">*</span></label>
+        <div class="col-md-6" ng-class="addForm.freenum.$invalid && addForm.freenum.$dirty ? 'has-error':''">
+            <div class="input-icon right">
+                <i class="fa tooltips" ng-class="addForm.freenum.$invalid && addForm.freenum.$dirty ? 'fa-exclamation':''"></i>
+                <input type="number" class="form-control" name="freenum" ng-model="formData.freenum" placeholder="请输入免费次数（单位：次）" readonly ng-pattern="/^\d+$/" min="0">
+            </div>
+        </div>
+        <div class="col-md-3 error" ng-if="(addForm.freenum.$invalid && addForm.freenum.$dirty) || submited">
+            <span ng-if="addForm.freenum.$error.required">请输入免费次数</span>
+            <span ng-if="addForm.freenum.$error.pattern">免费次数只能为整数</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">优惠券有效开始时间<span class="required">*</span></label>
+        <div class="col-md-6" ng-class="addForm.couponStartTime.$dirty ? (addForm.couponStartTime.$valid ? 'has-success': 'has-error') :''">
+            <div class="input-group">
+              <input type="text" class="form-control" onchange="" ng-model="formData.couponStartTime" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',autoPickDate:true})" id="searchTm1"/>
+              <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" onclick="WdatePicker({el:'searchTm1',dateFmt:'yyyy-MM-dd HH:mm:ss',autoPickDate:true})"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </div>
+        </div>
+        <div class="col-md-3 error" ng-show="addForm.couponStartTime.$invalid && (addForm.couponStartTime.$dirty || submited)">
+            <span ng-show="addForm.couponStartTime.$error.required">请选择开始时间</span>
+        </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-2">优惠券有效结束时间<span class="required">*</span></label>
+      <div class="col-md-6" ng-class="addForm.couponEndTime.$dirty ? (addForm.couponEndTime.$valid ? 'has-success': 'has-error') :''">
+          <div class="input-group">
+            <input type="text" class="form-control" onchange="" ng-model="formData.couponEndTime" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',autoPickDate:true})" id="searchTm2"/>
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" onclick="WdatePicker({el:'searchTm2',dateFmt:'yyyy-MM-dd HH:mm:ss',autoPickDate:true})"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+          </div>
+      </div>
+      <div class="col-md-3 error" ng-show="addForm.couponEndTime.$invalid && (addForm.couponEndTime.$dirty || submited)">
+          <span ng-show="addForm.couponEndTime.$error.required">请选择结束时间</span>
+      </div>
+    </div>
+  </script>
+  
+  <script type="text/ng-template" id="rule4">
+    <div class="form-group">
+        <label class="control-label col-md-2">满减规则<span class="required">*</span></label>
+        <div class="col-md-6" ng-class="(addForm.reducerule1.$invalid && addForm.reducerule1.$dirty)||(addForm.reducerule2.$invalid && addForm.reducerule2.$dirty) ? 'has-error':''">
+            <div class="input-icon right">
+                <i class="fa tooltips" ng-class="(addForm.reducerule1.$invalid && addForm.reducerule1.$dirty)||(addForm.reducerule2.$invalid && addForm.reducerule2.$dirty) ? 'fa-exclamation':''"></i>
+                消费满 <input type="number" class="form-control timeRange" name="reducerule1" ng-model="formData.reducerule1" min="0.0" step="0.5" required>元， 减 
+                <input type="number" class="form-control timeRange" name="reducerule2" ng-model="formData.reducerule2" min="0.0" step="0.5" required>元
+            </div>
+        </div>
+        <div class="col-md-3 error" ng-if="(addForm.reducerule1.$invalid && addForm.reducerule1.$dirty) ||(addForm.reducerule2.$invalid && addForm.reducerule2.$dirty)|| submited">
+            <span ng-if="(addForm.reducerule1.$error.required)||(addForm.reducerule2.$error.required)">请输入完整充电时长区间</span>
+            <span ng-if="formData.reducerule1 > formData.reducerule2">起始时间不得大于结束时间</span>
+        </div>
+    </div>
+  </script>
+  
+  <script type="text/ng-template" id="rule5">
+    <div class="form-group">
+        <label class="control-label col-md-2">打折规则<span class="required">*</span></label>
+        <div class="col-md-6" ng-class="(addForm.reducerule1.$invalid && addForm.reducerule1.$dirty)||(addForm.reducerule2.$invalid && addForm.reducerule2.$dirty) ? 'has-error':''">
+            <div class="input-icon right">
+                <i class="fa tooltips" ng-class="(addForm.reducerule1.$invalid && addForm.reducerule1.$dirty)||(addForm.reducerule2.$invalid && addForm.reducerule2.$dirty) ? 'fa-exclamation':''"></i>
+                消费满 <input type="number" class="form-control timeRange" name="reducerule1" ng-model="formData.reducerule1" min="0.0" step="0.5" required>元， 享受 
+                <input type="number" class="form-control timeRange" name="reducerule2" ng-model="formData.reducerule2" min="0.0" step="0.5" required>元折扣
+            </div>
+            <img src='img/jiahao.png' id='addRule' ng-click='addrule5()' style='width:34px;position:absolute;top:0;right:30px;'/>
+        </div>
+        <div class="col-md-3 error" ng-if="(addForm.reducerule1.$invalid && addForm.reducerule1.$dirty) ||(addForm.reducerule2.$invalid && addForm.reducerule2.$dirty)|| submited">
+            <span ng-if="(addForm.reducerule1.$error.required)||(addForm.reducerule2.$error.required)">请输入完整充电时长区间</span>
+            <span ng-if="formData.reducerule1 > formData.reducerule2">起始时间不得大于结束时间</span>
+        </div>
+    </div>
+  </script>
+  
+  <style>
+    .ruletype {
+      width:15px;
+      height:15px;
+    }
+    .timeRange {
+      display: inline-block;
+      width:20%;
+      padding-right: 20px !important;
+    }
+  </style>

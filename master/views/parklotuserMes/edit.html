@@ -1,0 +1,125 @@
+<div class="row" block-ui="main">
+  <div class="col-md-12">
+      <div class="page-bar">
+          <ul class="page-breadcrumb">
+              <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+              <li ng-if="titles.secTitle"><a href="javascript:;"  ui-sref="{{stateGoIndex}}">{{titles.secTitle}}</a></li>
+          </ul>
+      </div>
+      <div class="panel panel-default">
+          <div class="panel-heading">编辑收费员资料</div>
+          <div class="panel-body form">
+              <form name="editForm" ng-submit="submitForm(editForm.$valid)" class="form-horizontal" novalidate>
+                  <div class="format-height"></div>
+                  <div class="form-body">
+                      <div class="form-group">
+                          <label class="control-label col-md-2">收费员账号<span class="required">*</span></label>
+                          <div class="col-md-6" ng-class="editForm.userCode.$invalid && editForm.userCode.$dirty ? 'has-error':''">
+                              <div class="input-icon right">
+                                  <i class="fa tooltips" ng-class="editForm.userCode.$invalid && editForm.userCode.$dirty ? 'fa-exclamation':''"></i>
+                                  <input type="text" class="form-control" name="userCode" ng-model="formData.userCode" placeholder="请输入收费员账号" ng-maxlength="16" required>
+                              </div>
+                          </div>
+                          <div class="col-md-3 error" ng-if="(editForm.userCode.$invalid && editForm.userCode.$dirty) || submited">
+                              <span ng-if="editForm.userCode.$error.required">请输入收费员账号</span>
+                              <span ng-if="editForm.userCode.$error.maxlength">收费员账号不能超过16位</span>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="control-label col-md-2">收费员姓名<span class="required">*</span></label>
+                          <div class="col-md-6" ng-class="editForm.userName.$invalid && editForm.userName.$dirty ? 'has-error':''">
+                              <div class="input-icon right">
+                                  <i class="fa tooltips" ng-class="editForm.userName.$invalid && editForm.userName.$dirty ? 'fa-exclamation':''"></i>
+                                  <input type="text" class="form-control" name="userName" ng-model="formData.userName" placeholder="请输入收费员姓名" ng-maxlength="16" required>
+                              </div>
+                          </div>
+                          <div class="col-md-3 error" ng-if="(editForm.userName.$invalid && editForm.userName.$dirty) || submited">
+                              <span ng-if="editForm.userName.$error.required">请输入收费员姓名</span>
+                              <span ng-if="editForm.userName.$error.maxlength">收费员姓名不能超过16个字</span>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="control-label col-md-2">收费员手机号<span class="required">*</span></label>
+                          <div class="col-md-6" ng-class="editForm.userPhone.$invalid && (editForm.userPhone.$dirty || submited) ? 'has-error':''">
+                              <div class="input-icon right">
+                                  <i class="fa tooltips" ng-class="editForm.userPhone.$invalid && (editForm.userPhone.$dirty || submited) ? 'fa-exclamation':''"></i>
+                                  <input type="text" class="form-control" name="userPhone" ng-model="formData.userPhone" placeholder="请输入手机号" required ng-maxlength="11" ng-pattern="/^0?1[3|4|5|7|8][0-9]\d{8}$/">
+                              </div>
+                          </div>
+                          <div class="col-md-3 error" ng-if="editForm.userPhone.$invalid && (editForm.userPhone.$dirty || submited)">
+                              <span ng-if="editForm.userPhone.$error.required">请输入手机号</span>
+                              <span ng-show="editForm.userPhone.$error.maxlength">手机号不能超过11位</span>
+                              <span ng-show="editForm.userPhone.$error.pattern">手机号格式错误</span>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="control-label col-md-2">所属停车场<span class="required">*</span></label>
+                          <div class="col-md-6" ng-class="editForm.parklotCodes.$dirty ? (editForm.parklotCodes.$valid ? 'has-success': 'has-error') :''">
+                              <div class="input-icon right multiLot">
+                                  <i class="fa tooltips" ng-class="editForm.parklotCodes.$dirty ? (editForm.parklotCodes.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                  <select name="parklotCodes" class="form-control selectpicker" ng-model="formData.parklotCodes" multiple data-live-search="true" title="请选择停车场" required >
+                                      <option ng-repeat="option in parklotCodeOptions" value="{{option.code}}">
+                                          {{option.name}}
+                                      </option>
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="col-md-3 error" ng-show="(editForm.parklotCodes.$invalid && editForm.parklotCodes.$dirty) || submited">
+                              <span ng-show="editForm.parklotCodes.$error.required">请选择所属停车场</span>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-2">密码<span class="required">*</span></label>
+                        <div class="col-md-6" ng-class="editForm.userPasswd.$dirty ? (editForm.userPasswd.$valid ? 'has-success': 'has-error') :''">
+                            <div class="input-icon right">
+                                <i class="fa tooltips" ng-class="editForm.userPasswd.$dirty ? (editForm.userPasswd.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                <input type="password" class="form-control" name="userPasswd" ng-model="formData.userPasswd" required placeholder="支持字母、数字的组合">
+                            </div>
+                        </div>
+                        <div class="col-md-3 error" ng-show="editForm.userPasswd.$invalid && editForm.userPasswd.$dirty">
+                            <span ng-show="editForm.userPasswd.$error.required">请输入用户密码</span>
+                            <span ng-show="editForm.userPasswd.$error.pattern">格式错误，仅支持字母、数字的组合</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">确认密码<span class="required">*</span></label>
+                        <div class="col-md-6" ng-class="editForm.pwdconfirm.$dirty ? (editForm.pwdconfirm.$valid ? 'has-success': 'has-error') :''">
+                            <div class="input-icon right">
+                                <i class="fa tooltips" ng-class="editForm.pwdconfirm.$dirty ? (editForm.pwdconfirm.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                <input type="password" class="form-control" name="pwdconfirm" ng-model="formData.pwdconfirm" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3 error" ng-show="(formData.userPasswd != formData.pwdconfirm || editForm.pwdconfirm.$error.required) && editForm.pwdconfirm.$dirty">
+                            <span ng-show="(formData.pwdconfirm != formData.pwd) && !editForm.pwdconfirm.$error.required">两次密码输入不一致</span>
+                            <span ng-show="editForm.pwdconfirm.$error.required">请输入确认密码</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-md-2">备注</label>
+                      <div class="col-md-6">
+                          <div class="input-icon right">
+                              <textarea class="form-control" name="description" ng-model="formData.description" cols="50" rows="5" ng-maxlength="200" ></textarea>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-actions">
+                      <div class="col-md-offset-8 col-md-4">
+                          <button type="button" class="btn default" ui-sref="{{stateGoIndex}}">取消</button>
+                          <button type="submit" class="btn btn-info">提交</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+<style>
+  .multiLot>div {
+    padding:0 !important;
+  }
+  .bootstrap-select.btn-group .btn .filter-option {
+    position: static !important;
+  }
+</style>

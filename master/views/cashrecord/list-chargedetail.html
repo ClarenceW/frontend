@@ -1,0 +1,103 @@
+<div class="row" block-ui="main" id="charge-detail">
+    <div class="col-md-12">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li ng-if='titles.firstTitle'><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a>
+                    <i class="fa fa-angle-right"></i></li>
+                <li ng-if='titles.secTitle'><a href="javascript:;"
+                                               ui-sref="{{stateGoCashIndex}}({userCode:userCode})">{{titles.secTitle}}</a><i
+                        class="fa fa-angle-right"></i>
+                </li>
+                <li ng-if='titles.secTitle && fromVerify'><a href="javascript:;" ui-sref="{{stateGoCashVerifyIndex}}">已确认到账记录</a><i
+                        class="fa fa-angle-right"></i>
+                </li>
+                <li ng-if='titles.secTitle'><a href="javascript:;" ng-click="goBack()">岗亭收费记录</a><i
+                        class="fa fa-angle-right"></i></li>
+                <li ng-if='titles.secTitle'>岗亭收费记录详情</li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body form">
+                <div class="format-height"></div>
+                <div class="pay-record">
+                    <div class="pay-table">
+                        <table class="table table-bordered table-hover" width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tbody>
+                          <tr>
+                              <td width="25%" align="right"><font class="font-blue-deep"><strong>记录编号:</strong></font></td>
+                              <td width="75%">{{formData.billCode}}</td>
+                          </tr>
+                          <tr>
+                              <td align="right"><font class="font-blue-deep"><strong>停车场:</strong></font></td>
+                              <td>{{formData.parklotName}}</td>
+                          </tr>
+                          <tr>
+                              <td width="25%" align="right"><font class="font-blue-deep"><strong>车牌:</strong></font></td>
+                              <td width="75%">{{formData.plate}}</td>
+                          </tr>
+                          <!-- <tr>
+                              <td align="right"><font class="font-blue-deep"><strong>手机号:</strong></font></td>
+                              <td>{{formData.plateColor}}</td>
+                          </tr> -->
+                          <!-- <tr>
+                              <td align="right"><font class="font-blue-deep"><strong>总收费金额:</strong></font></td>
+                              <td>{{formData.payableMoney}}</td>
+                          </tr> -->
+                          <tr>
+                              <td align="right"><font class="font-blue-deep"><strong>应收费金额:</strong></font></td>
+                              <td>{{formData.payableMoney | currency}}</td>
+                          </tr>
+                          <tr>
+                              <td align="right"><font class="font-blue-deep"><strong>实收金额:</strong></font></td>
+                              <td>
+                                {{formData.actualMoney | currency}}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td align="right"><font class="font-blue-deep"><strong>减免金额:</strong></font></td>
+                              <td>{{formData.discountsMoney | currency}}</td>
+                          </tr>
+                          <tr>
+                              <td align="right"><font class="font-blue-deep"><strong>收费类型:</strong></font></td>
+                              <td>{{formData.parklotChargeType}}</td>
+                          </tr>
+                          <tr>
+                              <td align="right"><font class="font-blue-deep"><strong>到账时间:</strong></font></td>
+                              <td>
+                                {{formData.payTime | date : 'yyyy-MM-dd HH:mm:ss'}}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td align="right"><font class="font-blue-deep"><strong>操作员:</strong></font></td>
+                              <td>{{formData.opUser}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+
+                <div style="text-align: right">
+                    <button type="button" class="btn"  ng-click="goBack()">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .parkpay-record {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .parkpay-table {
+        width: 100%;
+        flex: 0 1 auto;
+
+    }
+
+    .parkpay-btn {
+        margin: 10px auto 10px;
+    }
+</style>

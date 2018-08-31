@@ -1,0 +1,115 @@
+<div class="row" block-ui="main" id="mouthpayrecord-detail">
+  <div class="col-md-12">
+      <div class="page-bar">
+          <ul class="page-breadcrumb">
+              <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+              <li ng-if="titles.secTitle"><a href="javascript:;">{{titles.secTitle}}</a><i ng-if="titles.thirdTitle" class="fa fa-angle-right"></i></li>
+              <li ng-if="titles.thirdTitle"><a href="javascript:;"  ui-sref="{{stateGoIndex}}">{{titles.thirdTitle}}</a></li>
+          </ul>
+      </div>
+      <div class="panel panel-default">
+          <div class="panel-heading">查看订单详情</div>
+          <div class="panel-body form">
+              <div class="format-height"></div>
+              <div class="parkpay-record">
+                <div class="parkpay-table">
+                  <table class="table table-bordered table-hover" width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tbody>
+                      <tr>
+                          <td width="19%" align="right"><font class="font-blue-deep"><strong>订单编号:</strong></font></td>
+                          <td width="81%">{{formData.orderCode}}</td>
+                      </tr>
+                      <tr>
+                          <td width="19%" align="right"><font class="font-blue-deep"><strong>交易单号:</strong></font></td>
+                          <td width="81%">{{formData.transactionCode}}</td>
+                      </tr>
+                      <tr>
+                          <td width="19%" align="right"><font class="font-blue-deep"><strong>第三方交易单号:</strong></font></td>
+                          <td width="81%">{{formData.thirdSn}}</td>
+                      </tr>
+                      <tr>
+                          <td width="19%" align="right"><font class="font-blue-deep"><strong>月卡编号:</strong></font></td>
+                          <td width="81%">{{formData.cardCode}}</td>
+                      </tr>
+                      <tr>
+                          <td align="right"><font class="font-blue-deep"><strong>购买人手机号:</strong></font></td>
+                          <td>{{formData.phoneNum}}</td>
+                      </tr>
+                      <tr>
+                          <td width="19%" align="right"><font class="font-blue-deep"><strong>车牌:</strong></font></td>
+                          <td width="81%">{{formData.plate}}</td>
+                      </tr>
+                      <tr>
+                          <td align="right"><font class="font-blue-deep"><strong>车牌颜色:</strong></font></td>
+                          <td>{{formData.plateColor}}</td>
+                      </tr>
+                      <tr>
+                          <td align="right"><font class="font-blue-deep"><strong>支付渠道:</strong></font></td>
+                          <td>{{formData.paySrc}}</td>
+                      </tr>
+                      <tr>
+                          <td align="right"><font class="font-blue-deep"><strong>支付方式:</strong></font></td>
+                          <td>{{formData.payType}}</td>
+                      </tr>
+                      <tr>
+                          <td align="right"><font class="font-blue-deep"><strong>订单金额:</strong></font></td>
+                          <td>{{formData.orderMoney | currency}}</td>
+                      </tr>
+                      <tr>
+                          <td align="right"><font class="font-blue-deep"><strong>到账时间:</strong></font></td>
+                          <td>
+                            {{formData.createTime | date : 'yyyy-MM-dd HH:mm:ss'}}
+                          </td>
+                      </tr>
+                      <tr>
+                          <td align="right"><font class="font-blue-deep"><strong>状态:</strong></font></td>
+                          <td>{{formData.status}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="">
+                  <button class="btn blue-madison parkpay-btn" ng-click="toParkingRecord()">
+                      月卡购买记录
+                  </button>
+              </div>
+              <table class="table table-bordered table-hover evidence_table" id="pass-car-table"
+                     ng-if="passcar">
+                  <thead>
+                  <tr>
+                      <th>订单编号</th>
+                      <th>车牌</th>
+                      <th>月卡编号</th>
+                      <th>终端来源</th>
+                      <th>购买人账号</th>
+                      <th>生成时间</th>
+                      <th>状态</th>
+                  </tr>
+                  </thead>
+                  <tbody></tbody>
+              </table>
+              <div style="text-align: right">
+                  <button type="button" class="btn" ng-click="back();">关闭</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<style>
+  .parkpay-record {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .parkpay-table {
+      width: 100%;
+      flex: 0 1 auto;
+
+  }
+
+  .parkpay-btn {
+      margin: 10px auto 10px;
+  }
+</style>

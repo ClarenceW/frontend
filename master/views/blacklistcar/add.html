@@ -1,0 +1,127 @@
+<div class="row" block-ui="main" id="blacklistcarAdd">
+    <div class="col-md-12">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+                <li ng-if="titles.secTitle"><a href="javascript:;"  ui-sref="{{stateGoIndex}}">{{titles.secTitle}}</a></li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">新增黑名单车辆</div>
+            <div class="panel-body form">
+                <form name="addForm" ng-submit="submitForm(addForm.$valid)" class="form-horizontal" novalidate>
+                    <div class="format-height"></div>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-2">车牌<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="addForm.plate.$invalid && addForm.plate.$dirty ? 'has-error':''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.plate.$invalid && addForm.name.$dirty ? 'fa-exclamation':''"></i>
+                                    <input type="text" class="form-control" name="plate" ng-model="formData.plate" placeholder="请输入车牌" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 error" ng-if="(addForm.plate.$invalid && addForm.plate.$dirty) || submited">
+                                <span ng-if="addForm.plate.$error.required">请输入车牌</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">车牌颜色<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="addForm.plateColor.$dirty ? (addForm.plateColor.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.plateColor.$dirty ? (addForm.plateColor.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <select name="plateColor" class="form-control" ng-model="formData.plateColor" required>
+                                        <option value="">请选择</option>
+                                        <option ng-repeat="option in colorOptions" value="{{option.lookupKey}}">
+                                            {{option.lookupValue}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 error" ng-show="(addForm.plateColor.$invalid && addForm.plateColor.$dirty) || submited">
+                                <span ng-show="addForm.plateColor.$error.required">请选择车牌颜色</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">车主手机号</label>
+                            <div class="col-md-6" ng-class="addForm.userCode.$invalid && (addForm.userCode.$dirty || submited) ? 'has-error':''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.userCode.$invalid && (addForm.userCode.$dirty || submited) ? 'fa-exclamation':''"></i>
+                                    <input type="text" class="form-control" name="userCode" ng-model="formData.userCode" placeholder="请输入车主手机号" ng-maxlength="11" ng-pattern="/^0?1[3|4|5|7|8][0-9]\d{8}$/">
+                                </div>
+                            </div>
+                            <div class="col-md-3 error" ng-if="addForm.userCode.$invalid && (addForm.userCode.$dirty || submited)">
+                                <span ng-show="addForm.userCode.$error.maxlength">车主手机号不能超过11位</span>
+                                <span ng-show="addForm.userCode.$error.pattern">车主手机号格式错误</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">车主姓名</label>
+                            <div class="col-md-6" ng-class="addForm.userName.$invalid && addForm.userName.$dirty ? 'has-error':''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.userName.$invalid && addForm.userName.$dirty ? 'fa-exclamation':''"></i>
+                                    <input type="text" class="form-control" name="userName" ng-model="formData.userName" placeholder="请输入车主姓名">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">所属停车场<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="addForm.parklotCode.$dirty ? (addForm.parklotCode.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.parklotCode.$dirty ? (addForm.dclotCode.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <select name="parklotCode" class="form-control" ng-model="formData.parklotCode" required>
+                                        <option value="">请选择</option>
+                                        <option ng-repeat="option in parklotCodeOptions" value="{{option.code}}">
+                                            {{option.name}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 error" ng-show="(addForm.dclotCode.$invalid && addForm.dclotCode.$dirty) || submited">
+                                <span ng-show="addForm.dclotCode.$error.required">请选择所属停车场</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">开始时间<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="addForm.startTime.$dirty ? (addForm.startTime.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="searchTm" readonly
+                                           uib-datepicker-popup="{{format}}"
+                                           ng-model="formData.startTime"
+                                           is-open="tempData.opened"
+                                           date-disabled="disabled(date, mode)"
+                                           datepicker-options="dateOptions"
+                                           ng-required="true"
+                                           alt-input-formats="altInputFormats"/>
+                                  <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                  </span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 error" ng-show="addForm.startTime.$invalid && (addForm.startTime.$dirty || submited)">
+                                <span ng-show="addForm.startTime.$error.required">请选择开始时间</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">原因<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="addForm.reason.$dirty ? (addForm.reason.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="addForm.reason.$invalid && addForm.reason.$dirty ? 'fa-exclamation':''"></i>
+                                    <textarea class="form-control" name="reason" ng-model="formData.reason" cols="50" rows="5" ng-maxlength="200" required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-3 error" ng-show="(addForm.reason.$invalid && addForm.reason.$dirty) || submited">
+                                <span ng-show="addForm.reason.$error.required">请输入原因</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <div class="col-md-offset-8 col-md-4">
+                            <button type="button" class="btn default" ui-sref="{{stateGoIndex}}">取消</button>
+                            <button type="submit" class="btn btn-info">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

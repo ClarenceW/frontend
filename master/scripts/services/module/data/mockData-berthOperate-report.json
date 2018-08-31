@@ -1,0 +1,152 @@
+[
+    {	
+    	"id":1,
+        "reportDate": "2018-02-10",
+        "companyName": "立方",
+        "parkingName": "城投商务楼停车场",
+        "berthTotal": 130,
+        "berthUseRate": 0.65,
+        "berthTurnRate":5.69,
+        "berthProfitRate": 280
+    },
+    {	
+    	"id":2,
+        "reportDate": "2018-02-10",
+        "companyName": "捷顺",
+        "parkingName": "宝龙城市广场",
+        "berthTotal": 210,
+        "berthUseRate": 0.53,
+        "berthTurnRate":4.32,
+        "berthProfitRate": 539
+    },
+    {	
+    	"id":3,
+        "reportDate": "2018-02-10",
+        "companyName": "ETC",
+        "parkingName": "国际创投中心",
+        "berthTotal": 150,
+        "berthUseRate": 0.88,
+        "berthTurnRate":6.14,
+        "berthProfitRate": 376
+    },
+    {	
+    	"id":4,
+        "reportDate": "2018-02-10",
+        "companyName": "捷顺",
+        "parkingName": "欧洲风情街",
+        "berthTotal": 180,
+        "berthUseRate": 0.90,
+        "berthTurnRate":7.63,
+        "berthProfitRate": 481
+    },
+   	{	
+    	"id":5,
+        "reportDate": "2018-02-10",
+        "companyName": "立方",
+        "parkingName": "南金鹰",
+        "berthTotal": 200,
+        "berthUseRate": 0.65,
+        "berthTurnRate":5.69,
+        "berthProfitRate": 280
+    },
+     {	
+    	"id":6,
+        "reportDate": "2018-02-10",
+        "companyName": "捷顺",
+        "parkingName": "市政务服务中心",
+        "berthTotal": 100,
+        "berthUseRate": 0.92,
+        "berthTurnRate":5.33,
+        "berthProfitRate": 1687
+    },
+    {	
+    	"id":7,
+        "reportDate": "2018-02-10",
+        "companyName": "城投集团",
+        "parkingName": "第三人民医院",
+        "berthTotal": 130,
+        "berthUseRate": 0.785,
+        "berthTurnRate":5.69,
+        "berthProfitRate": 984
+    },
+    {	
+    	"id":8,
+        "reportDate": "2018-02-09",
+        "companyName": "捷顺",
+        "parkingName": "南金鹰",
+        "berthTotal": 150,
+        "berthUseRate": 0.65,
+        "berthTurnRate":5.69,
+        "berthProfitRate": 880
+    },
+    {	
+    	"id":9,
+        "reportDate": "2018-02-09",
+        "companyName": "立方",
+        "parkingName": "宝龙城市广场",
+        "berthTotal": 180,
+        "berthUseRate": 0.75,
+        "berthTurnRate":4.32,
+        "berthProfitRate": 963
+    },
+   	{	
+    	"id":10,
+        "reportDate": "2018-02-09",
+        "companyName": "城投集团",
+        "parkingName": "欧洲风情街",
+        "berthTotal": 200,
+        "berthUseRate": 0.87,
+        "berthTurnRate":3.66,
+        "berthProfitRate": 1384
+    },
+     {	
+    	"id":11,
+        "reportDate": "2018-02-09",
+        "companyName": "ETC",
+        "parkingName": "中南城",
+        "berthTotal": 100,
+        "berthUseRate": 0.65,
+        "berthTurnRate":5.69,
+        "berthProfitRate": 980
+    },
+    {	
+    	"id":12,
+        "reportDate": "2018-02-09",
+        "companyName": "立方",
+        "parkingName": "南金鹰",
+        "berthTotal": 160,
+        "berthUseRate": 0.65,
+        "berthTurnRate":5.61,
+        "berthProfitRate": 280
+    },
+    {	
+    	"id":13,
+        "reportDate": "2018-02-09",
+        "companyName": "捷顺",
+        "parkingName": "新都社区商务楼",
+        "berthTotal": 130,
+        "berthUseRate": 0.88,
+        "berthTurnRate":4.32,
+        "berthProfitRate": 963
+    },
+    {	
+    	"id":14,
+        "reportDate": "2018-02-09",
+        "companyName": "城投集团",
+        "parkingName": "欧洲风情街",
+        "berthTotal": 170,
+        "berthUseRate": 0.65,
+        "berthTurnRate":5.69,
+        "berthProfitRate": 1080
+    },
+   	{	
+    	"id":15,
+        "reportDate": "2018-02-08",
+        "companyName": "ETCP",
+        "parkingName": "市政服务中心",
+        "berthTotal": 130,
+        "berthUseRate": 0.55,
+        "berthTurnRate":5.21,
+        "berthProfitRate": 1268
+    }
+]

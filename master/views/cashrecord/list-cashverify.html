@@ -1,0 +1,85 @@
+<div id="cashverify-index" block-ui="main">
+    <!-- BEGIN PAGE HEADER-->
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li ng-if='titles.firstTitle'><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i
+                    class="fa fa-angle-right"></i></li>
+            <li ng-if='titles.secTitle'><a href="javascript:;" ui-sref="{{stateGoCashIndex}}">{{titles.secTitle}}</a><i
+                    class="fa fa-angle-right"></i>
+            </li>
+            <li ng-if='titles.secTitle'>已确认到账记录</i></li>
+        </ul>
+        <!-- <span style="position:absolute;right:20px;top:12px;font-size:26px;color:#bfbfbf;"
+              class="glyphicon glyphicon-repeat" ng-click="toSearch()"></span> -->
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="selectbox">
+                <ul class="option">
+                    <div class="form-inline" style="z-index: 100">
+                        <div class="form-group form-group-sm">
+                          收费员编号： <input class="form-control" name="userCode" type="text" ng-model="formData.userCode">
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <div class="input-group">
+                                <label class="control-label">时间：</label>
+                                <input type="text" class="form-control" id="searchTm" uib-datepicker-popup="{{format}}" ng-model="formData.startTime"
+                                    is-open="tempBeginData.opened" date-disabled="disabled(date, mode)" datepicker-options="dateOptions"
+                                    ng-required="true" alt-input-formats="altInputFormats" ng-click="open('begin')" readonly />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open('begin')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                  </span>
+                                <label class="control-label">-</label>
+                                <input type="text" class="form-control" id="searchTm" uib-datepicker-popup="{{format}}" ng-model="formData.endTime"
+                                    is-open="tempEndData.opened" date-disabled="disabled(date, mode)" datepicker-options="dateOptions"
+                                    ng-required="true" alt-input-formats="altInputFormats" ng-click="open('end')" readonly />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open('end')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                  </span>
+                            </div>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn blue-madison search" ng-click="toSearch()">搜 索</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn search" ng-click="toReset()">重 置</button>
+                        </div>
+                    </div>
+
+                </ul>
+                <div id="ucSelectBoxWrapper" style="padding: 0px;"></div>
+            </div>
+            <div class="buttonbox" style="line-height:40px;">
+                <button class="btn btn-sm btn-default" ng-click="toExport()">
+                    <span class="fa fa-file-excel-o font-blue-linewell"></span> 导出
+                </button>
+                <button class="btn btn-sm btn-default" ng-click="toDetail()">
+                    <span class="glyphicon glyphicon-search font-blue-linewell"></span>详情
+                </button>
+
+            </div>
+            <table class="table table-bordered table-hover" id="cashverify-table">
+                <thead>
+                <tr>
+                    <th class="table-checkbox">
+                        <input type="checkbox" class="group-checkable" style="text-align: right;"
+                               data-set="#cashverify-table .checkboxes"/>
+                    </th>
+                    <th>收费员编号</th>
+                    <th>应上交金额（元）</th>
+                    <th>实际上交金额（元）</th>
+                    <th>收费日期</th>
+                    <th>状态</th>
+                    <th>确认人</th>
+                    <th>确认时间</th>
+
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--excel导出模板-->
+<div class="excel"></div>

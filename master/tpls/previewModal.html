@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="well scroller" style="min-height: 260px;" data-rail-visible="1" data-rail-color="yellow" data-handle-color="#a1b2bd">
+            <div style="padding: 0 0 20px 0;margin: 0;font-size: 18px; font-weight:bold;word-wrap:break-word;">
+                <span ng-if="title()">此处为标题</span>
+                <span ng-if="!title()">{{formData.title}}</span>
+            </div>
+            <div style="padding: 0 0 10px 0;margin: 0;font-size: 14px; word-wrap:break-word;color: #a0a0a0">
+                <span ng-if="pubTm()">此处为发布时间</span>
+                <span ng-if="!pubTm()">{{formData.pubTm | date:'yyyy-MM-dd hh:mm:ss'}}</span>
+            </div>
+            <div style="padding: 0 0 0 0;margin: 0;font-size: 14px; word-wrap:break-word;color: #a0a0a0">
+                <span ng-if="context()">此处为发布内容</span>
+                <span ng-if="!context()">{{formData.context}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-center" style="padding: 20px 0 0 0">
+    <button type="button" ng-click="closeThisDialog(0)" class="btn btn-info">Ok, Got It!</button>
+</div>

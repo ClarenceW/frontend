@@ -1,0 +1,17 @@
+[
+  {"name":"普通收费","opUser":"admin","sectionCount":26,"ruleType":"1","createTime":"2018-02-15 09:34:50","code":"54674","cartype":"0"},
+  {"name":"市区-按时收费","opUser":"admin","sectionCount":25,"ruleType":"1","createTime":"2018-02-16 08:14:18","code":"66826","cartype":"1"},
+  {"name":"市区-按次收费","opUser":"admin","sectionCount":62,"ruleType":"0","createTime":"2018-02-11 02:04:13","code":"89224","cartype":"3"},
+  {"name":"市区-按时收费","opUser":"admin","sectionCount":70,"ruleType":"0","createTime":"2018-02-12 07:57:07","code":"11529","cartype":"1"},
+  {"name":"普通收费","opUser":"admin","sectionCount":62,"ruleType":"1","createTime":"2018-02-12 03:55:46","code":"22322","cartype":"0"},
+  {"name":"市区-按时收费","opUser":"admin","sectionCount":72,"ruleType":"1","createTime":"2018-02-12 04:51:02","code":"56330","cartype":"2"},
+  {"name":"市区-按次收费","opUser":"admin","sectionCount":25,"ruleType":"1","createTime":"2018-02-13 06:13:06","code":"88483","cartype":"0"},
+  {"name":"普通收费","opUser":"admin","sectionCount":53,"ruleType":"0","createTime":"2018-02-12 07:25:19","code":"71289","cartype":"3"},
+  {"name":"市区-按次收费","opUser":"admin","sectionCount":60,"ruleType":"0","createTime":"2018-02-11 01:27:50","code":"44984","cartype":"0"},
+  {"name":"市区-按时收费","opUser":"admin","sectionCount":74,"ruleType":"1","createTime":"2018-02-12 01:04:49","code":"53565","cartype":"0"},
+  {"name":"市区-按时收费","opUser":"admin","sectionCount":37,"ruleType":"1","createTime":"2018-02-13 09:44:53","code":"58227","cartype":"1"},
+  {"name":"市区-按时收费","opUser":"admin","sectionCount":44,"ruleType":"0","createTime":"2018-02-14 09:50:49","code":"18814","cartype":"3"},
+  {"name":"市区-按次收费","opUser":"admin","sectionCount":18,"ruleType":"1","createTime":"2018-02-12 10:15:33","code":"63238","cartype":"1"},
+  {"name":"市区-按时收费","opUser":"admin","sectionCount":33,"ruleType":"0","createTime":"2018-02-13 11:45:42","code":"78207","cartype":"2"},
+  {"name":"普通收费","opUser":"admin","sectionCount":66,"ruleType":"1","createTime":"2018-02-12 00:22:02","code":"24208","cartype":"2"}
+]

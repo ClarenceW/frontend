@@ -1,0 +1,41 @@
+{
+	"iTotalDisplayRecords": 5,
+	"iTotalRecords": 5,
+	"aaData": [
+		{
+			"departmentnum": "1001",
+			"departmentname": "盐城城投",
+			"updepartment": "",
+			"mark": "盐城城投",
+			"createtime": "2017-05-26 09:10:51"
+		},
+		{
+			"departmentnum": "1006",
+			"departmentname": "工程部",
+			"updepartment": "盐城城投",
+			"mark": "工程部",
+			"createtime": "2017-06-20 12:10:38"
+		},
+		{
+			"departmentnum": "1007",
+			"departmentname": "信息技术部",
+			"updepartment": "盐城城投",
+			"mark": "信息技术部",
+			"createtime": "2017-05-08 15:50:51"
+		},
+		{
+			"departmentnum": "1003",
+			"departmentname": "财务管理部",
+			"updepartment": "盐城城投",
+			"mark": "财务管理部",
+			"createtime": "2017-06-20 11:36:28"
+		},
+		{
+			"departmentnum": "1002",
+			"departmentname": "公共服务部",
+			"updepartment": "盐城城投",
+			"mark": "公共服务部",
+			"createtime": "2017-06-25 08:45:51"
+		}
+	]
+}

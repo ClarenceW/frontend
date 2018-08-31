@@ -1,0 +1,95 @@
+
+<div id="carsalarm-index" block-ui="main">
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+            <li ng-if="titles.secTitle"><a href="javascript:;">{{titles.secTitle}}</a></li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="selectbox">
+                <ul class="option">
+                    <div class="form-inline" id="queryForm">
+                        <div class="form-group form-group-sm">
+                 			      车牌： <input class="form-control" name="plate" ng-model="formData.plate" type="text">
+                        </div>
+                        <div class="form-group form-group-sm">
+                            所属停车场： 
+                            <!-- <input class="form-control" name="parklotName" ng-model="formData.parklotName" type="text"> -->
+                            <div class="multiLot" style="width: 179px;padding: 0;height:34px;display:inline-block;">
+                              <select name="parklotCodes" class="form-control selectpicker" ng-model="formData.parklotCodes" multiple data-live-search="true" title="请选择停车场">
+                                <option ng-repeat="option in parklotCodeOptions" value="{{option.code}}">
+                                    {{option.name}}
+                                </option>
+                              </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            车主手机号： <input class="form-control" name="userCode" ng-model="formData.userCode" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">预警类型：</label>
+                            <select name="alarmType" ng-model="formData.alarmType" class="form-control">
+                                <option value="">请选择</option>
+                                <option ng-repeat="option in alarmTypeOption" value="{{option.lookupKey}}">{{option.lookupValue}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <div class="input-group">
+                                <label class="control-label">时间：</label>
+                                <input type="text" class="form-control" id="searchTm" uib-datepicker-popup="{{format}}" ng-model="formData.startTime"
+                                    is-open="tempBeginData.opened" date-disabled="disabled(date, mode)" datepicker-options="dateOptions"
+                                    ng-required="true" alt-input-formats="altInputFormats" ng-click="open('begin')" readonly />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open('begin')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                  </span>
+                                <label class="control-label">-</label>
+                                <input type="text" class="form-control" id="searchTm" uib-datepicker-popup="{{format}}" ng-model="formData.endTime"
+                                    is-open="tempEndData.opened" date-disabled="disabled(date, mode)" datepicker-options="dateOptions"
+                                    ng-required="true" alt-input-formats="altInputFormats" ng-click="open('end')" readonly />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open('end')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                  </span>
+                            </div>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn blue-madison search" ng-click="toSearch()">搜 索</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn search" ng-click="toReset()">重 置</button>
+                        </div>
+                    </div>
+                </ul>
+                <div id="ucSelectBoxWrapper" style="padding: 0px;"></div>
+            </div>
+            <table class="table table-bordered table-hover" id="carsalarm-table">
+                <thead>
+                <tr>
+                    <th class="table-checkbox">
+                        <input type="checkbox" class="group-checkable" style="text-align: right;" data-set="#carsalarm-table .checkboxes"/>
+                    </th>
+                    <th>车牌</th>
+                    <th>车牌颜色</th>
+                    <th>预警类型</th>
+                    <th>手机号</th>
+                    <th>停车场</th>
+                    <th>行驶方向</th>
+                    <th>出入口名称</th>
+                    <th>预警时间</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+  .multiLot>div {
+    padding:0 !important;
+  }
+  .bootstrap-select.btn-group .btn .filter-option {
+    position: static !important;
+  }
+</style>

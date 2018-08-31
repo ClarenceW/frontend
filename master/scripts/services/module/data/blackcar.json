@@ -1,0 +1,42 @@
+{
+  "iTotalRecords": 4,
+  "iTotalDisplayRecords": 4,
+  "aaData": [
+    {
+      "plate": "苏JV9K56",
+      "plateColor": "蓝色",
+      "userCode": "13457186549",
+      "fee": 728,
+      "plotName": "宝龙城市广场",
+      "inTime": "2017-07-29 17:32",
+      "inPic": "img/data/091313-in-1-AV9K56-0-288.jpg"
+    },
+     {
+      "plate": "苏J9LV62",
+      "plateColor": "蓝色",
+      "userCode": "13888754728",
+      "fee": 375,
+      "plotName": "宝龙城市广场",
+      "inTime": "2017-08-01 09:52",
+      "inPic": "img/data/105940-in-1-A9LV62-0-7410.jpg"
+    },
+     {
+      "plate": "苏JD23A3",
+      "plateColor": "蓝色",
+      "userCode": "15054562388",
+      "fee": 373,
+      "plotName": "城投商务楼停车场",
+      "inTime": "2017-08-03 17:52",
+      "inPic": "img/data/161659-in-1-ASJ587-0-4313.jpg"
+    },
+     {
+      "plate": "苏JS3427",
+      "plateColor": "蓝色",
+      "userCode": "17057142311",
+      "fee": 1209,
+      "plotName": "城投商务楼停车场",
+      "inTime": "2017-08-03 17:52",
+      "inPic": "img/data/091313-in-1-AV9K56-0-288.jpg"
+    }
+  ]
+}

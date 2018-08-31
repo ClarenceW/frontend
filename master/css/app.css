@@ -1,0 +1,922 @@
+
+html {
+    font-size: 16px;
+}
+
+body {
+    color: #333333;
+    font-family: "微软雅黑", "Open Sans", sans-serif;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size: 13px;
+    direction: ltr;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "微软雅黑", "Open Sans", sans-serif;
+    font-weight: 300;
+}
+
+a {
+    color: #2D59A2;
+    text-decoration: none;
+    border-bottom: 1px solid inherit
+}
+
+a.hovered:hover {
+    border-bottom: 1px solid #2D59A2
+}
+
+#top-menu {
+    height: 70px;
+    padding: 0;
+    z-index: 1000
+}
+
+#top-menu .logo {
+    padding: 16px;
+    margin: 0;
+    width:180px;
+    text-align: center;
+    background-color: #313D4A;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transition: width .3s ease;
+    -moz-transition: width .3s ease;
+    transition: width .3s ease;
+    z-index: 999
+}
+
+#top-menu a.title {
+    display: block;
+    padding: 18px;
+    margin-left: 180px;
+    text-decoration: none;
+    -webkit-transition: margin-left .3s ease;
+    -moz-transition: margin-left .3s ease;
+    transition: margin-left .3s ease;
+    z-index: 999
+}
+
+/**origin 200*/
+#top-menu .right.menu .icon.item i.icon {
+    font-size: 25px;
+    z-index: 999
+}
+
+#top-menu .left.menu {
+    margin: 9px 0;
+    position: absolute;
+    left: 75px;
+    top: 0;
+    z-index: 999
+}
+
+#top-menu .left.menu .item {
+    font-size: 16px
+}
+
+#top-menu .left.menu a.item {
+    padding: 3px 5px;
+    margin: 10px 2px;
+    text-align: center;
+    font-size: 14px
+}
+
+#top-menu .left.menu a.item .icon {
+    margin-right: 0
+}
+
+#top-menu .left.menu .item:before {
+    height: 0
+}
+
+/**right menu line 232
+*/
+#top-menu .right.menu {
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+#top-menu .right.menu > .login.button, #top-menu .right.menu > .register.button {
+    margin: 15px 6px
+}
+
+#top-menu .right.menu .item {
+    padding: 18px 15px
+}
+
+#top-menu .right.menu .item:before {
+    height: 0
+}
+
+/**right menu line 249*/
+
+/**start line 263**/
+#top-menu .right.menu .dropdown .menu {
+    width: 100px
+}
+
+#top-menu .right.menu .dropdown .menu:after {
+    right: 55px;
+    left: auto
+}
+
+#top-menu .right.menu .dropdown.icon {
+    padding-left: 50px;
+    margin: 0;
+    font-size: 24px
+}
+
+#top-menu .avatar.image {
+    position: absolute;
+    margin-top: -10px;
+    height: 40px;
+    width: 40px;
+    z-index: 999;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px
+}
+
+#top-menu .avatar img {
+    height: 40px;
+    width: 40px
+}
+
+/**end line 292**/
+
+/**start line 319**/
+#dropdown-icon:before {
+    content: "\f107"
+}
+
+#context-menu {
+    width: 180px !important;
+    height: 100% !important;
+    overflow-y: auto;
+    top: 70px;
+    -webkit-transition: margin-left .8s ease, margin-top .8s ease;
+    -moz-transition: margin-left .8s ease, margin-top .8s ease;
+    transition: margin-left .8s ease, margin-top .8s ease
+}
+
+#context-menu a.item {
+    text-align: center;
+    height: auto !important;
+    padding: 1.2rem 0 1.2rem 1.5rem;
+    border-top: 1px solid #333744;
+    border-bottom: 1px solid #333744;
+}
+
+#context-menu .iwrapper {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    height: 100%;
+    width: 65px;
+    border-left: 5px solid transparent;
+    border-right: 2px solid #333744;
+    padding-left: 10px;
+}
+#context-menu .iwrapper .icon {
+    display: inline-block;
+    margin: 0 1.5rem 0 0;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 1.2rem;
+    vertical-align: middle;
+}
+
+#context-menu i.icon {
+    margin-bottom: 3px !important
+}
+
+#context-avatar {
+    border: 1px solid #FFF;
+    margin-top: 3px;
+    background: #FFF
+}
+
+#context-menu .item:before {
+    height: 0
+}
+
+#context-menu .item.divider {
+    height: 30px !important
+}
+
+#context-menu .item.divider:last-child {
+    height: 60px !important
+}
+
+#context-menu .menu-title {
+    font-size: 12px
+}
+
+/**end line 366**/
+
+/**start line 407**/
+@media only screen and (max-height: 660px) {
+    #context-menu a.item {
+        width: 100%;
+        height: auto !important;
+        display: inline-block;
+        padding: 1.2rem 0 1.2rem 1.5rem
+    }
+}
+
+/**end line 414**/
+
+/**start line 416**/
+.page-container-wrapper {
+    margin-left: 0px;
+    padding: 10px 20px 0
+}
+
+#inner-menu ~ .page-container-wrapper {
+    margin-left: 190px;
+    padding: 10px 20px 0
+}
+
+#inner-menu {
+    width: 190px;
+    height: 100% !important;
+    overflow-y: hidden;
+    border-right: 1px solid #CCC;
+    -webkit-transition: width .3s ease;
+    -moz-transition: width .3s ease;
+    transition: width .3s ease;
+}
+
+#inner-menu:hover {
+    overflow-y: auto
+}
+
+#inner-menu > .sep {
+    width: 100%;
+    height: 1px;
+    background: #CCC;
+    visibility: visible;
+    margin: 20px 0
+}
+
+#inner-menu header.item {
+    font-size: 18px;
+    padding: 30px 25px 10px
+}
+
+#inner-menu header a {
+    float: right
+}
+
+#inner-menu header a i.icon {
+    margin: 0
+}
+
+#inner-menu header article {
+    margin: 5px 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #666;
+    word-wrap: break-word;
+    word-break: normal
+}
+
+/*#inner-menu a.item {
+    font-size: 14px;
+    padding: 10px 25px;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+#inner-menu a.item.active {
+    border-radius: 0
+}
+
+#inner-menu a.item i.icon {
+    float: none;
+    margin: 0 .25em 0 0
+}*/
+/**end line 479**/
+
+/**start line 607**/
+.message-breath {
+    box-shadow: 0 1px 8px #f75288
+}
+
+/**end line 610**/
+
+/**start line 11617**/
+.coding .ui.image, .coding.ui.image {
+    max-width: none;
+    height: 32px;
+    width: 32px;
+    -webkit-border-radius: 32px;
+    -moz-border-radius: 32px;
+    -ms-border-radius: 32px;
+    -o-border-radius: 32px;
+    border-radius: 32px
+}
+
+/**end line 11626**/
+
+/**start line 11650**/
+.coding .ui.image.avatar32, .coding.ui.image.avatar32 {
+    height: 32px;
+    width: 32px;
+    display: inline-block !important;
+    -webkit-border-radius: 32px;
+    -moz-border-radius: 32px;
+    -ms-border-radius: 32px;
+    -o-border-radius: 32px;
+    border-radius: 32px !important
+}
+
+/**end line 11659**/
+
+/**start line 11738**/
+/*.coding a {
+    color: #2D59A2
+}
+
+.coding a:active,.coding a:hover {
+    color: #203F71
+}*/
+/**end line 11744**/
+
+/**start line 11821**/
+.coding.icon {
+    font-family: Coding;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.coding.icon.monkey:before {
+    content: "\c600"
+}
+
+.coding.icon.logo {
+    width: auto;
+    height: auto
+}
+
+.coding.icon.logo:before {
+    content: "\c601"
+}
+
+.coding.icon.logo-v {
+    width: auto;
+    height: auto
+}
+
+.coding.icon.logo-v:before {
+    content: "\c602"
+}
+
+.coding.icon.bubble:before {
+    content: "\c603"
+}
+
+.coding.icon.project:before {
+    content: "\c604"
+}
+
+.coding.icon.read:before {
+    content: "\c605"
+}
+
+.coding.icon.advanced-setting:before {
+    content: "\c606"
+}
+
+.coding.icon.fork:before {
+    content: "\c607"
+}
+
+.coding.icon.pull-request:before {
+    content: "\c608"
+}
+
+.coding.icon.coding-url {
+    width: auto
+}
+
+.coding.icon.coding-url:before {
+    content: "\c609"
+}
+
+.coding.icon.merge-request:before {
+    content: "\c610"
+}
+
+.coding.icon.exclamation:before {
+    content: "\c611"
+}
+
+.coding.icon.exclamation.active {
+    color: #F75288
+}
+
+.coding.icon.exclamation.light:before {
+    content: "\c612"
+}
+
+.coding.icon.coding-recommended:before {
+    content: "\c613"
+}
+
+.coding.icon.coding-anchor {
+    color: #000;
+    vertical-align: middle;
+    line-height: 1;
+    font-size: 16px;
+    visibility: hidden;
+    user-select: none;
+    padding-right: 6px;
+    padding-left: 8px;
+    margin-left: -30px;
+    text-decoration: none
+}
+
+.coding.icon.coding-anchor:hover {
+    text-decoration: none;
+    visibility: visible
+}
+
+.coding.icon.coding-anchor:before {
+    content: '\c614'
+}
+
+.coding.icon.coding-gold:before {
+    content: "\c615"
+}
+
+.coding.icon.no-newline:before {
+    content: "\c616"
+}
+
+.coding.icon.coding-share:before {
+    content: "\c617"
+}
+
+.coding.icon.coding-organization:before {
+    content: "\c618"
+}
+
+.coding.icon.coding-compare:before {
+    content: "\c619"
+}
+
+.coding.icon.coding-commit:before {
+    content: "\c620"
+}
+
+.coding.icon.coding-mabi:before {
+    content: "\e800"
+}
+
+/**end line 11955**/
+
+/**custom start**/
+#inner-menu > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#inner-menu > .uc-secondary-sidebar-menu > li {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0px;
+}
+
+#inner-menu > .uc-secondary-sidebar-menu > li > a > .menu-title {
+    margin-left: 3px;
+}
+
+#inner-menu > .uc-secondary-sidebar-menu > li > a {
+    display: block;
+    position: relative;
+    margin: 0;
+    border: 0px;
+     color: #EDEDED; 
+    text-decoration: none;
+
+    font-size: 14px;
+    padding: 1.2rem;
+    font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    opacity: .8;
+    border-top: 1px solid #333744;
+    border-bottom: 1px solid #333744;
+}
+
+#inner-menu > .uc-secondary-sidebar-menu > li.active > a {
+    background-color: rgba(0, 0, 0, .08);
+    color: rgba(0, 0, 0, .95);
+    opacity: 1;
+}
+
+#inner-menu > .uc-secondary-sidebar-menu > li > a > [class^="icon-"] {
+    color: rgba(0, 0, 0, .75);
+    top: 2px;
+    margin-left: 1px;
+    margin-right: 4px;
+}
+
+#inner-menu > .uc-secondary-sidebar-menu .sub-menu {
+    list-style: none;
+    display: none;
+    padding: 0;
+    margin: 8px 0px 8px 0px;
+}
+
+#inner-menu > .uc-secondary-sidebar-menu li > a:hover {
+    opacity: 1;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, .08)
+}
+
+#inner-menu > .uc-secondary-sidebar-menu li > a > .arrow:before {
+    /** 增加position: absolute  top: 5px; 解决firefox换行显示问题 **/
+    position: absolute;
+    /*float: right;*/
+    right: 10px;
+    width: 10px;
+    /*text-align: center;*/
+    /*margin-top: -1px;*/
+    /*margin-right: 5px;*/
+    /*margin-left:  5px;*/
+    /*margin-left: 15px;*/
+    display: inline;
+    font-size: 16px;
+    font-family: FontAwesome;
+    height: auto;
+    content: "\f104";
+    font-weight: 300;
+    text-shadow: none;
+}
+
+#inner-menu > .uc-secondary-sidebar-menu li > a > .arrow.open:before {
+    content: "\f107";
+}
+
+#inner-menu > .uc-secondary-sidebar-menu li.active > .sub-menu {
+    display: block;
+}
+
+#inner-menu > .uc-secondary-sidebar-menu .sub-menu li {
+    background: none;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 1px !important;
+    /* 2nd level sub menu */
+}
+
+#inner-menu > .uc-secondary-sidebar-menu .sub-menu li > a {
+    display: block;
+    position: relative;
+    margin: 0;
+    border: 0px;
+    color: rgba(0, 0, 0, .75);
+    text-decoration: none;
+
+    font-size: 13px;
+    padding: 6px 15px 6px 53px;
+    font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+
+    opacity: .8;
+}
+
+#inner-menu > .uc-secondary-sidebar-menu .sub-menu li.active > a {
+    background-color: rgba(0, 0, 0, .08);
+    color: rgba(0, 0, 0, .95);
+    opacity: 1;
+}
+
+#inner-menu .nav-item .nav-link {
+    position: relative;
+    display: block;
+    padding: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    background: transparent;
+    border-top: 1px solid #333744;
+    border-bottom: 1px solid #333744;
+}
+
+/**custom end**/
+
+/* Page content start*/
+#context-menu.active + .wrapper {
+    margin-left: 180px;
+}
+
+[class*="-center"] > .wrapper {
+    -webkit-transition: padding-left ease-in-out .3s;
+    -moz-transition: padding-left ease-in-out .3s;
+    -ms-transition: padding-left ease-in-out .3s;
+    -o-transition: padding-left ease-in-out .3s;
+    transition: padding-left ease-in-out .3s;
+    padding: 60px 0 0;
+}
+
+.page-content {
+    margin: 0px;
+    padding: 0px;
+}
+
+@media (min-width: 992px) {
+    /* 992px */
+    /* Page content */
+    .page-content-wrapper {
+        float: left;
+        width: 100%;
+    }
+
+    .page-content-wrapper .page-content {
+        margin-left: 0px;
+        margin-top: 0px;
+        min-height: 600px;
+        padding: 10px 15px 0 15px;
+    }
+
+    #inner-menu + .page-content-wrapper .page-content {
+        margin-left: 190px;
+        background-color: #fff;
+    }
+}
+
+@media (max-width: 767px) {
+    /* 767px */
+    /* Page content */
+    .page-content-wrapper .page-content {
+        padding: 20px 10px 10px 10px !important;
+        overflow: hidden;
+        /* Page title */
+    }
+}
+
+/* Page content end*/
+
+
+.sidebar-hidden #top-menu a.logo {
+    padding: 16px;
+    margin: 0;
+    width: 65px;
+    text-align: center;
+    background-color: #3b3f51;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    -webkit-transition: width .3s ease;
+    -moz-transition: width .3s ease;
+    transition: width .3s ease
+}
+
+.sidebar-hidden #top-menu a.title {
+    display: block;
+    padding: 18px;
+    margin-left: 65px;
+    -webkit-transition: margin-left .3s ease;
+    -moz-transition: margin-left .3s ease;
+    transition: margin-left .3s ease;
+    z-index: 999
+}
+
+.sidebar-hidden #context-menu {
+    width: 65px !important;
+    height: 100% !important;
+    overflow-y: auto;
+    /* padding-top: 70px; */
+    -webkit-transition: width .3s ease;
+    -moz-transition: width .3s ease;
+    transition: width .3s ease
+}
+
+.sidebar-hidden #context-menu .menu-title {
+    display: none;
+}
+
+.sidebar-hidden #context-menu a.item {
+    width: 100%;
+    height: auto !important;
+    display: inline-block;
+    padding: 24px;
+}
+
+.sidebar-hidden #context-menu + .wrapper {
+    margin-left: 65px;
+    -webkit-transition: margin-left .3s ease;
+    -moz-transition: margin-left .3s ease;
+    transition: margin-left .3s ease;
+}
+
+@media (min-width: 992px) {
+    /* 992px */
+    /* Page content */
+    .page-content-wrapper {
+        float: left;
+        width: 100%;
+         margin-top: 10px; 
+        background: #E5ECF2;
+    }
+
+    .sidebar-hidden .page-content-wrapper .page-content {
+        margin-left: 0px;
+        margin-top: 0px;
+        min-height: 600px;
+        margin: 18px 15px 10px 15px;
+    }
+
+    .sidebar-hidden .page-content-wrapper .page-content {
+        margin-left: 90px;
+    }
+}
+
+@media (max-width: 767px) {
+    /* 767px */
+    /* Page content */
+    .sidebar-hidden .page-content-wrapper .page-content {
+        padding: 20px 10px 10px 10px !important;
+        overflow: hidden;
+        /* Page title */
+    }
+}
+
+
+/**start 二级菜单显示与隐藏**/
+.sidebar-second-hidden #inner-menu {
+    width: 1.5rem;
+    height: 4rem !important;
+    overflow: hidden;
+    background: #52BE8A;
+    margin-top:10px;
+    -webkit-transition: width .3s ease;
+    -moz-transition: width .3s ease;
+    transition: width .3s ease;
+    /* border-right: 1px solid #CCC ; */
+}
+
+.sidebar-second-hidden #inner-menu + .page-content-wrapper .page-content {
+    margin-left: 2rem;
+    -webkit-transition: margin-left .3s ease;
+    -moz-transition: margin-left .3s ease;
+    transition: margin-left .3s ease;
+}
+
+.sidebar-second-hidden #inner-menu .nav-item .nav-link {
+    position: relative;
+    display: block;
+    width: 1.5rem;
+    height: 4.5rem;
+    padding: 0;
+    color: #fff;
+}
+
+.sidebar-second-hidden #inner-menu + .page-content-wrapper .page-content .sidebar-second-toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #52BE8A;
+    width: 1.5rem;
+    height: 4.5rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    z-index: 9999;
+    -webkit-transition: width .3s ease;
+    -moz-transition: width .3s ease;
+    transition: width .3s ease;
+}
+
+.sidebar-second-hidden .sidebar-second-title .sidebar-second-toggle .sidebar-second-hid-icon {
+    display: block;
+}
+
+.sidebar-second-hidden .sidebar-second-title .sidebar-second-hid-icon i.sidebar-second-hid-icon-item {
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    display: block;
+    margin-top: 10px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.sidebar-second-hidden .sidebar-second-title .sidebar-second-toggle i.iconfont {
+    display: none;
+    /* -webkit-transition: margin-left .3s ease;
+    -moz-transition: margin-left .3s ease;
+    transition: margin-left .3s ease; */
+}
+
+.sidebar-second-hidden .main.padding-left .sidebar-second nav ul {
+    width: 50px;
+}
+
+/**end 二级菜单显示与隐藏**/
+
+/**=========================================================
+ * add by xhh 2016.07.06
+ * 表单校验输入框错误提示样式 div.error
+ * 表单校验输入框通知提示样式 div.info
+ * 表单校验弹出框效果 .alert
+ * 表单移动时的效果 .table > tbody > tr:hover
+ =========================================================*/
+
+div.error {
+    color: red;
+    padding-top: 7px;
+}
+
+div.info {
+    color: #CDCDCD;
+    padding-top: 7px;
+}
+
+.alert {
+    margin-bottom: 0px;
+    border: 0px solid transparent;
+}
+
+.table > tbody > tr:hover {
+    background-color: #efefef;
+}
+
+.format-height {
+    height: 20px;
+}
+
+.format-height2 {
+    height: 36px;
+}
+
+.break-word {
+    word-wrap: break-word;
+}
+
+/*.has-success .input-icon > i {*/
+/*!*color: #45B6AF;*!*/
+/*color: #3c763d;*/
+/*}*/
+
+/*.has-success .form-control:focus {*/
+/*color: #e5e5e5;*/
+/*}*/
+
+/** 修改过的数据样式 **/
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    /*background-color: rgb(250, 255, 189);*/
+    background-color: rgb(255, 255, 255) !important;
+    background-image: none;
+    color: rgb(0, 0, 0);
+}
+
+/**=========================================================
+ * add by hjc 2016.07.08
+ * Table内容部分显示 .partial-display
+ * 表单校验输入框通知提示样式 div.info
+ * 表单校验弹出框效果 .alert
+ * 表单移动时的效果 .table > tbody > tr:hover
+ =========================================================*/
+
+.partial-display {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /*table标签添加table-layout: fixed;可自由设定显示宽度*/
+}

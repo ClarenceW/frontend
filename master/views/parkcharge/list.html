@@ -1,0 +1,103 @@
+
+<div id="parkcharge-index" block-ui="main">
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+            <li ng-if="titles.secTitle"><a href="javascript:;">{{titles.secTitle}}</a></li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="selectbox">
+                <ul class="option">
+                    <div class="form-inline" id="queryForm">
+                        <div class="form-group form-group-sm">
+                 			车牌： <input class="form-control" name="parklotCode" ng-model="formData.plate" type="text">
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <div class="input-group">
+                                <label class="control-label">驶入时间：</label>
+                                <input type="text" class="form-control" id="searchTm" uib-datepicker-popup="{{format}}" ng-model="formData.clearScoreBeginTime"
+                                    is-open="tempBeginData.opened" date-disabled="disabled(date, mode)" datepicker-options="dateOptions"
+                                    ng-required="true" alt-input-formats="altInputFormats" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open('begin')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                  </span>
+                                <label class="control-label">-</label>
+                                <input type="text" class="form-control" id="searchTm" uib-datepicker-popup="{{format}}" ng-model="formData.clearScoreEndTime"
+                                    is-open="tempEndData.opened" date-disabled="disabled(date, mode)" datepicker-options="dateOptions"
+                                    ng-required="true" alt-input-formats="altInputFormats" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open('end')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                  </span>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            会员类型： 
+                            <select name="crossCode" class="form-control" ng-model="formData.memberType" required>
+                                <option value="">请选择</option>
+                                <option value="">临时车辆</option>
+                                <option value="">平台会员</option>
+                                <option value="">月卡会员</option>
+                                <option value="">季卡会员</option>
+                                <option value="">年卡会员</option>
+                                <!-- <option ng-repeat="option in formOptions.cartypeOptions" value="{{option.crossCode}}">
+                                    {{option.lookupValue}}
+                                </option> -->
+                            </select>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            收费方式： 
+                            <select name="crossCode" class="form-control" ng-model="formData.payType" required>
+                                <option value="">请选择</option>
+                                <option value="">月卡</option>
+                                <option value="">季卡</option>
+                                <option value="">年卡</option>
+                                <option value="">现金</option>
+                                <option value="">时间券放行</option>
+                                <option value="">次券放行</option>
+                                <option value="">异常放行</option>
+                                <!-- <option ng-repeat="option in formOptions.cartypeOptions" value="{{option.crossCode}}">
+                                    {{option.lookupValue}}
+                                </option> -->
+                            </select>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn blue-madison search" ng-click="toSearch()">搜 索</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn search" ng-click="toReset()">重 置</button>
+                        </div>
+                    </div>
+                </ul>
+                <div id="ucSelectBoxWrapper" style="padding: 0px;"></div>
+            </div>
+            <div class="buttonbox">
+                  <button class="btn btn-sm btn-default">
+                    <span class="fa fa-file-excel-o font-blue-linewell"></span> 导出
+                </button>
+            </div>
+            <table class="table table-bordered table-hover" id="parkcharge-table">
+                <thead>
+                <tr>
+                    <th class="table-checkbox">
+                        <input type="checkbox" class="group-checkable" style="text-align: right;" data-set="#parkcharge-table .checkboxes"/>
+                    </th>
+                    <th>车牌</th>
+                    <th>停车场名称</th>
+                    <th>驶入时间</th>
+                    <th>驶出时间</th>
+                    <th>是否预约</th>
+                    <th>预约费用</th>
+                    <th>停车费用</th>
+                    <th>车辆类型</th>
+                    <th>实收金额</th>
+                    <th>优惠券金额</th>
+                    <th>收费方式</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>

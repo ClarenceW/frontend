@@ -1,0 +1,39 @@
+<div class="form-group">
+  <label class="control-label col-md-2">满减规则<span class="required">*</span></label>
+  <div class="col-md-6" ng-class="addForm.avtivename.$invalid && addForm.avtivename.$dirty ? 'has-error':''">
+      <div class="input-icon right">
+          <input type="text" class="form-control" name="avtivename" ng-model="formData.avtivename" readonly >
+      </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-md-2">规则描述<span class="required">*</span></label>
+  <div class="col-md-6" ng-class="addForm.couponmoney.$invalid && addForm.couponmoney.$dirty ? 'has-error':''">
+      <div class="input-icon right">
+          <input type="text" class="form-control" name="couponmoney" ng-model="formData.couponmoney" readonly >
+      </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-md-2">活动范围<span class="required">*</span></label>
+  <div class="col-md-6" ng-class="addForm.couponrule.$invalid && addForm.plate.$dirty ? 'has-error':''">
+      <div class="input-icon right">
+          <i class="fa tooltips" ng-class="addForm.couponrule.$invalid && addForm.couponrule.$dirty ? 'fa-exclamation':''"></i>
+          <select name="parklotCode" class="form-control selectpicker" multiple ng-model="formData.parklotCode" data-live-search="true" title="请选择停车场" required >
+              <option value="">请选择</option>
+              <option value="1">下沙</option>
+              <option value="2">滨江</option>
+              <option value="3">余杭</option>
+              <option value="4">萧山</option>
+              <option value="5">拱墅</option>
+              <!-- <option ng-repeat="option in parklotCodeOptions" value="{{option.code}}">
+                  {{option.name}}
+              </option> -->
+          </select>
+      </div>
+  </div>
+  <div class="col-md-3 error" ng-if="(addForm.couponrule.$invalid && addForm.couponrule.$dirty) || submited">
+      <span ng-if="addForm.couponrule.$error.required">请输入优惠规则名称</span>
+      <span ng-if="addForm.couponrule.$error.maxlength">规则名称不能超过10个字</span>
+  </div>
+</div>

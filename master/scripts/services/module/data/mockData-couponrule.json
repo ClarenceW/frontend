@@ -1,0 +1,17 @@
+[
+  {"couponruleCode":"32395556228973","couponruleName":"充电抵扣","couponStarttime":"2018-02-10","couponEndtime":"2018-02-15","opUser":"admin","couponruleType":"3","isbindCoupon":"1","createTime":"2018-02-10 10:55:40"},
+  {"couponruleCode":"23554777179563","couponruleName":"停车场次券","couponStarttime":"2018-02-10","couponEndtime":"2018-02-14","opUser":"admin","couponruleType":"2","isbindCoupon":"1","createTime":"2018-02-10 10:04:02"},
+  {"couponruleCode":"35608508290371","couponruleName":"停车场优惠","couponStarttime":"2018-02-16","couponEndtime":"2018-02-13","opUser":"admin","couponruleType":"3","isbindCoupon":"0","createTime":"2018-02-10 08:59:58"},
+  {"couponruleCode":"27824111945377","couponruleName":"充电抵扣","couponStarttime":"2018-02-10","couponEndtime":"2018-02-15","opUser":"admin","couponruleType":"2","isbindCoupon":"1","createTime":"2018-02-10 08:28:03"},
+  {"couponruleCode":"64374971481483","couponruleName":"停车场次券","couponStarttime":"2018-02-10","couponEndtime":"2018-02-13","opUser":"admin","couponruleType":"1","isbindCoupon":"1","createTime":"2018-02-10 08:24:27"},
+  {"couponruleCode":"62771747670577","couponruleName":"过年打折","couponStarttime":"2018-02-10","couponEndtime":"2018-02-14","opUser":"admin","couponruleType":"3","isbindCoupon":"0","createTime":"2018-02-10 10:40:43"},
+  {"couponruleCode":"03060381473397","couponruleName":"停车场次券","couponStarttime":"2018-02-10","couponEndtime":"2018-02-15","opUser":"admin","couponruleType":"3","isbindCoupon":"0","createTime":"2018-02-10 06:18:31"},
+  {"couponruleCode":"57331534892388","couponruleName":"停车场优惠","couponStarttime":"2018-02-10","couponEndtime":"2018-02-15","opUser":"admin","couponruleType":"1","isbindCoupon":"0","createTime":"2018-02-09 01:40:00"},
+  {"couponruleCode":"63135446968833","couponruleName":"停车场次券","couponStarttime":"2018-02-10","couponEndtime":"2018-02-15","opUser":"admin","couponruleType":"0","isbindCoupon":"1","createTime":"2018-02-09 03:23:40"},
+  {"couponruleCode":"59589205106120","couponruleName":"充电抵扣","couponStarttime":"2018-02-10","couponEndtime":"2018-02-12","opUser":"admin","couponruleType":"2","isbindCoupon":"1","createTime":"2018-02-09 10:25:30"},
+  {"couponruleCode":"94725788267187","couponruleName":"停车场次券","couponStarttime":"2018-02-10","couponEndtime":"2018-02-14","opUser":"admin","couponruleType":"3","isbindCoupon":"1","createTime":"2018-02-09 08:32:47"},
+  {"couponruleCode":"88346519209899","couponruleName":"停车场优惠","couponStarttime":"2018-02-10","couponEndtime":"2018-02-15","opUser":"admin","couponruleType":"1","isbindCoupon":"0","createTime":"2018-02-09 03:24:31"},
+  {"couponruleCode":"03827514164168","couponruleName":"停车场次券","couponStarttime":"2018-02-10","couponEndtime":"2018-02-14","opUser":"admin","couponruleType":"2","isbindCoupon":"0","createTime":"2018-02-09 01:43:52"},
+  {"couponruleCode":"47375890874354","couponruleName":"充电抵扣","couponStarttime":"2018-02-10","couponEndtime":"2018-02-15","opUser":"admin","couponruleType":"1","isbindCoupon":"1","createTime":"2018-02-09 03:34:12"},
+  {"couponruleCode":"35351553836421","couponruleName":"过年打折","couponStarttime":"2018-02-10","couponEndtime":"2018-02-14","opUser":"admin","couponruleType":"0","isbindCoupon":"0","createTime":"2018-02-09 09:15:44"}
+]

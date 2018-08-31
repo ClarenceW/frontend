@@ -1,0 +1,60 @@
+{
+	"iTotalDisplayRecords": 6,
+	"iTotalRecords": 6,
+	"aaData": [
+		{
+			"paymentChannel": "盐城停车",
+			"collectionCompany": "捷顺",
+			"accountPeriod": "02-07+3",
+			"paymentChannelClear": "1100",
+			"collectionCompanyClear": "1080",
+			"clearCycle": "3",
+			"ClearTime": "02-10 18:35"
+		},
+		{
+			"paymentChannel": "盐城停车",
+			"collectionCompany": "立方",
+			"accountPeriod": "02-07+3",
+			"paymentChannelClear": "1180",
+			"collectionCompanyClear": "1180",
+			"clearCycle": "3",
+			"ClearTime": "02-10 13:35"
+		},
+		{
+			"paymentChannel": "盐城停车",
+			"collectionCompany": "ETCP",
+			"accountPeriod": "02-07+3",
+			"paymentChannelClear": "1200",
+			"collectionCompanyClear": "1200",
+			"clearCycle": "3",
+			"ClearTime": "02-10 11:53"
+		},
+		{
+			"paymentChannel": "立方",
+			"collectionCompany": "盐城停车",
+			"accountPeriod": "02-07+3",
+			"paymentChannelClear": "1460",
+			"collectionCompanyClear": "1450",
+			"clearCycle": "3",
+			"ClearTime": "02-10 10:35"
+		},
+		{
+			"paymentChannel": "捷顺",
+			"collectionCompany": "盐城停车",
+			"accountPeriod": "02-07+3",
+			"paymentChannelClear": "1340",
+			"collectionCompanyClear": "1340",
+			"clearCycle": "3",
+			"ClearTime": "02-10 09:35"
+		},
+		{
+			"paymentChannel": "ETCP",
+			"collectionCompany": "盐城停车",
+			"accountPeriod": "02-07+3",
+			"paymentChannelClear": "1070",
+			"collectionCompanyClear": "1050",
+			"clearCycle": "3",
+			"ClearTime": "02-10 08:35"
+		}
+	]
+}

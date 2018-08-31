@@ -1,0 +1,106 @@
+<div class="row" block-ui="main" id="vipvehicle-detail">
+    <div class="col-md-12">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+                <li ng-if="titles.secTitle"><a href="javascript:;"  ui-sref="{{stateGoIndex}}">{{titles.secTitle}}</a></li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">查看包月车购买详情</div>
+            <div class="panel-body form">
+                <div class="format-height"></div>
+                <div class="parkpay-record">
+                  <div class="parkpay-table">
+                    <table class="table table-bordered table-hover" width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                        <tr>
+                          <td width="25%" align="right"><font class="font-blue-deep"><strong>交易单号</strong></font></td>
+                          <td width="75%">{{formData.orderCode}}</td>
+                        </tr>
+                        <tr>
+                            <td width="25%" align="right"><font class="font-blue-deep"><strong>车牌</strong></font></td>
+                            <td width="75%">{{formData.plate}}</td>
+                        </tr>
+                        <tr>
+                            <td width="25%" align="right"><font class="font-blue-deep"><strong>手机号</strong></font></td>
+                            <td width="75%">{{formData.phoneNum}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>包期数量</strong></font></td>
+                            <td>{{formData.cardType}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>购买金额</strong></font></td>
+                            <td>{{formData.payMoney}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>支付方式</strong></font></td>
+                            <td>{{formData.paySrc}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>购买渠道</strong></font></td>
+                            <td>{{formData.channel}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>停车场</strong></font></td>
+                            <td>{{formData.parklotNames}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>购买时间</strong></font></td>
+                            <td>
+                              {{formData.rechargeTime | date : 'yyyy-MM-dd HH:mm:ss'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><font class="font-blue-deep"><strong>操作员</strong></font></td>
+                            <td>
+                              {{formData.opUser}}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="">
+                    <button class="btn blue-madison parkpay-btn" ng-click="toParkingRecord()">
+                        支付订单
+                    </button>
+                </div>
+                <table class="table table-bordered table-hover evidence_table" id="pass-car-table"
+                       ng-if="passcar">
+                    <thead>
+                    <tr>
+                        <th>交易编号</th>
+                        <th>月卡编号</th>
+                        <th>订单金额（元）</th>
+                        <th>生成时间</th>
+                        <th>状态</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div style="text-align: right">
+                    <button type="button" class="btn" ng-click="back();">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .parkpay-record {
+        display: flex;
+        justify-content: space-between;
+    }
+  
+    .parkpay-table {
+        width: 100%;
+        flex: 0 1 auto;
+  
+    }
+  
+    .parkpay-btn {
+        margin: 10px auto 10px;
+    }
+  </style>

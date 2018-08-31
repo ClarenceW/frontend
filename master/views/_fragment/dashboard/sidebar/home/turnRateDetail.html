@@ -1,0 +1,93 @@
+<div class="row" block-ui="main" style="margin-left: 0;margin-right:0;">
+  <div class="col-md-12" style="margin:20px 0px;">
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li><i class="fa fa-home"></i><a href="javascript:;" ui-sref="{{stateGoHome}}">首页</a><i class="fa fa-angle-right"></i></li>
+            <li><a href="javascript:;">泊位周转率详情</a></li>
+        </ul>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 col-md-6-padding-left">
+          <p style="padding:10px;font-size:20px;margin-bottom:0;">停车场泊位周转率：
+            <span style="color:#f8b551">{{turnrate}}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 col-md-6-padding-right chartBox">
+          <div class="btn-group btnBox">
+            <button ng-if="berthturnrate === 1" class="btn btn-primary active" ng-click="berthTurnRate(1)">周</button>
+            <button ng-if="berthturnrate !== 1" class="btn btn-primary" ng-click="berthTurnRate(1)">周</button>
+
+            <button ng-if="berthturnrate === 2" class="btn btn-primary active" ng-click="berthTurnRate(2)">月</button>
+            <button ng-if="berthturnrate !== 2" class="btn btn-primary" ng-click="berthTurnRate(2)">月</button>
+          </div>
+          <div class="selectBox" style="top:50px;">
+            <label>停车场：</label>
+            <select name="parklotCodes" class="selectpicker" ng-model="formData.parklotCodes" multiple data-live-search="true" maxOptions=3 title="全部停车场">
+              <option ng-repeat="option in parklotOption" value="{{option.code}}">
+                  {{option.name}}
+              </option>
+            </select>
+          </div>
+          <div class="chart1" id="berthturnrateDetail">
+            <!-- 各停车场泊位利用率 -->
+          </div>
+          <i data-toggle="tooltip" data-placement="right" title="车位周转率：车位平均停车次数<br/>计算公式：车位总停车次数/车位总数（单位:次）" class="fa fa-question-circle-o chart-help"
+                  aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" style="margin: 20px 0px;">
+        <table class="table table-bordered table-hover" style="white-space: nowrap" id="turnRate-table">
+            <thead>
+                <tr>
+                    <th style="vertical-align:middle;text-align:center;">停车场</th>
+                    <th style="vertical-align:middle;text-align:center;">星期一<span ng-if="berthturnrate == 1">（本周/上周）</span><span ng-if="berthturnrate == 2">（本月/上月）</span></th>
+                    <th style="vertical-align:middle;text-align:center;">星期二<span ng-if="berthturnrate == 1">（本周/上周）</span><span ng-if="berthturnrate == 2">（本月/上月）</span></th>
+                    <th style="vertical-align:middle;text-align:center;">星期三<span ng-if="berthturnrate == 1">（本周/上周）</span><span ng-if="berthturnrate == 2">（本月/上月）</span></th>
+                    <th style="vertical-align:middle;text-align:center;">星期四<span ng-if="berthturnrate == 1">（本周/上周）</span><span ng-if="berthturnrate == 2">（本月/上月）</span></th>
+                    <th style="vertical-align:middle;text-align:center;">星期五<span ng-if="berthturnrate == 1">（本周/上周）</span><span ng-if="berthturnrate == 2">（本月/上月）</span></th>
+                    <th style="vertical-align:middle;text-align:center;">星期六<span ng-if="berthturnrate == 1">（本周/上周）</span><span ng-if="berthturnrate == 2">（本月/上月）</span></th>
+                    <th style="vertical-align:middle;text-align:center;">星期日<span ng-if="berthturnrate == 1">（本周/上周）</span><span ng-if="berthturnrate == 2">（本月/上月）</span></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div style="text-align: right;padding-right:37px;">
+      <button type="button" class="btn" ng-click="back();">关闭</button>
+  </div>
+  </div>
+</div>
+
+<style>
+  .container-fluid {
+    padding:0 35px 0 15px;
+  }
+  .chartBox {
+    position: relative;
+  }
+  .selectBox {
+    position:absolute;
+    top:30px;
+    right:40px;
+    z-index: 100;
+  }
+  .chart-help{
+    position: absolute;
+    left: 220px;
+    top: 40px;
+    color: #999;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  #turnRate-table td{
+    vertical-align:middle;
+    text-align:center;
+  }
+</style>

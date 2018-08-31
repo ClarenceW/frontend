@@ -1,0 +1,132 @@
+<div class="row" block-ui="main" id="mouthcardEdit">
+  <div class="col-md-12">
+      <div class="page-bar">
+          <ul class="page-breadcrumb">
+              <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+              <li ng-if="titles.secTitle"><a href="javascript:;"  ui-sref="{{stateGoIndex}}">{{titles.secTitle}}</a></li>
+          </ul>
+      </div>
+      <div class="panel panel-default">
+          <div class="panel-heading">修改月卡</div>
+          <div class="instruct">
+            说明：<br/>
+            月卡：从买卡当天起，至下个月当日，若下月无当前日期，则顺延1天；如：1月20日--2月20日；1月31--3月1日；以此类推<br/>
+            季卡、半年卡、年卡的规则亦如“月卡”规则类似；
+          </div>
+          <div class="panel-body form">
+              <form name="editForm" ng-submit="submitForm(editForm.$valid)" class="form-horizontal" novalidate>
+                  <div class="format-height" style="padding-left:80px;height:40px;line-height:40px;font-size:16px;">
+                    <span style="border-left:5px solid #68b4f1;padding-left:5px;">月卡规则信息</span>
+                  </div>
+                  <div class="form-body">
+                      <div class="form-group">
+                          <label class="control-label col-md-2">月卡名称<span class="required">*</span></label>
+                          <div class="col-md-6" ng-class="editForm.cardName.$invalid && editForm.cardName.$dirty ? 'has-error':''">
+                              <div class="input-icon right">
+                                  <i class="fa tooltips" ng-class="editForm.cardName.$invalid && editForm.cardName.$dirty ? 'fa-exclamation':''"></i>
+                                  <input type="text" class="form-control" name="cardName" ng-model="formData.cardName" placeholder="请输入月卡名称" required ng-maxlength="16">
+                              </div>
+                          </div>
+                          <div class="col-md-3 error" ng-if="(editForm.cardName.$invalid && editForm.cardName.$dirty) || submited">
+                              <span ng-if="editForm.cardName.$error.required">请输入月卡名称</span>
+                              <span ng-if="addForm.cardName.$error.maxlength">月卡名称不能超过16位</span>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="control-label col-md-2">月卡类型<span class="required">*</span></label>
+                          <div class="col-md-6" ng-class="editForm.cardType.$dirty ? (editForm.cardType.$valid ? 'has-success': 'has-error') :''">
+                              <div class="input-icon right">
+                                  <i class="fa tooltips" ng-class="editForm.cardType.$dirty ? (editForm.cardType.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                  <input type="text" class="form-control" name="cardType" ng-model="formData.cardType" readonly>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="control-label col-md-2">购买金额（元）<span class="required">*</span></label>
+                          <div class="col-md-6" ng-class="editForm.price.$invalid && editForm.price.$dirty ? 'has-error':''">
+                              <div class="input-icon right">
+                                  <i class="fa tooltips" ng-class="editForm.price.$invalid && editForm.price.$dirty ? 'fa-exclamation':''"></i>
+                                  <input type="text" class="form-control" name="price" ng-model="formData.price" placeholder="请输入购买金额" required ng-pattern='/^\d+\.?\d{0,2}$/'>
+                              </div>
+                          </div>
+                          <div class="col-md-3 error" ng-if="(editForm.price.$invalid && editForm.price.$dirty) || submited">
+                              <span ng-if="editForm.price.$error.required">请输入购买金额</span>
+                              <span ng-if="editForm.price.$error.pattern">购买金额保留两位小数</span>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="control-label col-md-2">发行数量<span class="required">*</span></label>
+                          <div class="col-md-6" ng-class="editForm.cardSum.$invalid && editForm.cardSum.$dirty ? 'has-error':''">
+                              <div class="input-icon right">
+                                  <i class="fa tooltips" ng-class="editForm.cardSum.$invalid && editForm.cardSum.$dirty ? 'fa-exclamation':''"></i>
+                                  <input type="text" class="form-control" name="cardSum" ng-model="formData.cardSum" placeholder="请输入发行数量" required ng-pattern='/^-?\d+$/'>
+                              </div>
+                          </div>
+                          <div class="col-md-3 error" ng-if="(editForm.cardSum.$invalid && editForm.cardSum.$dirty) || submited">
+                              <span ng-if="editForm.cardSum.$error.required">请输入发行数量</span>
+                              <span ng-if="editForm.cardSum.$error.pattern">发行数量只能为整数</span>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-2">购买渠道<span class="required">*</span></label>
+                        <div class="col-md-6">
+                          <label class="control-label" style="text-align: left;margin-right:15px;" ng-repeat="option in cardChannelOptions">
+                            <input type="radio" name="cardChannel" class="ruletype" value="{{option.lookupKey}}" ng-model="formData.cardChannel"> {{option.lookupValue}}
+                        </label>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="format-height" style="padding-left:80px;height:40px;line-height:40px;font-size:16px;">
+                    <span style="border-left:5px solid #68b4f1;padding-left:5px;">停车场信息</span>
+                  </div>
+                  <div class="form-body">
+                    <div class="form-group">
+                      <span class="col-md-2" style="margin-right:15px;"></span>
+                      <table class="table table-bordered table-hover col-md-6" style="width:666px;position: relative;" ng-if="formData.status==1">
+                        <thead>
+                          <tr class="success">
+                              <th style="text-align:center"><input type="checkbox" id="checkAll" name="checkAll" /></th>
+                            <th>停车场名称<span class="berthnum" style="position: absolute;right:10px;top:10px;"></span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="option in parklotCodeOptions">
+                            <td style="text-align:center"><input type="checkbox" name="checkItem" value="{{option.code}}"></td>
+                            <td><span>{{option.parklotName}}</span>  （<span>{{option.berthNum}}</span>车位）</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <table class="table table-bordered table-hover col-md-6" style="width:666px;position: relative;" ng-if="formData.status==2">
+                        <thead>
+                          <tr class="success">
+                              <th style="text-align:center"><input type="checkbox" id="checkAll" disabled="disabled" name="checkAll" /></th>
+                            <th>停车场名称<span class="berthnum" style="position: absolute;right:10px;top:10px;"></span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="option in formData.parklotCodeList">
+                              <td style="text-align:center"><input type="checkbox" name="checkItem" disabled="disabled" value="{{option.parklotCode}}"></td>
+                            <td><span>{{option.parklotName}}</span>  （<span>{{option.berthNum}}</span>车位）</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="form-actions">
+                      <div class="col-md-offset-8 col-md-4">
+                          <button type="button" class="btn default" ui-sref="{{stateGoIndex}}">取消</button>
+                          <button type="submit" class="btn btn-info">保存</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+<style>
+  .instruct {
+    padding:5px 20px;
+    color: #ff3366;
+  }
+</style>

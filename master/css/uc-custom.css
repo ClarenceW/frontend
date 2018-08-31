@@ -1,0 +1,39 @@
+
+div.uc_dataTables_info {
+    height: 34px;
+    font-size: 14px;
+    padding-top: 6px;
+}
+
+
+
+/** 按钮样式 **/
+.buttonbox {
+    margin-bottom: 5px;
+    padding: 8px;
+    border: 1px solid #dddddd;
+    border-top: 2px solid #749bc3;
+    background: #ecf2f8;
+}
+
+.buttonbox .btn {
+    padding: 3px 14px;
+    font-size: 14px;
+}
+
+.buttonbox .btn .glyphicon {
+    padding-right: 4px;
+    top: 2px;
+}
+
+.buttonbox .font-green-linewell {
+    color: #85e078 !important;
+}
+
+.buttonbox .font-blue-linewell {
+    color: #8caac9 !important;
+}
+
+.buttonbox .font-red-linewell {
+    color: #df7373 !important;
+}

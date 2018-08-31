@@ -1,0 +1,98 @@
+<div id="menuEditIndex" class="row" block-ui="main">
+    <div class="col-md-12">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li ng-if="titles.firstTitle"><i class="fa fa-home"></i><a href="javascript:;">{{titles.firstTitle}}</a><i class="fa fa-angle-right"></i></li>
+                <li ng-if="titles.secTitle"><a href="javascript:;">{{titles.secTitle}}</a><i class="fa fa-angle-right"></i></li>
+                <li ng-if="titles.thirdTitle"><a href="javascript:;"  ui-sref="{{stateGoIndex}}">{{titles.thirdTitle}}</a></li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">编辑菜单</div>
+            <div class="panel-body form">
+                <form name="editForm" ng-submit="submitForm(editForm.$valid)" class="form-horizontal" novalidate>
+                    <div class="format-height"></div>
+                    <div class="alert alert-danger" ng-show="alertDanger">
+                        <div class="close" ng-click="alertClose()"></div>
+                        您输入的信息存在错误，请先检查.
+                    </div>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-2">菜单编号<span class="required">*</span></label>
+                            <div class="col-md-6">
+                                <div class="input-icon right">
+                                    <input type="text" class="form-control"  name="menuCode"  ng-model="formData.menuCode" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">菜单名称<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="editForm.menuName.$dirty ? (editForm.menuName.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="editForm.menuName.$dirty ? (editForm.menuName.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <input type="text" class="form-control"  name="menuName"  ng-model="formData.menuName"  ng-required="true">
+                                </div>
+                            </div>
+                            <div class="col-md-3 info" ng-hide="editForm.menuName.$dirty">
+                                <span>菜单名称不能为空</span>
+                            </div>
+                            <div class="col-md-3 error" ng-show="editForm.menuName.$invalid && editForm.menuName.$dirty">
+                                <span ng-show="editForm.menuName.$error.required">请输入菜单名称</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">菜单地址<span class="required">*</span></label>
+                            <div class="col-md-6" ng-class="editForm.menuUrl.$dirty ? (editForm.menuUrl.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="editForm.menuUrl.$dirty ? (editForm.menuUrl.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <input type="text" class="form-control"  name="menuUrl"  ng-model="formData.menuUrl"  ng-required="true">
+                                </div>
+                            </div>
+                            <div class="col-md-3 info" ng-hide="editForm.menuUrl.$dirty">
+                                <span>菜单地址不能为空</span>
+                            </div>
+                            <div class="col-md-3 error" ng-show="editForm.menuUrl.$invalid && editForm.menuUrl.$dirty">
+                                <span ng-show="editForm.menuUrl.$error.required">请输入菜单地址</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">父级菜单编号</label>
+                            <div class="col-md-6" ng-class="editForm.parentCode.$dirty ? (editForm.parentCode.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="editForm.parentCode.$dirty ? (editForm.parentCode.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <input type="text" class="form-control"  name="parentCode"  ng-model="formData.parentCode">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">菜单图标</label>
+                            <div class="col-md-6" ng-class="editForm.menuIcon.$dirty ? (editForm.menuIcon.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="editForm.menuIcon.$dirty ? (editForm.menuIcon.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <input type="text" class="form-control"  name="menuIcon"  ng-model="formData.menuIcon" >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">优先级</label>
+                            <div class="col-md-6" ng-class="editForm.menuSort.$dirty ? (editForm.menuSort.$valid ? 'has-success': 'has-error') :''">
+                                <div class="input-icon right">
+                                    <i class="fa tooltips" ng-class="editForm.menuSort.$dirty ? (editForm.menuSort.$valid ? 'fa-check': 'fa-exclamation') :''"></i>
+                                    <input type="text" class="form-control"  name="menuSort"  ng-model="formData.menuSort">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <div class="col-md-offset-9 col-md-3">
+                                <button type="submit" class="btn btn-info">保存</button>
+                                <button type="button" class="btn default" ui-sref="{{stateGoIndex}}">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
